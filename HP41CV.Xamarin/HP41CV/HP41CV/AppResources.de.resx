@@ -1,0 +1,852 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Activ" xml:space="preserve">
+    <value>Activ</value>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>HP-41CV</value>
+  </data>
+  <data name="ButtonLoadLayout" xml:space="preserve">
+    <value>Layout laden</value>
+  </data>
+  <data name="ButtonLoadProgram" xml:space="preserve">
+    <value>Program laden</value>
+  </data>
+  <data name="ButtonSaveLayout" xml:space="preserve">
+    <value>Layout speichern</value>
+  </data>
+  <data name="ButtonSaveProgram" xml:space="preserve">
+    <value>Program speichern</value>
+  </data>
+  <data name="BuyButton" xml:space="preserve">
+    <value>Buy for {0}</value>
+  </data>
+  <data name="Chapter1Description" xml:space="preserve">
+    <value>Zahl eingeben und die Funktionstaste drücken. </value>
+  </data>
+  <data name="Chapter1Remark" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Chapter1Title" xml:space="preserve">
+    <value>Funktion von einer Variable</value>
+  </data>
+  <data name="Chapter2Description" xml:space="preserve">
+    <value>Beide Zahlen eingeben und die Funktionstaste drücken. </value>
+  </data>
+  <data name="Chapter2Remark" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Chapter2Title" xml:space="preserve">
+    <value>Funktion von zwei Variablen</value>
+  </data>
+  <data name="Chapter3Description" xml:space="preserve">
+    <value>Beginne mit der inneren Klammer und laß die Zwischenergebnisse auf dem Stack Beispiel (5+7)*(3-1) = 24</value>
+  </data>
+  <data name="Chapter3Title" xml:space="preserve">
+    <value>Kettenrechnungen</value>
+  </data>
+  <data name="Differens1" xml:space="preserve">
+    <value>Intern wird mit dem Datentyp double gearbeitet.</value>
+  </data>
+  <data name="Differens2" xml:space="preserve">
+    <value>Alle Register können gleichzeitig Zahlen und Texte enthalten.</value>
+  </data>
+  <data name="Differens3" xml:space="preserve">
+    <value>In der Basic Konfiguration sind 99 Register verfügbar. Die Registerzahl ist erweiterbar auf bis zu 999 unabhängig vom Programmplatz.</value>
+  </data>
+  <data name="Differens4" xml:space="preserve">
+    <value>Die Beschriftung der Tasten ändert sich je nach Modus (Normal, User or Alpha)</value>
+  </data>
+  <data name="Differens5" xml:space="preserve">
+    <value>Zusätzliche Zahlenformate HEX und BIN sowie die Ziffern A bis F als Erweiterungsfunktionen.</value>
+  </data>
+  <data name="Differens6" xml:space="preserve">
+    <value>Für einfache Berechnungen steht ein Eingabemodus ohne UPN zur Verfügung</value>
+  </data>
+  <data name="Differens7" xml:space="preserve">
+    <value>Tastatureingabe</value>
+  </data>
+  <data name="DifferentTitle" xml:space="preserve">
+    <value>Unterschiede zum Original</value>
+  </data>
+  <data name="FeedbackText1" xml:space="preserve">
+    <value>Der HP 41 CV Emulator ist noch in Entwicklung  und natürlich noch nicht perfekt.</value>
+  </data>
+  <data name="FeedbackText2" xml:space="preserve">
+    <value>Kommentare, Bug Reports und Hinweise auf abweichendes Verhalten sind willkommen.</value>
+  </data>
+  <data name="FeedbackText3" xml:space="preserve">
+    <value>Sende eine Mail an juergen@fam-stroehmer.de</value>
+  </data>
+  <data name="FeedbackTitle" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="ForW" xml:space="preserve">
+    <value>für Windows</value>
+  </data>
+  <data name="Function1Description" xml:space="preserve">
+    <value>Geben einen oder zwei Operatoren ein und wähle die Funktion</value>
+  </data>
+  <data name="Function1Title" xml:space="preserve">
+    <value>Aritmetische Funktionen</value>
+  </data>
+  <data name="Function2Description" xml:space="preserve">
+    <value>Für der Winkel kann Grad, Bogenmaß oder Neugrad ausgewählt werden.</value>
+  </data>
+  <data name="Function2Title" xml:space="preserve">
+    <value>Winkelfunktionen</value>
+  </data>
+  <data name="Function3Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Function3Title" xml:space="preserve">
+    <value>Logaritmus und Exponential Funktionen</value>
+  </data>
+  <data name="Function4Description" xml:space="preserve">
+    <value>Steuere Programverzweigungen oder zeig das Ergebnis an</value>
+  </data>
+  <data name="Function4Title" xml:space="preserve">
+    <value>Logische Funktionen</value>
+  </data>
+  <data name="Function5Description" xml:space="preserve">
+    <value>Gebe Werte aus den X und Y Register ein oder finde dort das Ergebniss</value>
+  </data>
+  <data name="Function5Title" xml:space="preserve">
+    <value>Statistische Funktionen (Option)</value>
+  </data>
+  <data name="Function6Description" xml:space="preserve">
+    <value>Wähle ein Register über seine zweistellige Numer aus oder wähle ein Stackregister über  .  gefolgt von  X,Y,Z,T oder L</value>
+  </data>
+  <data name="Function6Title" xml:space="preserve">
+    <value>Register Funktionen</value>
+  </data>
+  <data name="Function7Description" xml:space="preserve">
+    <value>Steuere Programverzweigungen oder das Verhalten des Rechners über Flags</value>
+  </data>
+  <data name="Function7Title" xml:space="preserve">
+    <value>Flag Funktionen</value>
+  </data>
+  <data name="Function8Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Function8Title" xml:space="preserve">
+    <value>Umwandlungsfunktionen</value>
+  </data>
+  <data name="Function9Description" xml:space="preserve">
+    <value>Wähle das Format aus und gebe die Anzahl der Nachkommstellen oder Bytes ein.</value>
+  </data>
+  <data name="Function9Title" xml:space="preserve">
+    <value>Zahlen Format</value>
+  </data>
+  <data name="FunctionTitle" xml:space="preserve">
+    <value>Hauptfunktionen</value>
+  </data>
+  <data name="HelpProgramming" xml:space="preserve">
+    <value>Programme können aus Text-Dateien mit der Endung 41p geladen werden.</value>
+  </data>
+  <data name="HelpProgramming1" xml:space="preserve">
+    <value>In den Programmen können die meisten Funktionen des HP41-CV sowie Schleifen und Verzweigungen verwendet werden.</value>
+  </data>
+  <data name="HelpProgramming2" xml:space="preserve">
+    <value>Nicht unterstützt werden  die Editier Funktionen.  </value>
+  </data>
+  <data name="HelpProgrammingExample1" xml:space="preserve">
+    <value>Einfaches Beispiel</value>
+  </data>
+  <data name="HelpProgrammingExample1Code1" xml:space="preserve">
+    <value>Program=CIRCLE</value>
+  </data>
+  <data name="HelpProgrammingExample1Code2" xml:space="preserve">
+    <value>X↑2</value>
+  </data>
+  <data name="HelpProgrammingExample1Code3" xml:space="preserve">
+    <value>PI</value>
+  </data>
+  <data name="HelpProgrammingExample1Code4" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="HelpProgrammingExample1Code5" xml:space="preserve">
+    <value>EndProgram</value>
+  </data>
+  <data name="HelpProgrammingExample1Description" xml:space="preserve">
+    <value>Flächenberechungn eines Kreise</value>
+  </data>
+  <data name="HelpProgrammingExample1Remark1" xml:space="preserve">
+    <value>Programm Name</value>
+  </data>
+  <data name="HelpProgrammingExample2" xml:space="preserve">
+    <value>Programm mit Schleife</value>
+  </data>
+  <data name="HelpProgrammingExample2Code1" xml:space="preserve">
+    <value>Program=INTEREST</value>
+  </data>
+  <data name="HelpProgrammingExample2Code10" xml:space="preserve">
+    <value>STO 00</value>
+  </data>
+  <data name="HelpProgrammingExample2Code11" xml:space="preserve">
+    <value>LBL 01</value>
+  </data>
+  <data name="HelpProgrammingExample2Code12" xml:space="preserve">
+    <value>RCL 02</value>
+  </data>
+  <data name="HelpProgrammingExample2Code13" xml:space="preserve">
+    <value>RCL 01</value>
+  </data>
+  <data name="HelpProgrammingExample2Code14" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="HelpProgrammingExample2Code15" xml:space="preserve">
+    <value>ST+ 02</value>
+  </data>
+  <data name="HelpProgrammingExample2Code16" xml:space="preserve">
+    <value>DSE 00</value>
+  </data>
+  <data name="HelpProgrammingExample2Code17" xml:space="preserve">
+    <value>GTO 01</value>
+  </data>
+  <data name="HelpProgrammingExample2Code18" xml:space="preserve">
+    <value>RCL 02</value>
+  </data>
+  <data name="HelpProgrammingExample2Code19" xml:space="preserve">
+    <value>EndProgram</value>
+  </data>
+  <data name="HelpProgrammingExample2Code2" xml:space="preserve">
+    <value>ᵀINTEREST?</value>
+  </data>
+  <data name="HelpProgrammingExample2Code3" xml:space="preserve">
+    <value>PROMPT</value>
+  </data>
+  <data name="HelpProgrammingExample2Code4" xml:space="preserve">
+    <value>STO 01</value>
+  </data>
+  <data name="HelpProgrammingExample2Code5" xml:space="preserve">
+    <value>ᵀCAPITAL?</value>
+  </data>
+  <data name="HelpProgrammingExample2Code6" xml:space="preserve">
+    <value>PROMPT</value>
+  </data>
+  <data name="HelpProgrammingExample2Code7" xml:space="preserve">
+    <value>STO 02</value>
+  </data>
+  <data name="HelpProgrammingExample2Code8" xml:space="preserve">
+    <value>ᵀYEARS?</value>
+  </data>
+  <data name="HelpProgrammingExample2Code9" xml:space="preserve">
+    <value>PROMPT</value>
+  </data>
+  <data name="HelpProgrammingExample2Description" xml:space="preserve">
+    <value>berechnet den Zinseszins</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark1" xml:space="preserve">
+    <value>Programm Name</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark10" xml:space="preserve">
+    <value>und speichere sie als Laufvariable in Register 0</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark11" xml:space="preserve">
+    <value>Marke für die Schleife</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark16" xml:space="preserve">
+    <value>Erniederige den Schleifenzähler</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark17" xml:space="preserve">
+    <value>und springe zur Schleifenmarke solange der Zähler größer null ist</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark18" xml:space="preserve">
+    <value>Zeige das Ergebniss an</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark3" xml:space="preserve">
+    <value>Frage den Zins ab</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark4" xml:space="preserve">
+    <value>und speichere ihn in Register 1</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark6" xml:space="preserve">
+    <value>Frage das Kapital ab</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark7" xml:space="preserve">
+    <value>und speichere es in Register 2</value>
+  </data>
+  <data name="HelpProgrammingExample2Remark9" xml:space="preserve">
+    <value>Frage die Laufzeit ab</value>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>HP-41CV Hilfe</value>
+  </data>
+  <data name="InPreparation" xml:space="preserve">
+    <value>in Vorbereitung</value>
+  </data>
+  <data name="IntermediateText" xml:space="preserve">
+    <value>Zwischenwert</value>
+  </data>
+  <data name="LoadedPrograms" xml:space="preserve">
+    <value>Geladene Programme</value>
+  </data>
+  <data name="LoadKeysTitle" xml:space="preserve">
+    <value>Tastenbelegung laden</value>
+  </data>
+  <data name="LoadProgram" xml:space="preserve">
+    <value>Program laden</value>
+  </data>
+  <data name="MenuInfo" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MenuSettings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="NotBin" xml:space="preserve">
+    <value>nicht im BIN-Modus erlaubt</value>
+  </data>
+  <data name="NotHex" xml:space="preserve">
+    <value>nicht im HEX-Modus erlaubt</value>
+  </data>
+  <data name="NotLight" xml:space="preserve">
+    <value>Diese Funktion ist noch nicht verfügbar!  Über den Marktplatz-Dialog kann die Funktionalität demnächst gekauft werden.</value>
+  </data>
+  <data name="NotYet" xml:space="preserve">
+    <value>Sorry, diese Funktion ist noch nicht implemented</value>
+  </data>
+  <data name="OnlyUpn" xml:space="preserve">
+    <value>Diese Funktion arbeitet nur im UPN Modus</value>
+  </data>
+  <data name="OptionPersistence" xml:space="preserve">
+    <value>Lade  und speicher alle Register  Tastenbelegungen und  Programme</value>
+  </data>
+  <data name="OptionPersistence1" xml:space="preserve">
+    <value>Lade Tastenbelegungen  aus und Speicher Sie in Dateien </value>
+  </data>
+  <data name="OptionPrinter" xml:space="preserve">
+    <value>Zeigt eine Liste der Eingegebenen Werte und Befehle und der Rechenergebnisse</value>
+  </data>
+  <data name="OptionPrinter1" xml:space="preserve">
+    <value>Die Liste gann gelöscht oder als Datei gespeichert werden.</value>
+  </data>
+  <data name="OptionProgramming" xml:space="preserve">
+    <value>Programme können aus Text-Dateinen geladen und ausgeführt werden.</value>
+  </data>
+  <data name="OptionRobustStatistic" xml:space="preserve">
+    <value>Bis zu 99 Datenreihen unterschiedlicher Länge werden unterstützt </value>
+  </data>
+  <data name="OptionRobustStatistic1" xml:space="preserve">
+    <value>Median und MAD werden ermittelt</value>
+  </data>
+  <data name="OptionRobustStatistic2" xml:space="preserve">
+    <value>t- und f-Test sind möglich</value>
+  </data>
+  <data name="OptionRobustStatistic3" xml:space="preserve">
+    <value>und Ausreißer können entfernt werden</value>
+  </data>
+  <data name="OptionStatistic" xml:space="preserve">
+    <value>Aktiviert die Statistic Funktionen des HP41-CV</value>
+  </data>
+  <data name="OptionTitle" xml:space="preserve">
+    <value>Marktplatz</value>
+  </data>
+  <data name="PrinterTitle" xml:space="preserve">
+    <value>Printer</value>
+  </data>
+  <data name="ProgrammingTitle" xml:space="preserve">
+    <value>Programmierung</value>
+  </data>
+  <data name="ProgramTitle" xml:space="preserve">
+    <value>HP 41CV Programs</value>
+  </data>
+  <data name="ResultText" xml:space="preserve">
+    <value>Ergebniss</value>
+  </data>
+  <data name="SaveKeysTitle" xml:space="preserve">
+    <value>Speicher Tastenbelegung</value>
+  </data>
+  <data name="SaveList" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TextReset" xml:space="preserve">
+    <value>Reset to delivery state</value>
+  </data>
+  <data name="UPNCourseDisplay" xml:space="preserve">
+    <value>Anzeige</value>
+  </data>
+  <data name="UPNCourseKey" xml:space="preserve">
+    <value>Tasten</value>
+  </data>
+  <data name="UPNCourseRemark" xml:space="preserve">
+    <value>Bemerkung</value>
+  </data>
+  <data name="UPNCourseTitle" xml:space="preserve">
+    <value>Kleiner UPN Kurs</value>
+  </data>
+  <data name="ForD" xml:space="preserve">
+    <value>für Android</value>
+  </data>
+  <data name="ForI" xml:space="preserve">
+    <value>für iOS</value>
+  </data>
+  <data name="AboutCommand" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="Help1D" xml:space="preserve">
+    <value>Kerhwert</value>
+  </data>
+  <data name="HelpAbs" xml:space="preserve">
+    <value>Absoluter Wert</value>
+  </data>
+  <data name="HelpACOS" xml:space="preserve">
+    <value>Arkuscosinus</value>
+  </data>
+  <data name="HelpAdd" xml:space="preserve">
+    <value>Addiere x und y </value>
+  </data>
+  <data name="HelpAOFF" xml:space="preserve">
+    <value>ALPHA mode aus</value>
+  </data>
+  <data name="HelpAON" xml:space="preserve">
+    <value>ALPHA mode an</value>
+  </data>
+  <data name="HelpAPPEND" xml:space="preserve">
+    <value>Anhängen der Aneige</value>
+  </data>
+  <data name="HelpARCL" xml:space="preserve">
+    <value>ALPHA zurückrufen</value>
+  </data>
+  <data name="HelpASHF" xml:space="preserve">
+    <value>ALPHA nach links schieben</value>
+  </data>
+  <data name="HelpASIN" xml:space="preserve">
+    <value>Arkussinus</value>
+  </data>
+  <data name="HelpASN" xml:space="preserve">
+    <value>Zuordnen eine Funktion zu einer Taste</value>
+  </data>
+  <data name="HelpASTO" xml:space="preserve">
+    <value>ALPHA speichern</value>
+  </data>
+  <data name="HelpATAN" xml:space="preserve">
+    <value>Arkus tangens</value>
+  </data>
+  <data name="HelpAVD" xml:space="preserve">
+    <value>Papiervorschub</value>
+  </data>
+  <data name="HelpAVIEW" xml:space="preserve">
+    <value>ALPHA betrachten</value>
+  </data>
+  <data name="HelpBACK" xml:space="preserve">
+    <value>Löschen der letzten Eingabe</value>
+  </data>
+  <data name="HelpBEEP" xml:space="preserve">
+    <value>Beeper</value>
+  </data>
+  <data name="HelpBST" xml:space="preserve">
+    <value>Schrit zurück</value>
+  </data>
+  <data name="HelpCAT" xml:space="preserve">
+    <value>Verzeichnisausgabe</value>
+  </data>
+  <data name="HelpCHS" xml:space="preserve">
+    <value>Vorzeichenwechsel</value>
+  </data>
+  <data name="HelpCLA" xml:space="preserve">
+    <value>Löschen des Alpharegisters</value>
+  </data>
+  <data name="HelpClearFlag" xml:space="preserve">
+    <value>Löschen der Flageingabe</value>
+  </data>
+  <data name="HelpClearProgram" xml:space="preserve">
+    <value>Löschen eines Programs</value>
+  </data>
+  <data name="HelpClearStack" xml:space="preserve">
+    <value>Löschen des Rechenregisterstapels</value>
+  </data>
+  <data name="HelpClearX" xml:space="preserve">
+    <value>Löschen des X-Registers</value>
+  </data>
+  <data name="HelpCLRG" xml:space="preserve">
+    <value>Löschen des Speicherregisters</value>
+  </data>
+  <data name="HelpCOS" xml:space="preserve">
+    <value>Cosinus</value>
+  </data>
+  <data name="HelpDEC" xml:space="preserve">
+    <value>Oktal-Dezimal Umwandlung</value>
+  </data>
+  <data name="HelpDEG" xml:space="preserve">
+    <value>Grad-Modus</value>
+  </data>
+  <data name="HelpDiv" xml:space="preserve">
+    <value>X durch Y teilen</value>
+  </data>
+  <data name="HelpDSE" xml:space="preserve">
+    <value>Erniedrigen und Überspringen wenn nulll (Programier Option)</value>
+  </data>
+  <data name="HelpDTR" xml:space="preserve">
+    <value>Grad zu Bogenmaß Umwandlung</value>
+  </data>
+  <data name="HelpEEX" xml:space="preserve">
+    <value>Exponenteneingabe</value>
+  </data>
+  <data name="HelpEND" xml:space="preserve">
+    <value>Programmende (Programier Option)</value>
+  </data>
+  <data name="HelpENG" xml:space="preserve">
+    <value>Technisches Anzeigeformat</value>
+  </data>
+  <data name="HelpENTER" xml:space="preserve">
+    <value>Übertragen des X in das Y Register</value>
+  </data>
+  <data name="HelpEPX" xml:space="preserve">
+    <value>Natürliche Exponentialfunktion</value>
+  </data>
+  <data name="HelpEPX1" xml:space="preserve">
+    <value>Natürliche Exponentialfunktion für Argumente nahe Null</value>
+  </data>
+  <data name="HelpFACT" xml:space="preserve">
+    <value>Fakultät</value>
+  </data>
+  <data name="HelpFC" xml:space="preserve">
+    <value>Flag gelöscht?</value>
+  </data>
+  <data name="HelpFCC" xml:space="preserve">
+    <value>Flag gelöscht? und löschen</value>
+  </data>
+  <data name="HelpFIX" xml:space="preserve">
+    <value>Festkommaeingabe</value>
+  </data>
+  <data name="HelpFRC" xml:space="preserve">
+    <value>Dezimalteil einer Zahl</value>
+  </data>
+  <data name="HelpFS" xml:space="preserve">
+    <value>Flag gesetzt?</value>
+  </data>
+  <data name="HelpFSC" xml:space="preserve">
+    <value>Flag gesetzt? und löschen</value>
+  </data>
+  <data name="HelpGRAD" xml:space="preserve">
+    <value>Neugrad Modus</value>
+  </data>
+  <data name="HelpHMS" xml:space="preserve">
+    <value>Umwandlung von Stunden,Minuten,Sekunden</value>
+  </data>
+  <data name="HelpHMSM" xml:space="preserve">
+    <value>Subtraktion von Stunden, Minuten, Sekunden</value>
+  </data>
+  <data name="HelpHMSP" xml:space="preserve">
+    <value>Addition von Stunden, Minuten, Sekunden</value>
+  </data>
+  <data name="HelpHR" xml:space="preserve">
+    <value>Umwandlung von Stunden, Minuten, Sekunden in Dezimalstunden</value>
+  </data>
+  <data name="HelpINT" xml:space="preserve">
+    <value>Ganzzahliger Teil einer Zahl</value>
+  </data>
+  <data name="HelpISG" xml:space="preserve">
+    <value>Erhöhen und Überspringen wenn nulll (Programier Option)</value>
+  </data>
+  <data name="HelpLASTX" xml:space="preserve">
+    <value>Zurückrufen des Last-X Registers</value>
+  </data>
+  <data name="HelpLN" xml:space="preserve">
+    <value>Natürliche Logarithmus</value>
+  </data>
+  <data name="HelpLN1" xml:space="preserve">
+    <value>Natürliche Logarithmus für Argumente nahe Null</value>
+  </data>
+  <data name="HelpLOG" xml:space="preserve">
+    <value>Dekadischer Logarithmus</value>
+  </data>
+  <data name="HelpMEAN" xml:space="preserve">
+    <value>Mittelwert (Statistik Option)</value>
+  </data>
+  <data name="HelpMOD" xml:space="preserve">
+    <value>Modulo (Rest)</value>
+  </data>
+  <data name="HelpMul" xml:space="preserve">
+    <value>Multipizier x mit y </value>
+  </data>
+  <data name="HelpOCT" xml:space="preserve">
+    <value>Dezimal-Oktal Umwandlung</value>
+  </data>
+  <data name="HelpOFF" xml:space="preserve">
+    <value>Ausschalten</value>
+  </data>
+  <data name="HelpPer" xml:space="preserve">
+    <value>Prozent</value>
+  </data>
+  <data name="HelpPerC" xml:space="preserve">
+    <value>Berechnung prozentualer Unterschiede</value>
+  </data>
+  <data name="HelpPI" xml:space="preserve">
+    <value>Pi</value>
+  </data>
+  <data name="HelpPROMPT" xml:space="preserve">
+    <value>Prompt</value>
+  </data>
+  <data name="HelpPSE" xml:space="preserve">
+    <value>Pause (Programier Option)</value>
+  </data>
+  <data name="HelpPTR" xml:space="preserve">
+    <value>Polar-Kartesisch Umwandlung</value>
+  </data>
+  <data name="HelpRAD" xml:space="preserve">
+    <value>Radian-Modus</value>
+  </data>
+  <data name="HelpRCL" xml:space="preserve">
+    <value>Wert aus Register zurückrufen</value>
+  </data>
+  <data name="HelpRD" xml:space="preserve">
+    <value>Zyklische Vertauschung nach unten</value>
+  </data>
+  <data name="HelpRND" xml:space="preserve">
+    <value>Rundung</value>
+  </data>
+  <data name="HelpRS" xml:space="preserve">
+    <value>Start/Stop. Stopt Programme (Programier Option)</value>
+  </data>
+  <data name="HelpRTD" xml:space="preserve">
+    <value>Bogenmaß zu Grad Umwandlung</value>
+  </data>
+  <data name="HelpRTP" xml:space="preserve">
+    <value>Kartesisch-Polar Umwandlung</value>
+  </data>
+  <data name="HelpRU" xml:space="preserve">
+    <value>Zyklische Vertauschung nach oben</value>
+  </data>
+  <data name="HelpSCI" xml:space="preserve">
+    <value>Wissenschaftliches Anzeigeformat</value>
+  </data>
+  <data name="HelpSDEV" xml:space="preserve">
+    <value>Standardabweichung (Statistik Option)</value>
+  </data>
+  <data name="HelpSF" xml:space="preserve">
+    <value>Falg setzen</value>
+  </data>
+  <data name="HelpSIGN" xml:space="preserve">
+    <value>Vorzeichen von x</value>
+  </data>
+  <data name="HelpSIN" xml:space="preserve">
+    <value>Sinus</value>
+  </data>
+  <data name="HelpSIZE" xml:space="preserve">
+    <value>Größe der Speicherbereiches</value>
+  </data>
+  <data name="HelpSQRT" xml:space="preserve">
+    <value>Quadratwurzel</value>
+  </data>
+  <data name="HelpSST" xml:space="preserve">
+    <value>Eizelschritt vor</value>
+  </data>
+  <data name="HelpStatAdd" xml:space="preserve">
+    <value>Hinzfügen von X und Y zu Statistik Registern  (Statistik Option)</value>
+  </data>
+  <data name="HelpStatClear" xml:space="preserve">
+    <value>Löscht die Statistik Register  (Statistik Option)</value>
+  </data>
+  <data name="HelpStatRemove" xml:space="preserve">
+    <value>Entfernten von X und Y von Statistik Registern  (Statistik Option)</value>
+  </data>
+  <data name="HelpSTD" xml:space="preserve">
+    <value>Register durch X dividieren</value>
+  </data>
+  <data name="HelpSTM" xml:space="preserve">
+    <value>X mit Register multiplizieren</value>
+  </data>
+  <data name="HelpSTO" xml:space="preserve">
+    <value>X in Register speichern</value>
+  </data>
+  <data name="HelpSTOP" xml:space="preserve">
+    <value>Halt</value>
+  </data>
+  <data name="HelpSTP" xml:space="preserve">
+    <value>X zum Register addieren</value>
+  </data>
+  <data name="HelpSTS" xml:space="preserve">
+    <value>X vom Register subtrahieren</value>
+  </data>
+  <data name="HelpSub" xml:space="preserve">
+    <value>x von y subtrahieren</value>
+  </data>
+  <data name="HelpTAN" xml:space="preserve">
+    <value>Tangens</value>
+  </data>
+  <data name="HelpTONE" xml:space="preserve">
+    <value>Tonhöhe des Summers</value>
+  </data>
+  <data name="HelpVIEW" xml:space="preserve">
+    <value>Anzeigen von Registerinhalten</value>
+  </data>
+  <data name="HelpX2" xml:space="preserve">
+    <value>x quadrieren</value>
+  </data>
+  <data name="HelpXEN" xml:space="preserve">
+    <value>Prüfung x = 0</value>
+  </data>
+  <data name="HelpXEQ" xml:space="preserve">
+    <value>Führt ein Program oder eine Funktion aus</value>
+  </data>
+  <data name="HelpXEY" xml:space="preserve">
+    <value>Prüfung x = y</value>
+  </data>
+  <data name="HelpXGN" xml:space="preserve">
+    <value>Prüfung x =&gt; 0</value>
+  </data>
+  <data name="HelpXGY" xml:space="preserve">
+    <value>Prüfung x &gt; 0</value>
+  </data>
+  <data name="HelpXLEN" xml:space="preserve">
+    <value>Prüfung x &lt;= 0</value>
+  </data>
+  <data name="HelpXLEY" xml:space="preserve">
+    <value>Prüfung x &lt;= y</value>
+  </data>
+  <data name="HelpXLY" xml:space="preserve">
+    <value>Prüfung x &lt; y</value>
+  </data>
+  <data name="HelpXROM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HelpXTY" xml:space="preserve">
+    <value>X und Y-Register austauschen</value>
+  </data>
+  <data name="HelpXUN" xml:space="preserve">
+    <value>Prüfung x &lt;&gt; 0</value>
+  </data>
+  <data name="HelpXUY" xml:space="preserve">
+    <value>Prüfung x &lt;&gt; y</value>
+  </data>
+  <data name="HelpYPX" xml:space="preserve">
+    <value>Potenz</value>
+  </data>
+  <data name="Chapter1Example1" xml:space="preserve">
+    <value>   Beispiel  1/25=0.04</value>
+  </data>
+  <data name="Chapter1Example2" xml:space="preserve">
+    <value>   Beispiel  sin(45)=0.7071</value>
+  </data>
+  <data name="Chapter2Example1" xml:space="preserve">
+    <value>   Beispiel  15+7=22</value>
+  </data>
+  <data name="Chapter2Example2" xml:space="preserve">
+    <value>   Beispiel  4³ = 64</value>
+  </data>
+  <data name="Chapter3Example" xml:space="preserve">
+    <value>   Beispiel (5+7)*(3-1) = 24</value>
+  </data>
+</root>

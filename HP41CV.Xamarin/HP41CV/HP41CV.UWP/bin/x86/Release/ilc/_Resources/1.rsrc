@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:HP41CV.Views;assembly=HP41CV"
+             x:Class="HP41CV.MainPage"
+  SizeChanged="MainPage_OnSizeChanged">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+  <AbsoluteLayout VerticalOptions="FillAndExpand"
+           HorizontalOptions="FillAndExpand"
+           BackgroundColor="#FF4D2A18">
+    <views:AboutView BindingContext="{Binding Path=AboutViewModel}" x:Name="AboutView" IsVisible="{Binding Path=IsVisible}" />
+    <views:HelpView BindingContext="{Binding Path=HelpViewModel}" x:Name="HelpView" IsVisible="{Binding Path=IsVisible}" />
+    <views:Calculator BindingContext="{Binding Path=CalculatorViewModel}" x:Name="calculator" IsVisible="{Binding Path=IsVisible}" />
+  </AbsoluteLayout>
+
+</ContentPage>

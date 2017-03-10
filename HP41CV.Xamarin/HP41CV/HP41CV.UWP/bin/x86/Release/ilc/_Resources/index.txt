@@ -1,0 +1,12 @@
+HP41CV, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  HP41CV.AppResources.resources
+  HP41CV.MainPage.xaml
+  HP41CV.App.xaml
+  HP41CV.Views.Calculator.xaml
+  HP41CV.Views.DisplayView.xaml
+  HP41CV.Views.ButtonView.xaml
+  HP41CV.Views.ToggleView.xaml
+  HP41CV.Views.AboutView.xaml
+  HP41CV.Views.ByteView.xaml
+  HP41CV.Views.HelpView.xaml
+  HP41CV.Assets.JS.png
