@@ -1,5 +1,0 @@
-/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile111.AssemblyAttribute.cs
-/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle/obj/Debug/_15Puzzle.MainPage.xaml.g.cs
-/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle/obj/Debug/_15Puzzle.App.xaml.g.cs
-/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle/obj/Debug/_15Puzzle.MainPage.xaml
-/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle/obj/Debug/_15Puzzle.App.xaml
