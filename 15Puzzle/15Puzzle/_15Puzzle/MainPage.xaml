@@ -2,10 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:_15Puzzle"
-             x:Class="_15Puzzle.MainPage">
+             xmlns:views="clr-namespace:_15Puzzle.Views;assembly=_15Puzzle"
+             x:Class="_15Puzzle.MainPage"
+             SizeChanged="MainPage_OnSizeChanged">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+  <AbsoluteLayout 
+           VerticalOptions="FillAndExpand"
+           HorizontalOptions="FillAndExpand">
+    <Frame OutlineColor="Black" x:Name="Board" BackgroundColor="Gray"/>
+    <views:TileView x:Name="Tile1" BindingContext="{Binding Path=Tiles[0]}" />
+    <views:TileView x:Name="Tile2" BindingContext="{Binding Path=Tiles[1]}" />
+    <views:TileView x:Name="Tile3" BindingContext="{Binding Path=Tiles[2]}" />
+    <views:TileView x:Name="Tile4" BindingContext="{Binding Path=Tiles[3]}" />
+    <views:TileView x:Name="Tile5" BindingContext="{Binding Path=Tiles[4]}" />
+    <views:TileView x:Name="Tile6" BindingContext="{Binding Path=Tiles[5]}" />
+    <views:TileView x:Name="Tile7" BindingContext="{Binding Path=Tiles[6]}" />
+    <views:TileView x:Name="Tile8" BindingContext="{Binding Path=Tiles[7]}" />
+    <views:TileView x:Name="Tile9" BindingContext="{Binding Path=Tiles[8]}" />
+    <views:TileView x:Name="Tile10" BindingContext="{Binding Path=Tiles[9]}" />
+    <views:TileView x:Name="Tile11" BindingContext="{Binding Path=Tiles[10]}" />
+    <views:TileView x:Name="Tile12" BindingContext="{Binding Path=Tiles[11]}" />
+    <views:TileView x:Name="Tile13" BindingContext="{Binding Path=Tiles[12]}" />
+    <views:TileView x:Name="Tile14" BindingContext="{Binding Path=Tiles[13]}" />
+    <views:TileView x:Name="Tile15" BindingContext="{Binding Path=Tiles[14]}" />
+  </AbsoluteLayout>
 
 </ContentPage>
