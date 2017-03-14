@@ -55,13 +55,12 @@ namespace _15Puzzle.Models
                     Tiles.Add(new Tile(index,i,j));
                     index++;
                 }
-//            Shuffle();
             return true;
         }
 
         public void Shuffle()
         {
-            for (var i = 0; i < 1; i++)
+            for (var i = 0; i < 20; i++)
             {
                 var index1 = random.Next(15);
                 var index2 = random.Next(15);
