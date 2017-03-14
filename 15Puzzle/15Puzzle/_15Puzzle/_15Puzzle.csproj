@@ -38,6 +38,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ImageConverter..cs" />
     <Compile Include="Helpers\ImageResourceExtension.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -55,6 +61,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -90,22 +100,22 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pictures\Frankenberg.png" />
-    <Content Include="Pictures\Frankenberg00.png" />
-    <Content Include="Pictures\Frankenberg01.png" />
-    <Content Include="Pictures\Frankenberg02.png" />
-    <Content Include="Pictures\Frankenberg03.png" />
-    <Content Include="Pictures\Frankenberg10.png" />
-    <Content Include="Pictures\Frankenberg11.png" />
-    <Content Include="Pictures\Frankenberg12.png" />
-    <Content Include="Pictures\Frankenberg13.png" />
-    <Content Include="Pictures\Frankenberg20.png" />
-    <Content Include="Pictures\Frankenberg21.png" />
-    <Content Include="Pictures\Frankenberg22.png" />
-    <Content Include="Pictures\Frankenberg23.png" />
-    <Content Include="Pictures\Frankenberg30.png" />
-    <Content Include="Pictures\Frankenberg31.png" />
-    <Content Include="Pictures\Frankenberg32.png" />
-    <Content Include="Pictures\Frankenberg33.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg00.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg01.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg02.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg03.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg10.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg11.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg12.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg13.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg20.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg21.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg22.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg23.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg30.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg31.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg32.png" />
+    <EmbeddedResource Include="Pictures\Frankenberg33.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

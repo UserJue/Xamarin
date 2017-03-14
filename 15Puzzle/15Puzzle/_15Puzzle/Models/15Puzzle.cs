@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
+using Xamarin.Forms;
 using _15Puzzle.Annotations;
 
 namespace _15Puzzle.Models
@@ -12,12 +13,22 @@ namespace _15Puzzle.Models
         public enum GameStatus { None, WatingForPlayer, Activ, Inactiv, Stoped, Finished, Deleted }
 
         private Random random;
+        private GameStatus status;
 
         public IList<Tile> Tiles { get; set; }
 
         public int Dimension { get; private set; }
 
-        public GameStatus Status { get; set; }
+        public GameStatus Status
+        {
+            get { return status; }
+            set
+            {
+                if (value == status) return;
+                status = value;
+                OnPropertyChanged(nameof(Status));
+            }
+        }
 
         public string Picture { get; set; }
 
@@ -44,13 +55,13 @@ namespace _15Puzzle.Models
                     Tiles.Add(new Tile(index,i,j));
                     index++;
                 }
-            Shuffle();
+//            Shuffle();
             return true;
         }
 
         public void Shuffle()
         {
-            for (var i = 0; i < 2; i++)
+            for (var i = 0; i < 1; i++)
             {
                 var index1 = random.Next(15);
                 var index2 = random.Next(15);
@@ -64,6 +75,7 @@ namespace _15Puzzle.Models
                     Tiles[index2].IndexY = y;
                 }
             }
+            Status = GameStatus.None;
         }
 
         public bool CheckFinished(int[][] places)
@@ -73,14 +85,20 @@ namespace _15Puzzle.Models
             for (var j = 0; j < Dimension; j++)
                 for (var i = 0; i < Dimension; i++)
                 {
-                    result &= places[i][j] == index;
                     if ((places[i][j] >= 0) && (places[i][j] < Tiles.Count))
                     {
+                        result &= places[i][j] == index;
                         Tiles[places[i][j]].IndexX = i;
                         Tiles[places[i][j]].IndexY = j;
                     }
                     index++;
                 }
+            if (result)
+            {
+                if (Application.Current.MainPage != null)
+                    Application.Current.MainPage.DisplayAlert(AppResource.ApplicationTitle, AppResource.WinMessage, "OK");
+                Status = GameStatus.Finished;
+            }
             return result;
         }
 

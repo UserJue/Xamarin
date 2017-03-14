@@ -10,6 +10,7 @@ namespace _15Puzzle
         private MainViewModel mainViewModel;
         private ContentPage contentView;
         private double tileSize;
+        private bool init;
 
         public MainPage()
         {
@@ -25,23 +26,33 @@ namespace _15Puzzle
             contentView = (ContentPage)sender;
             if (contentView.Width > 0)
             {
-                var hight = Device.OS == TargetPlatform.iOS ? contentView.Height - 20 : contentView.Height;
-                var width = contentView.Width;
-                if (BoardLayout.Height > 100)
-                {
-                    hight = BoardLayout.Height;
-                    width = BoardLayout.Width;
-                }
-                tileSize = Math.Min(hight, width)/4;
-                AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0,0, tileSize*4, tileSize*4));
+                SetSize();
                 SetTiles();
             }
+        }
+
+        private void SetSize()
+        {
+            var hight = Device.OS == TargetPlatform.iOS ? contentView.Height - 20 : contentView.Height;
+            var width = contentView.Width;
+            if (BoardLayout.Height > 100)
+            {
+                hight = BoardLayout.Height;
+                width = BoardLayout.Width;
+                init = true;
+            }
+            tileSize = Math.Min(hight, width)/4;
+            AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0, 0, tileSize*4, tileSize*4));
         }
 
         private void SetTiles()
         {
             if (contentView.Width > 0)
             {
+                if (!init)
+                {
+                    SetSize();
+                }
                 AbsoluteLayout.SetLayoutBounds(Tile1, new Rectangle(tileSize * mainViewModel.Tiles[0].X, tileSize * mainViewModel.Tiles[0].Y, tileSize, tileSize));
                 AbsoluteLayout.SetLayoutBounds(Tile2, new Rectangle(tileSize * mainViewModel.Tiles[1].X, tileSize * mainViewModel.Tiles[1].Y, tileSize, tileSize));
                 AbsoluteLayout.SetLayoutBounds(Tile3, new Rectangle(tileSize * mainViewModel.Tiles[2].X, tileSize * mainViewModel.Tiles[2].Y, tileSize, tileSize));

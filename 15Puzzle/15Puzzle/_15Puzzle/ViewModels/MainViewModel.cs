@@ -13,17 +13,33 @@ namespace _15Puzzle.ViewModels
         private int holeY = 3;
 
         private int[][] places;
+        private int[][] lastPlaces;
         private Models._15Puzzle model;
 
         public TileViewModel[] Tiles { get; }
+
+        public string StartBreakText
+        {
+            get
+            {
+                var text = (model.Status == Models._15Puzzle.GameStatus.None) ||
+                       (model.Status == Models._15Puzzle.GameStatus.Inactiv)
+                    ? "Start"
+                    : (model.Status == Models._15Puzzle.GameStatus.Activ) ? "Break" : null;
+                return text;
+            }
+        }
 
         public Action OnTilesMoved;
 
         public ICommand ShuffleCommand { get;  private set; }
 
+        public ICommand StartBreakCommand { get; set; }
+
         public MainViewModel(Models._15Puzzle model)
         {
             this.model = model;
+            this.model.PropertyChanged += MainViewModel_PropertyChanged;
             ShuffleCommand = new Command(() =>
             {
                 model.Shuffle();
@@ -34,14 +50,26 @@ namespace _15Puzzle.ViewModels
                 }
                 OnTilesMoved?.Invoke();
             });
+            StartBreakCommand = new Command(() =>
+            {
+                if ((model.Status == Models._15Puzzle.GameStatus.None) ||
+                    (model.Status == Models._15Puzzle.GameStatus.Inactiv))
+                    model.Status = Models._15Puzzle.GameStatus.Activ;
+                else
+                    model.Status = Models._15Puzzle.GameStatus.Inactiv;
+            });
             Tiles = new TileViewModel[model.Tiles.Count];
             places = new int[model.Dimension][];
-            for (int i = 0;i < model.Dimension;i++)
+            lastPlaces = new int[model.Dimension][];
+            for (int i = 0; i < model.Dimension; i++)
+            {
                 places[i] = new int[model.Dimension];
+                lastPlaces[i] = new int[model.Dimension];
+            }
             foreach (var tile in model.Tiles)
             {
                 Tiles[tile.Index] = new TileViewModel(tile);
-                Tiles[tile.Index].Picture = model.Picture;
+                Tiles[tile.Index].Picture = $"{model.Picture}{tile.IndexY}{tile.IndexX}"; 
                 Tiles[tile.Index].PropertyChanged += MainViewModel_PropertyChanged;
                 Tiles[tile.Index].canMoveX = CanMoveX;
                 Tiles[tile.Index].canMoveY = CanMoveY;
@@ -102,11 +130,11 @@ namespace _15Puzzle.ViewModels
                             break;
                         case TileViewModel.Direction.Left:
                             indexX--;
-                            if ((indexX < 3) && (places[indexX][indexY] >= 0))
+                            if ((indexX >= 0) && (places[indexX][indexY] >= 0))
                             {
                                 Tiles[places[indexX][indexY]].Move(tile.Delta, true);
                                 indexX--;
-                                if ((indexX < 3) && (places[indexX][indexY] >= 0))
+                                if ((indexX >= 0) && (places[indexX][indexY] >= 0))
                                     Tiles[places[indexX][indexY]].Move(tile.Delta, true);
                             }
                             break;
@@ -125,11 +153,16 @@ namespace _15Puzzle.ViewModels
                     OnTilesMoved?.Invoke();
                 }
             }
+            else if (e.PropertyName == "Status")
+            {
+                OnPropertyChanged(nameof(StartBreakText));
+            }
         }
 
         private bool CanMoveX(double x, double y, double dx)
         {
-            if (((x + dx) < 0) || ((x + dx) > 3)) return false;
+            if (model.Status != Models._15Puzzle.GameStatus.Activ) return false;
+                if (((x + dx) < 0) || ((x + dx) > 3)) return false;
             if (holeY != (int) y) return false;
             var hole = holeX;
             if (dx < 0)
@@ -155,6 +188,7 @@ namespace _15Puzzle.ViewModels
 
         private bool CanMoveY(double x, double y, double dy)
         {
+            if (model.Status != Models._15Puzzle.GameStatus.Activ) return false;
             if (((y + dy) < 0) || ((y + dy) > 3)) return false;
             if (holeX != (int) x) return false;
             var hole = holeY;
@@ -207,24 +241,45 @@ namespace _15Puzzle.ViewModels
                     {
                         Tiles[places[i][j]].Set(i,j);
                     }
-            bool hole = false;
-            for (var i = 0; ok && (i < 4); i++)
-                for (var j = 0; ok && (j < 4); j++)
-                    if (places[i][j] == -1)
-                        if (hole)
-                            ok = false;
-                        else
-                            hole = true;
-            if (ok && hole)
-                model.CheckFinished(places);
+            if (model.Status == Models._15Puzzle.GameStatus.None)
+                IsEqualSet(lastPlaces, places);
             else
             {
-                foreach (var tile in model.Tiles)
+                bool hole = false;
+                for (var i = 0; ok && (i < 4); i++)
+                    for (var j = 0; ok && (j < 4); j++)
+                        if (places[i][j] == -1)
+                            if (hole)
+                                ok = false;
+                            else
+                                hole = true;
+                if (ok && hole)
                 {
-                    Tiles[tile.Index].X = tile.IndexX;
-                    Tiles[tile.Index].Y = tile.IndexY;
+                    if (!IsEqualSet(lastPlaces, places))
+                        model.CheckFinished(places);
+                }
+                else
+                {
+                    foreach (var tile in model.Tiles)
+                    {
+                        Tiles[tile.Index].X = tile.IndexX;
+                        Tiles[tile.Index].Y = tile.IndexY;
+                    }
                 }
             }
+        }
+
+        private bool IsEqualSet(int[][] last, int[][] actual)
+        {
+            var result = true;
+            var dimension = actual.Length;
+            for (var j = 0; j < dimension; j++)
+                for (var i = 0; i < dimension; i++)
+                {
+                    result &= last[i][j] == actual[i][j];
+                    last[i][j] = actual[i][j];
+                }
+            return result;
         }
 
         private int GetIndex(double value)
