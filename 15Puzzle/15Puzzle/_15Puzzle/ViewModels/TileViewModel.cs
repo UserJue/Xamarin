@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using _15Puzzle.Annotations;
+using _15Puzzle.Models;
 
 namespace _15Puzzle.ViewModels
 {
@@ -19,6 +20,7 @@ namespace _15Puzzle.ViewModels
 
         public Func<double, double, double, bool> canMoveX;
         public Func<double, double, double, bool> canMoveY;
+        private string picture;
 
         public Direction MoveDirection { get; set; }
 
@@ -27,6 +29,14 @@ namespace _15Puzzle.ViewModels
         public int IndexY => (int) y0;
 
         public double Delta { get; set; }
+
+        public bool Pictures => picture != null;
+
+        public string Picture
+        {
+            get { return picture; }
+            set { picture = value; }
+        }
 
         public bool Moving
         {
@@ -72,6 +82,15 @@ namespace _15Puzzle.ViewModels
             y0 = Y;
         }
 
+        public TileViewModel(Tile tile)
+        {
+            Text = (tile.Index + 1).ToString();
+            Y = tile.IndexY;
+            X = tile.IndexX;
+            x0 = X;
+            y0 = Y;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
@@ -92,6 +111,8 @@ namespace _15Puzzle.ViewModels
         {
             x0 = X = x;
             y0 = Y = y;
+            Moving = false;
+            MoveDirection = Direction.None;
         }
 
         public void OnMove(double dX, double dY)

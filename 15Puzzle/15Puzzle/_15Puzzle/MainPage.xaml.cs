@@ -6,6 +6,7 @@ namespace _15Puzzle
 {
     public partial class MainPage : ContentPage
     {
+        private Models._15Puzzle model;
         private MainViewModel mainViewModel;
         private ContentPage contentView;
         private double tileSize;
@@ -13,7 +14,9 @@ namespace _15Puzzle
         public MainPage()
         {
             InitializeComponent();
-            mainViewModel = new MainViewModel {OnTilesMoved = SetTiles};
+            model = new Models._15Puzzle();
+            model.Create(15);
+            mainViewModel = new MainViewModel(model) {OnTilesMoved = SetTiles};
             BindingContext = mainViewModel;
         }
         
@@ -24,6 +27,11 @@ namespace _15Puzzle
             {
                 var hight = Device.OS == TargetPlatform.iOS ? contentView.Height - 20 : contentView.Height;
                 var width = contentView.Width;
+                if (BoardLayout.Height > 100)
+                {
+                    hight = BoardLayout.Height;
+                    width = BoardLayout.Width;
+                }
                 tileSize = Math.Min(hight, width)/4;
                 AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0,0, tileSize*4, tileSize*4));
                 SetTiles();

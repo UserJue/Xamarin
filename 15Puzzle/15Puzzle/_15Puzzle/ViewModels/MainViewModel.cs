@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using Xamarin.Forms;
 using _15Puzzle.Annotations;
 
 namespace _15Puzzle.ViewModels
@@ -9,47 +11,49 @@ namespace _15Puzzle.ViewModels
     {
         private int holeX = 3;
         private int holeY = 3;
-        private Random random;
 
-        private int[][] places; 
+        private int[][] places;
+        private Models._15Puzzle model;
 
-        public TileViewModel[] Tiles { get; private set; }
+        public TileViewModel[] Tiles { get; }
 
         public Action OnTilesMoved;
 
-        public MainViewModel()
+        public ICommand ShuffleCommand { get;  private set; }
+
+        public MainViewModel(Models._15Puzzle model)
         {
-            random = new Random();
-            Tiles = new TileViewModel[15];
-            places = new[] {new[] { 0,1,2,3}, new[] { 4,5,6,7}, new[] { 8,9,10,11}, new[] { 12,13,14,-1}};
-            for (int i = 0; i < 15; i++)
+            this.model = model;
+            ShuffleCommand = new Command(() =>
             {
-                Tiles[i] = new TileViewModel(i);
-                Tiles[i].PropertyChanged += MainViewModel_PropertyChanged;
-                Tiles[i].canMoveX = CanMoveX;
-                Tiles[i].canMoveY = CanMoveY;
+                model.Shuffle();
+                foreach (var tile in model.Tiles)
+                {
+                    Tiles[tile.Index].X = tile.IndexX;
+                    Tiles[tile.Index].Y = tile.IndexY;
+                }
+                OnTilesMoved?.Invoke();
+            });
+            Tiles = new TileViewModel[model.Tiles.Count];
+            places = new int[model.Dimension][];
+            for (int i = 0;i < model.Dimension;i++)
+                places[i] = new int[model.Dimension];
+            foreach (var tile in model.Tiles)
+            {
+                Tiles[tile.Index] = new TileViewModel(tile);
+                Tiles[tile.Index].PropertyChanged += MainViewModel_PropertyChanged;
+                Tiles[tile.Index].canMoveX = CanMoveX;
+                Tiles[tile.Index].canMoveY = CanMoveY;
             }
-            Shuffle();
             FillPlaces();
+            Device.StartTimer(TimeSpan.FromSeconds(1),TimerOnTick );
         }
 
-        public void Shuffle()
+        internal bool TimerOnTick()
         {
-            for (var i = 0; i < 20; i++)
-            {
-                var index1 = random.Next(15);
-                var index2 = random.Next(15);
-                if (index1 != index2)
-                {
-                    var x = Tiles[index1].X;
-                    var y = Tiles[index1].Y;
-                    Tiles[index1].X = Tiles[index2].X; 
-                    Tiles[index1].Y = Tiles[index2].Y; 
-                    Tiles[index2].X = x; 
-                    Tiles[index2].Y = y;
-                    OnTilesMoved?.Invoke();
-                }
-            }
+            FillPlaces();
+            OnTilesMoved?.Invoke();
+            return true;
         }
 
         private void MainViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -176,10 +180,11 @@ namespace _15Puzzle.ViewModels
 
         private void FillPlaces()
         {
+            bool ok = true;
             for (var i = 0; i < 4; i++)
                 for (var j = 0; j < 4; j++)
                     places[i][j] = -1;
-            for (int index = 0; index < Tiles.Length; index++)
+            for (var index = 0; index < Tiles.Length; index++)
             {
                 var indexX = GetIndex(Tiles[index].X);
                 var indexY = GetIndex(Tiles[index].Y);
@@ -187,10 +192,10 @@ namespace _15Puzzle.ViewModels
                     places[indexX][indexY] = index;
                 else
                 {
-                    ;
+                    ok = false;
                 }
             }
-            for (var i = 0; i < 4; i++)
+            for (var i = 0;ok && (i < 4); i++)
                 for (var j = 0; j < 4; j++)
                     if (places[i][j] == -1)
                     {
@@ -201,6 +206,24 @@ namespace _15Puzzle.ViewModels
                     {
                         Tiles[places[i][j]].Set(i,j);
                     }
+            bool hole = false;
+            for (var i = 0; ok && (i < 4); i++)
+                for (var j = 0; ok && (j < 4); j++)
+                    if (places[i][j] == -1)
+                        if (hole)
+                            ok = false;
+                        else
+                            hole = true;
+            if (ok && hole)
+                model.CheckFinished(places);
+            else
+            {
+                foreach (var tile in model.Tiles)
+                {
+                    Tiles[tile.Index].X = tile.IndexX;
+                    Tiles[tile.Index].Y = tile.IndexY;
+                }
+            }
         }
 
         private int GetIndex(double value)

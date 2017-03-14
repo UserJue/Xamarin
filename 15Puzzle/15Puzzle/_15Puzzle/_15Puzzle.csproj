@@ -38,9 +38,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ImageResourceExtension.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\15Puzzle.cs" />
+    <Compile Include="Models\Tile.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\IPanViewModel.cs" />
@@ -84,6 +87,25 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pictures\Frankenberg.png" />
+    <Content Include="Pictures\Frankenberg00.png" />
+    <Content Include="Pictures\Frankenberg01.png" />
+    <Content Include="Pictures\Frankenberg02.png" />
+    <Content Include="Pictures\Frankenberg03.png" />
+    <Content Include="Pictures\Frankenberg10.png" />
+    <Content Include="Pictures\Frankenberg11.png" />
+    <Content Include="Pictures\Frankenberg12.png" />
+    <Content Include="Pictures\Frankenberg13.png" />
+    <Content Include="Pictures\Frankenberg20.png" />
+    <Content Include="Pictures\Frankenberg21.png" />
+    <Content Include="Pictures\Frankenberg22.png" />
+    <Content Include="Pictures\Frankenberg23.png" />
+    <Content Include="Pictures\Frankenberg30.png" />
+    <Content Include="Pictures\Frankenberg31.png" />
+    <Content Include="Pictures\Frankenberg32.png" />
+    <Content Include="Pictures\Frankenberg33.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
