@@ -247,7 +247,7 @@
     <value>Natürliche Logarithmus</value>
   </data>
   <data name="HelpHR" xml:space="preserve">
-    <value>Umwandlung von Stunden,Minuten,Sekunden in Dezimalstunden</value>
+    <value>Umwandlung von Stunden, Minuten, Sekunden in Dezimalstunden</value>
   </data>
   <data name="Help1D" xml:space="preserve">
     <value>Kerhwert</value>
@@ -622,10 +622,10 @@
     <value>Löschen des Speicherregisters</value>
   </data>
   <data name="HelpHMSM" xml:space="preserve">
-    <value>Subtraktion von Stunden,Minuten,Sekunden</value>
+    <value>Subtraktion von Stunden, Minuten, Sekunden</value>
   </data>
   <data name="HelpHMSP" xml:space="preserve">
-    <value>Addition von Stunden,Minuten,Sekunden</value>
+    <value>Addition von Stunden, Minuten, Sekunden</value>
   </data>
   <data name="Chapter1Description" xml:space="preserve">
     <value>Zahl eingeben und die Funktionstaste drücken. </value>
@@ -763,7 +763,7 @@
     <value>X durch Y teilen</value>
   </data>
   <data name="HelpDSE" xml:space="preserve">
-    <value>Erniedrigen und überspringen wenn nulll (Programier Option)</value>
+    <value>Erniedrigen und Überspringen wenn nulll (Programier Option)</value>
   </data>
   <data name="HelpDTR" xml:space="preserve">
     <value>Grad zu Bogenmaß Umwandlung</value>
@@ -817,7 +817,7 @@
     <value>Dekadischer Logarithmus</value>
   </data>
   <data name="HelpISG" xml:space="preserve">
-    <value>Erhöhen und überspringen wenn nulll (Programier Option)</value>
+    <value>Erhöhen und Überspringen wenn nulll (Programier Option)</value>
   </data>
   <data name="HelpINT" xml:space="preserve">
     <value>Ganzzahliger Teil einer Zahl</value>

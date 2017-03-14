@@ -10,97 +10,100 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>2f5bd349-f7d1-4383-a528-c630f811b560</PackageIdentityName>
     <PackageIdentityPublisher>CN=JUE</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\AppxManifest.xml">
+    <AppXManifest Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\JS.png">
+      <PackagePath>Assets\JS.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\ClrCompression.dll">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\ClrCompression.dll">
       <PackagePath>ClrCompression.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\de\HP41CV.resources.dll">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\de\HP41CV.resources.dll">
       <PackagePath>de\HP41CV.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.dll">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.dll">
       <PackagePath>HP41CV.UWP.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.exe">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.exe">
       <PackagePath>HP41CV.UWP.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.pdb">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.pdb">
       <PackagePath>HP41CV.UWP.pdb</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\resources.pri">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\0.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\0.rsrc">
       <PackagePath>_Resources\0.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\1.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\1.rsrc">
       <PackagePath>_Resources\1.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\10.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\10.rsrc">
       <PackagePath>_Resources\10.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\2.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\2.rsrc">
       <PackagePath>_Resources\2.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\3.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\3.rsrc">
       <PackagePath>_Resources\3.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\4.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\4.rsrc">
       <PackagePath>_Resources\4.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\5.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\5.rsrc">
       <PackagePath>_Resources\5.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\6.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\6.rsrc">
       <PackagePath>_Resources\6.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\7.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\7.rsrc">
       <PackagePath>_Resources\7.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\8.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\8.rsrc">
       <PackagePath>_Resources\8.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\9.rsrc">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\9.rsrc">
       <PackagePath>_Resources\9.rsrc</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\index.txt">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\index.txt">
       <PackagePath>_Resources\index.txt</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

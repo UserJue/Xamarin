@@ -108,12 +108,12 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v7.MediaRouter.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
-		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
-		"Xamarin.Forms.Platform.dll",
-		"Xamarin.Forms.Xaml.dll",
 		"HP41CV.dll",
 		"Java.Interop.dll",
+		"Xamarin.Forms.Core.dll",
+		"Xamarin.Forms.Platform.dll",
+		"Xamarin.Forms.Xaml.dll",
 		"System.ServiceModel.Internals.dll",
 	};
 	public static final String[] Dependencies = new String[]{
