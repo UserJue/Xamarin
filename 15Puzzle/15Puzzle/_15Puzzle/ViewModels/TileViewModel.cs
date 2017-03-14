@@ -30,7 +30,9 @@ namespace _15Puzzle.ViewModels
 
         public double Delta { get; set; }
 
-        public bool Pictures => picture != null;
+        public bool HasPictures => picture != null;
+
+        public bool HasText => picture == null;
 
         public string Picture
         {

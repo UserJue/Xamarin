@@ -41,6 +41,7 @@ namespace _15Puzzle.ViewModels
             foreach (var tile in model.Tiles)
             {
                 Tiles[tile.Index] = new TileViewModel(tile);
+                Tiles[tile.Index].Picture = model.Picture;
                 Tiles[tile.Index].PropertyChanged += MainViewModel_PropertyChanged;
                 Tiles[tile.Index].canMoveX = CanMoveX;
                 Tiles[tile.Index].canMoveY = CanMoveY;

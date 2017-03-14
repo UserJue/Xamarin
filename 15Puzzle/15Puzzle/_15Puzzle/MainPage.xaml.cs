@@ -15,7 +15,7 @@ namespace _15Puzzle
         {
             InitializeComponent();
             model = new Models._15Puzzle();
-            model.Create(15);
+            model.Create(15,"Frankenberg");
             mainViewModel = new MainViewModel(model) {OnTilesMoved = SetTiles};
             BindingContext = mainViewModel;
         }
