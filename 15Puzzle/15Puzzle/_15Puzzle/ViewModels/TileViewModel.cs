@@ -37,7 +37,11 @@ namespace _15Puzzle.ViewModels
         public string Picture
         {
             get { return picture; }
-            set { picture = value; }
+            set {
+				picture = value;
+				OnPropertyChanged(nameof(HasText));
+				OnPropertyChanged(nameof(HasPictures));
+			}
         }
 
         public bool Moving
