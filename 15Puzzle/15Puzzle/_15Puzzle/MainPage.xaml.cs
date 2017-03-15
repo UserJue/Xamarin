@@ -43,6 +43,8 @@ namespace _15Puzzle
             }
             tileSize = Math.Min(hight, width)/4;
             AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0, 0, tileSize*4, tileSize*4));
+//            AbsoluteLayout.SetLayoutBounds(Picture, new Rectangle(0, 0, tileSize * 4, tileSize * 4));
+            ShowPictureButton.WidthRequest = tileSize*4;
         }
 
         private void SetTiles()

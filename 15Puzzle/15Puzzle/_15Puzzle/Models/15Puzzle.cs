@@ -14,6 +14,9 @@ namespace _15Puzzle.Models
 
         private Random random;
         private GameStatus status;
+        private TimeSpan usedTime;
+        private DateTime startTime;
+        private int usedMoves;
 
         public IList<Tile> Tiles { get; set; }
 
@@ -25,8 +28,26 @@ namespace _15Puzzle.Models
             set
             {
                 if (value == status) return;
+                if (status == GameStatus.Activ)
+                    usedTime += DateTime.Now - startTime;
+                else if (value == GameStatus.None)
+                    usedTime = TimeSpan.Zero;
+                startTime = DateTime.Now;
                 status = value;
                 OnPropertyChanged(nameof(Status));
+            }
+        }
+
+        public TimeSpan UsedTime => (status == GameStatus.Activ) ? usedTime + (DateTime.Now - startTime): usedTime;
+
+        public int UsedMoves
+        {
+            get { return usedMoves; }
+            set
+            {
+                if (value == usedMoves) return;
+                usedMoves = value;
+                OnPropertyChanged(nameof(UsedMoves));
             }
         }
 
@@ -42,6 +63,7 @@ namespace _15Puzzle.Models
         public bool Create(int tilesNumber,string picture=null)
         {
             Status = GameStatus.None;
+            usedTime = TimeSpan.Zero;
             Picture = picture;
             var dimension = (int)Math.Sqrt(tilesNumber + 1);
             if (dimension* dimension != tilesNumber + 1) return false;
@@ -55,6 +77,7 @@ namespace _15Puzzle.Models
                     Tiles.Add(new Tile(index,i,j));
                     index++;
                 }
+            Shuffle();
             return true;
         }
 
@@ -92,6 +115,7 @@ namespace _15Puzzle.Models
                     }
                     index++;
                 }
+            UsedMoves++;
             if (result)
             {
                 if (Application.Current.MainPage != null)
