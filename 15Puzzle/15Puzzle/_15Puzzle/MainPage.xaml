@@ -17,6 +17,10 @@
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
     <AbsoluteLayout 
              VerticalOptions="FillAndExpand"
              HorizontalOptions="FillAndExpand"
@@ -38,17 +42,17 @@
       <views:TileView x:Name="Tile14" BindingContext="{Binding Path=Tiles[13]}" />
       <views:TileView x:Name="Tile15" BindingContext="{Binding Path=Tiles[14]}" />
     </AbsoluteLayout>
-    <Image Grid.Row="0" x:Name="Picture" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  IsVisible="{Binding Path=ShowPicture}" Aspect="AspectFit"/>
-    <Button Grid.Row="1" x:Name="ShowPictureButton" Text="Show Picture" Command="{Binding Path=ShowPictureCommand}" />
-    <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Start">
+    <Image Grid.Row="0" Grid.Column="0" x:Name="Picture" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  IsVisible="{Binding Path=ShowPicture}" Aspect="AspectFit"/>
+    <Button Grid.Row="1" Grid.Column="0" x:Name="ShowPictureButton" Text="{Binding Path=ShowPictureText}" Command="{Binding Path=ShowPictureCommand}" IsVisible="{Binding Path=IsPortrait}"/>
+    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Start" IsVisible="{Binding Path=IsPortrait}">
       <Label Text="Moves" />
       <Label Text="{Binding Path=UsedMoves}" />
     </StackLayout>
-    <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End">
+    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="End" IsVisible="{Binding Path=IsPortrait}">
       <Label Text="Used Time" />
       <Label Text="{Binding Path=UsedTime}" />
     </StackLayout>
-    <StackLayout Grid.Row="3" Orientation="Horizontal">
+    <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal" IsVisible="{Binding Path=IsPortrait}">
       <Button Text="Shuffle" Command="{Binding Path=ShuffleCommand}" HorizontalOptions="FillAndExpand"/>
       <Image Source="{Binding Path=StartBreakPicture,Converter={StaticResource ImageConverter}}" HeightRequest="40" VerticalOptions="FillAndExpand" HorizontalOptions="End">
         <Image.GestureRecognizers>
@@ -61,6 +65,38 @@
         </Image.GestureRecognizers>
       </Image>
     </StackLayout>
+    <Grid Grid.Row="0" Grid.Column="1" IsVisible="{Binding Path=IsLandscape}" HorizontalOptions="Start" VerticalOptions="Fill">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Button Grid.Row="0" Text="{Binding Path=ShowPictureText}" Command="{Binding Path=ShowPictureCommand}" HorizontalOptions="Start"/>
+      <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Start">
+        <Label Text="Moves : " />
+        <Label Text="{Binding Path=UsedMoves}" />
+      </StackLayout>
+      <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+        <Label Text="Used Time : " />
+        <Label Text="{Binding Path=UsedTime}" />
+      </StackLayout>
+      <Button Grid.Row="4" Text="Shuffle" Command="{Binding Path=ShuffleCommand}" HorizontalOptions="FillAndExpand"/>
+      <StackLayout Grid.Row="5" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+        <Image Source="{Binding Path=StartBreakPicture,Converter={StaticResource ImageConverter}}" HeightRequest="50" VerticalOptions="FillAndExpand" HorizontalOptions="End">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding Path=StartBreakCommand}"></TapGestureRecognizer>
+          </Image.GestureRecognizers>
+        </Image>
+        <Image Source="{Binding Path=SettingPicture,Converter={StaticResource ImageConverter}}}" HeightRequest="50" VerticalOptions="FillAndExpand" HorizontalOptions="End">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding Path=SettingCommand}"></TapGestureRecognizer>
+          </Image.GestureRecognizers>
+        </Image>
+      </StackLayout>
+    </Grid>
   </Grid>
 
 </ContentPage>

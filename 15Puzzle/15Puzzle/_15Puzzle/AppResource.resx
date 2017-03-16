@@ -123,6 +123,12 @@
   <data name="BreakCommand" xml:space="preserve">
     <value>Break</value>
   </data>
+  <data name="HidePictureText" xml:space="preserve">
+    <value>Hide Picture</value>
+  </data>
+  <data name="ShowPictureText" xml:space="preserve">
+    <value>Show Picture</value>
+  </data>
   <data name="StartCommand" xml:space="preserve">
     <value>Start</value>
   </data>

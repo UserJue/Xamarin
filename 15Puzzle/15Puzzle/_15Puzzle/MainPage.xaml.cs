@@ -35,6 +35,7 @@ namespace _15Puzzle
         {
             var hight = Device.OS == TargetPlatform.iOS ? contentView.Height - 20 : contentView.Height;
             var width = contentView.Width;
+            mainViewModel.IsLandscape = width > hight;
             if (BoardLayout.Height > 100)
             {
                 hight = BoardLayout.Height;
