@@ -17,6 +17,8 @@ namespace _15Puzzle.ViewModels
         private Models._15Puzzle model;
         private int showPictureCount;
         private bool showPicture;
+        private TileViewModel.Direction moveDirection;
+        private bool timerWorking;
 
         public TileViewModel[] Tiles { get; }
 
@@ -120,17 +122,20 @@ namespace _15Puzzle.ViewModels
 
         internal bool TimerOnTick()
         {
+            if (timerWorking) return true;
+            timerWorking = true;
             if (ShowPicture)
             {
                 showPictureCount--;
                 ShowPicture = showPictureCount >= 0;
             }
-            else
+            else if (!isMoving())
             {
                 FillPlaces();
                 OnTilesMoved?.Invoke();
                 OnPropertyChanged(nameof(UsedTime));
             }
+            timerWorking = false;
             return true;
         }
 
@@ -143,6 +148,7 @@ namespace _15Puzzle.ViewModels
                 {
                     var indexX = tile.IndexX;
                     var indexY = tile.IndexY;
+                    moveDirection = tile.MoveDirection;
                     switch (tile.MoveDirection)
                     {
                         case TileViewModel.Direction.None:
@@ -198,8 +204,12 @@ namespace _15Puzzle.ViewModels
                 var tile = sender as TileViewModel;
                 if ((tile != null) && !tile.Moving)
                 {
-                    FillPlaces();
-                    OnTilesMoved?.Invoke();
+                    if (!timerWorking)
+                    {
+                        FillPlaces();
+                        OnTilesMoved?.Invoke();
+                    }
+                    moveDirection = TileViewModel.Direction.None;
                 }
             }
             else if (e.PropertyName == "Status")
@@ -339,10 +349,28 @@ namespace _15Puzzle.ViewModels
         private int GetIndex(double value)
         {
             var index = (int)value;
-            if ((value - index) > 0.5) index++;
+            if ((moveDirection == TileViewModel.Direction.Down) || (moveDirection == TileViewModel.Direction.Right))
+            {
+                if ((value - index) > 0.1) index++;
+            }
+            else if ((moveDirection == TileViewModel.Direction.Up) ||
+                     (moveDirection == TileViewModel.Direction.Left))
+            {
+                if ((value - index) > 0.9) index++;
+                else if ((value - index) > 0.1)
+                        ;
+            }
+            else
+                if ((value - index) > 0.5) index++;
             if (index < 0) index = 0;
             if (index > 3) index = 3;
             return index;
+        }
+
+        private bool isMoving()
+        {
+            var result = false;
+            return result;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -17,6 +17,7 @@ namespace _15Puzzle.ViewModels
         private double x;
         private double y;
         private bool moving;
+        private double usedDelta;
 
         public Func<double, double, double, bool> canMoveX;
         public Func<double, double, double, bool> canMoveY;
@@ -108,13 +109,15 @@ namespace _15Puzzle.ViewModels
         public void Move(double delta, bool horizontal)
         {
             if (horizontal)
-                X = x0 + delta;
+                X = x0 + delta - usedDelta;
             else
-                Y = y0 + delta;
+                Y = y0 + delta - usedDelta;
         }
 
         public void Set(double x, double y)
         {
+            if (moving)
+                usedDelta = Delta;
             x0 = X = x;
             y0 = Y = y;
             Moving = false;
@@ -127,6 +130,7 @@ namespace _15Puzzle.ViewModels
             {
                 x0 = X;
                 y0 = Y;
+                usedDelta = 0;
                 Moving = true;
             }
             if ((canMoveX != null) && canMoveX(x0, y0, dX))
@@ -148,6 +152,11 @@ namespace _15Puzzle.ViewModels
             Moving = false;
             MoveDirection = Direction.None;
             Delta = 0;
+        }
+
+        protected void OnStartMove()
+        {
+            usedDelta = 0;
         }
     }
 }
