@@ -1,0 +1,15 @@
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.Forms.Core.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/Mono.Dynamic.Interpreter.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/_15Puzzle.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.ServiceModel.Internals.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/mscorlib.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.Core.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.Net.Http.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.Runtime.Serialization.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.Forms.Xaml.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/_15PuzzleiOS.exe
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.Forms.Platform.iOS.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.Forms.Platform.dll
+/Users/strojude/Projects/Repro/UserJue/Xamarin.git/15Puzzle/15Puzzle/_15Puzzle.iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.Xml.dll
