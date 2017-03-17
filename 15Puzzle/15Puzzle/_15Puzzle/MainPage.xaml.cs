@@ -33,11 +33,17 @@ namespace _15Puzzle
 
         private void SetSize()
         {
-            var hight = Device.OS == TargetPlatform.iOS ? contentView.Height - 20 : contentView.Height;
+			var landScape = contentView.Width > contentView.Height;
+            var hight = contentView.Height;
             var width = contentView.Width;
-            if (BoardLayout.Height > 100)
-            {
-                hight = BoardLayout.Height;
+			if (Device.OS == TargetPlatform.iOS)
+				if (landScape)
+					width -= 20;
+				else
+					hight -= 20;
+			if (!landScape && (BoardLayout.Height > 100))
+			{
+				hight = BoardLayout.Height;
                 width = BoardLayout.Width;
                 init = true;
             }
@@ -45,7 +51,12 @@ namespace _15Puzzle
             AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0, 0, tileSize*4, tileSize*4));
 //            AbsoluteLayout.SetLayoutBounds(Picture, new Rectangle(0, 0, tileSize * 4, tileSize * 4));
             ShowPictureButton.WidthRequest = tileSize*4;
-        }
+			if (mainViewModel.IsLandscape != landScape)
+			{
+				mainViewModel.IsLandscape = landScape;
+				init = false;
+			}
+		}
 
         private void SetTiles()
         {

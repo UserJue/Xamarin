@@ -80,6 +80,24 @@ namespace _15Puzzle {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hide Picture ähnelt.
+        /// </summary>
+        internal static string HidePictureText {
+            get {
+                return ResourceManager.GetString("HidePictureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Show Picture ähnelt.
+        /// </summary>
+        internal static string ShowPictureText {
+            get {
+                return ResourceManager.GetString("ShowPictureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Start ähnelt.
         /// </summary>
         internal static string StartCommand {

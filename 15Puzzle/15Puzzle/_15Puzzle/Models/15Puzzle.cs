@@ -31,7 +31,10 @@ namespace _15Puzzle.Models
                 if (status == GameStatus.Activ)
                     usedTime += DateTime.Now - startTime;
                 else if (value == GameStatus.None)
+                {
                     usedTime = TimeSpan.Zero;
+                    UsedMoves = 0;
+                }
                 startTime = DateTime.Now;
                 status = value;
                 OnPropertyChanged(nameof(Status));
@@ -63,6 +66,7 @@ namespace _15Puzzle.Models
         public bool Create(int tilesNumber,string picture=null)
         {
             Status = GameStatus.None;
+            UsedMoves = 0;
             usedTime = TimeSpan.Zero;
             Picture = picture;
             var dimension = (int)Math.Sqrt(tilesNumber + 1);

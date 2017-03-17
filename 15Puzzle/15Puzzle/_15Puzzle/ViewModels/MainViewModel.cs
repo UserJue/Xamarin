@@ -19,6 +19,8 @@ namespace _15Puzzle.ViewModels
         private bool showPicture;
         private TileViewModel.Direction moveDirection;
         private bool timerWorking;
+        private string hidePictureText;
+        private string showPictureText;
 
         public TileViewModel[] Tiles { get; }
 
@@ -42,6 +44,7 @@ namespace _15Puzzle.ViewModels
         public string SettingPicture => "Setting";
 
         public Action OnTilesMoved;
+        private bool isPortrait;
 
         public ICommand ShuffleCommand { get;  private set; }
 
@@ -56,10 +59,38 @@ namespace _15Puzzle.ViewModels
             {
                 if (value == showPicture) return;
                 showPicture = value;
+                ShowPictureText = showPicture ? hidePictureText : showPictureText;
                 OnPropertyChanged(nameof(ShowPicture));
                 OnPropertyChanged(nameof(ShowTiles));
+                OnPropertyChanged(nameof(ShowPictureText));
             }
         }
+
+        public bool IsPortrait
+        {
+            get { return isPortrait; }
+            set
+            {
+                if (value == isPortrait) return;
+                isPortrait = value;
+                OnPropertyChanged(nameof(IsPortrait));
+                OnPropertyChanged(nameof(IsLandscape));
+            }
+        }
+
+        public bool IsLandscape
+        {
+            get { return !isPortrait; }
+            set
+            {
+                if (value == !isPortrait) return;
+                isPortrait = !value;
+                OnPropertyChanged(nameof(IsPortrait));
+                OnPropertyChanged(nameof(IsLandscape));
+            }
+        }
+
+        public string ShowPictureText { get; set; }
 
         public int Moves { get; set; }
 
@@ -75,6 +106,9 @@ namespace _15Puzzle.ViewModels
 
         public MainViewModel(Models._15Puzzle model)
         {
+            showPictureText = AppResource.ShowPictureText;
+            hidePictureText = AppResource.HidePictureText;
+            isPortrait = true;
             this.model = model;
             this.model.PropertyChanged += MainViewModel_PropertyChanged;
             ShuffleCommand = new Command(() =>
@@ -95,10 +129,19 @@ namespace _15Puzzle.ViewModels
                 else
                     model.Status = Models._15Puzzle.GameStatus.Inactiv;
             });
+            ShowPictureText = showPictureText;
             ShowPictureCommand = new Command(() =>
             {
-                showPictureCount = 5;
-                ShowPicture = true;
+                if (showPicture)
+                {
+                    ShowPicture = false;
+                    showPictureCount = -1;
+                }
+                else
+                {
+                    showPictureCount = 5;
+                    ShowPicture = true;
+                }
             });
             Tiles = new TileViewModel[model.Tiles.Count];
             places = new int[model.Dimension][];
