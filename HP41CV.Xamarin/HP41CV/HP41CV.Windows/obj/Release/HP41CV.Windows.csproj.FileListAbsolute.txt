@@ -120,3 +120,6 @@ C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\obj\Release
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\obj\Release\Xamarin.Forms.Platform.WinRT.pri.xml
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\obj\Release\Xamarin.Forms.Platform.WinRT.Tablet.pri.xml
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\obj\Release\ProjectArchitectures.txt
+C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Core.dll
+C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Platform.dll
+C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Xaml.dll

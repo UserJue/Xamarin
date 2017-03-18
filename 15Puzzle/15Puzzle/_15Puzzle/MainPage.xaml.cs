@@ -41,7 +41,7 @@ namespace _15Puzzle
 					width -= 20;
 				else
 					hight -= 20;
-			if (!landScape && (BoardLayout.Height > 100))
+			if (!landScape && (BoardLayout.Height > 100) && (Device.OS == TargetPlatform.Windows))
 			{
 				hight = BoardLayout.Height;
                 width = BoardLayout.Width;
