@@ -72,11 +72,8 @@ C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\HP41CV.Windows.build.appxrecipe
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\HP41CV.dll
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.dll
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Core.dll
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Platform.dll
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Platform.WinRT.dll
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Platform.WinRT.Tablet.dll
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Xaml.dll
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\HP41CV.pdb
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Core.pdb
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\Xamarin.Forms.Core.xml

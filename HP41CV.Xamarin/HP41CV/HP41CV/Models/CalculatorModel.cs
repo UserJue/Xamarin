@@ -1669,11 +1669,10 @@ namespace HP41CV.Models
             ActionModels.AddExtension(action.Text, "FORMAT", action);
             action = new SelectActionModel(this, (v) =>
             {
-                Messenger.ShowDialogAsync(AppResources.NotYet);
-                //Precision = v;
-                //UsedFormat = Format.Bin;
-                //SetValue(X);
-            }, (v) => IsBetween(v, 1, 8), false, "BIN")
+                Precision = v;
+                UsedFormat = Format.Bin;
+                SetValue(X);
+            }, (v) => IsBetween(v, 1, 4), false, "BIN")
             { IsFormat = true };
             ActionModels.AddExtension(action.Text, "FORMAT", action);
 

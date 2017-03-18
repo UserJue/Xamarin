@@ -28,10 +28,10 @@
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Release\HP41CV.dll">
       <PackagePath>HP41CV.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Release\Xamarin.Forms.Core.dll">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Release\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Release\Xamarin.Forms.Platform.dll">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Release\Xamarin.Forms.Platform.dll">
       <PackagePath>Xamarin.Forms.Platform.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\packages\Xamarin.Forms.2.3.3.193\lib\wpa81\Xamarin.Forms.Platform.WinRT.dll">
@@ -40,7 +40,7 @@
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\packages\Xamarin.Forms.2.3.3.193\lib\wpa81\Xamarin.Forms.Platform.WinRT.Phone.dll">
       <PackagePath>Xamarin.Forms.Platform.WinRT.Phone.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Release\Xamarin.Forms.Xaml.dll">
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Release\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Release\de\HP41CV.resources.dll">
