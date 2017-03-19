@@ -11,6 +11,7 @@ namespace _15Puzzle
         private ContentPage contentView;
         private double tileSize;
         private bool init;
+        private double lastFrameHight = -1;
 
         public MainPage()
         {
@@ -37,16 +38,21 @@ namespace _15Puzzle
             var hight = contentView.Height;
             var width = contentView.Width;
 			if (Device.OS == TargetPlatform.iOS)
-				if (landScape)
-					width -= 20;
-				else
-					hight -= 20;
-			if (!landScape && (BoardLayout.Height > 100) && (Device.OS == TargetPlatform.Windows))
+			    if (landScape)
+			        contentView.Padding = new Thickness(0, 0, 0, 0);
+			    else
+			    {
+                    contentView.Padding = new Thickness(0, 20, 0, 0);
+                    hight -= 20;
+			    }
+			if (Frame.Height > 100)
 			{
-				hight = BoardLayout.Height;
-                width = BoardLayout.Width;
+                hight = Frame.Height;
+                width = Frame.Width;
+                //   mainViewModel.Init = true;
                 init = true;
-            }
+			    lastFrameHight = Frame.Height;
+			}
             tileSize = Math.Min(hight, width)/4;
             AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0, 0, tileSize*4, tileSize*4));
 //            AbsoluteLayout.SetLayoutBounds(Picture, new Rectangle(0, 0, tileSize * 4, tileSize * 4));
@@ -54,15 +60,24 @@ namespace _15Puzzle
 			if (mainViewModel.IsLandscape != landScape)
 			{
 				mainViewModel.IsLandscape = landScape;
+                contentView.ForceLayout();
+			    //mainViewModel.Init = false;
 				init = false;
 			}
 		}
+
+        protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
+        {
+            var result = base.OnMeasure(widthConstraint, heightConstraint);
+            SetSize();
+            return result;
+        }
 
         private void SetTiles()
         {
             if (contentView.Width > 0)
             {
-                if (!init)
+                if (!init || (Frame.Height != lastFrameHight))
                 {
                     SetSize();
                 }

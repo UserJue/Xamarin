@@ -1665,7 +1665,7 @@ namespace HP41CV.Models
                 UsedFormat = Format.Hex;
                 SetValue(X);
             }, (v) => IsBetween(v, 1, 8), false, "HEX")
-            { IsFormat = true };
+            { IsFormat = true ,Description = AppResources.HelpHEX};
             ActionModels.AddExtension(action.Text, "FORMAT", action);
             action = new SelectActionModel(this, (v) =>
             {
@@ -1673,7 +1673,7 @@ namespace HP41CV.Models
                 UsedFormat = Format.Bin;
                 SetValue(X);
             }, (v) => IsBetween(v, 1, 4), false, "BIN")
-            { IsFormat = true };
+            { IsFormat = true ,Description = AppResources.HelpBIN};
             ActionModels.AddExtension(action.Text, "FORMAT", action);
 
             action = new ModelActionModel(this, () =>

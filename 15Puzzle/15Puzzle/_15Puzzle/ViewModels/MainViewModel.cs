@@ -45,12 +45,23 @@ namespace _15Puzzle.ViewModels
 
         public Action OnTilesMoved;
         private bool isPortrait;
+        private bool init;
 
         public ICommand ShuffleCommand { get;  private set; }
 
         public ICommand StartBreakCommand { get; set; }
 
         public string Picture => model.Picture;
+
+        public bool Init
+        {
+            get { return init; }
+            set
+            {
+                init = value;
+                ShowPicture = !init;
+            }
+        }
 
         public bool ShowPicture
         {
@@ -65,6 +76,8 @@ namespace _15Puzzle.ViewModels
                 OnPropertyChanged(nameof(ShowPictureText));
             }
         }
+
+        public bool ShowShuffle => model.Status != Models._15Puzzle.GameStatus.Activ;
 
         public bool IsPortrait
         {
@@ -259,6 +272,7 @@ namespace _15Puzzle.ViewModels
             {
                 OnPropertyChanged(nameof(StartBreakText));
                 OnPropertyChanged(nameof(StartBreakPicture));
+                OnPropertyChanged(nameof(ShowShuffle));
             }
             else if (e.PropertyName == "UsedMoves")
             {

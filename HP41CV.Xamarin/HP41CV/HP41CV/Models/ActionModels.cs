@@ -101,5 +101,20 @@ namespace HP41CV.Models
             }
             return result;
         }
+
+        public static ICollection<Tuple<string, string>> GetExtentionActionDescritions(Func<ActionModel, bool> predicate)
+        {
+            ActionModel lastKey = null;
+            var result = new Collection<Tuple<string, string>>();
+            foreach (var actionModel in extentionActionDictionary.Values)
+            {
+                if (predicate(actionModel) && (actionModel != lastKey))
+                {
+                    result.Add(new Tuple<string, string>(actionModel.TextD, actionModel.Description));
+                    lastKey = actionModel;
+                }
+            }
+            return result;
+        }
     }
 }
