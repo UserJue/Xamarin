@@ -804,6 +804,9 @@
   <data name="HelpBIN" xml:space="preserve">
     <value>Binary display</value>
   </data>
+  <data name="HelpCNK" xml:space="preserve">
+    <value>binomial coefficient</value>
+  </data>
   <data name="HelpExtention" xml:space="preserve">
     <value>Extention functions</value>
   </data>

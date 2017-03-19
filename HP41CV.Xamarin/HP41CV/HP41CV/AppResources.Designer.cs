@@ -719,6 +719,15 @@ namespace HP41CV {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die binomial coefficient ähnelt.
+        /// </summary>
+        internal static string HelpCNK {
+            get {
+                return ResourceManager.GetString("HelpCNK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Cosine ähnelt.
         /// </summary>
         internal static string HelpCOS {

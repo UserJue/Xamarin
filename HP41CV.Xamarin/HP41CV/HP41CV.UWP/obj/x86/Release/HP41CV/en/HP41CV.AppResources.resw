@@ -759,6 +759,9 @@
   <data name="HelpCOS" xml:space="preserve">
     <value>Cosine</value>
   </data>
+  <data name="HelpCNK" xml:space="preserve">
+    <value>binomial coefficient</value>
+  </data>
   <data name="HelpCAT" xml:space="preserve">
     <value>Catalog list of </value>
   </data>

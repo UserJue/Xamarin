@@ -1713,7 +1713,7 @@ namespace HP41CV.Models
             }, "NOUPN")
             { IsUpn = false };
             ActionModels.AddExtension(action.Text, "NOUPN", action);
-            action = new BinaryOperationModel(this, (a, b) => Cnk(a,b), "CNK");
+            action = new BinaryOperationModel(this, (a, b) => Cnk(a,b), "CNK") {Description = AppResources.HelpCNK};
             ActionModels.AddExtension(action.Text,"CNK", action);
             action = new ModelActionModel(this, () =>
             {
