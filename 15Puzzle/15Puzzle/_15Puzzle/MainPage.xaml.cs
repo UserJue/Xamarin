@@ -11,14 +11,14 @@ namespace _15Puzzle
         private ContentPage contentView;
         private double tileSize;
         private bool init;
-        private double lastFrameHight = -1;
+        private double lastBoardLayoutHight = -1;
 
         public MainPage()
         {
             InitializeComponent();
             model = new Models._15Puzzle();
             //model.Create(15,"Frankenberg");
-            model.Create(15, "USA_Zion");
+            model.Create(23, "USA_Zion",true);
             mainViewModel = new MainViewModel(model) {OnTilesMoved = SetTiles};
             BindingContext = mainViewModel;
         }
@@ -46,23 +46,20 @@ namespace _15Puzzle
                     contentView.Padding = new Thickness(0, 20, 0, 0);
                     hight -= 20;
 			    }
-			if (Frame.Height > 100)
+			if (BoardLayout.Height > 100)
 			{
-                hight = Frame.Height;
-                width = Frame.Width;
-                //   mainViewModel.Init = true;
+                hight = BoardLayout.Height;
+                width = BoardLayout.Width;
                 init = true;
-			    lastFrameHight = Frame.Height;
+			    lastBoardLayoutHight = BoardLayout.Height;
 			}
-            tileSize = Math.Min(hight, width)/4;
-            AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0, 0, tileSize*4, tileSize*4));
-//            AbsoluteLayout.SetLayoutBounds(Picture, new Rectangle(0, 0, tileSize * 4, tileSize * 4));
+            tileSize = Math.Min(hight/model.DimensionY, width/model.DimensionX);
+            AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0, 0, tileSize*model.DimensionX, tileSize*model.DimensionY));
             ShowPictureButton.WidthRequest = tileSize*4;
 			if (mainViewModel.IsLandscape != landScape)
 			{
 				mainViewModel.IsLandscape = landScape;
                 contentView.ForceLayout();
-			    //mainViewModel.Init = false;
 				init = false;
 			}
 		}
@@ -78,7 +75,7 @@ namespace _15Puzzle
         {
             if (contentView.Width > 0)
             {
-                if (!init || (Frame.Height != lastFrameHight))
+                if (!init || (BoardLayout.Height != lastBoardLayoutHight))
                 {
                     SetSize();
                 }
@@ -96,7 +93,16 @@ namespace _15Puzzle
                 AbsoluteLayout.SetLayoutBounds(Tile12, new Rectangle(tileSize * mainViewModel.Tiles[11].X, tileSize * mainViewModel.Tiles[11].Y, tileSize, tileSize));
                 AbsoluteLayout.SetLayoutBounds(Tile13, new Rectangle(tileSize * mainViewModel.Tiles[12].X, tileSize * mainViewModel.Tiles[12].Y, tileSize, tileSize));
                 AbsoluteLayout.SetLayoutBounds(Tile14, new Rectangle(tileSize * mainViewModel.Tiles[13].X, tileSize * mainViewModel.Tiles[13].Y, tileSize, tileSize));
-                AbsoluteLayout.SetLayoutBounds(Tile15, new Rectangle(tileSize * mainViewModel.Tiles[14].X, tileSize * mainViewModel.Tiles[14].Y, tileSize, tileSize));
+                AbsoluteLayout.SetLayoutBounds(Tile15, new Rectangle(tileSize * mainViewModel.Tiles[14].X, tileSize * mainViewModel.Tiles[14].Y, (mainViewModel.Tiles[14].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[14].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile16, new Rectangle(tileSize * mainViewModel.Tiles[15].X, tileSize * mainViewModel.Tiles[15].Y, (mainViewModel.Tiles[15].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[15].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile17, new Rectangle(tileSize * mainViewModel.Tiles[16].X, tileSize * mainViewModel.Tiles[16].Y, (mainViewModel.Tiles[16].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[16].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile18, new Rectangle(tileSize * mainViewModel.Tiles[17].X, tileSize * mainViewModel.Tiles[17].Y, (mainViewModel.Tiles[17].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[17].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile19, new Rectangle(tileSize * mainViewModel.Tiles[18].X, tileSize * mainViewModel.Tiles[18].Y, (mainViewModel.Tiles[18].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[18].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile20, new Rectangle(tileSize * mainViewModel.Tiles[19].X, tileSize * mainViewModel.Tiles[19].Y, (mainViewModel.Tiles[19].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[19].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile21, new Rectangle(tileSize * mainViewModel.Tiles[20].X, tileSize * mainViewModel.Tiles[20].Y, (mainViewModel.Tiles[20].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[20].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile22, new Rectangle(tileSize * mainViewModel.Tiles[21].X, tileSize * mainViewModel.Tiles[21].Y, (mainViewModel.Tiles[21].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[21].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile23, new Rectangle(tileSize * mainViewModel.Tiles[22].X, tileSize * mainViewModel.Tiles[22].Y, (mainViewModel.Tiles[22].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[22].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile24, new Rectangle(tileSize * mainViewModel.Tiles[23].X, tileSize * mainViewModel.Tiles[23].Y,(mainViewModel.Tiles[23].TileVisible)? tileSize:0, (mainViewModel.Tiles[23].TileVisible) ? tileSize : 0));
             }
         }
     }

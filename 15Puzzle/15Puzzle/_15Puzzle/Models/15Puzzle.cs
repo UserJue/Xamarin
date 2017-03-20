@@ -20,7 +20,8 @@ namespace _15Puzzle.Models
 
         public IList<Tile> Tiles { get; set; }
 
-        public int Dimension { get; private set; }
+        public int DimensionX { get; private set; }
+        public int DimensionY { get; private set; }
 
         public GameStatus Status
         {
@@ -63,19 +64,36 @@ namespace _15Puzzle.Models
             Tiles = new List<Tile>();
         }
 
-        public bool Create(int tilesNumber,string picture=null)
+        public bool Create(int tilesNumber,string picture=null,bool landscape=false)
         {
             Status = GameStatus.None;
             UsedMoves = 0;
             usedTime = TimeSpan.Zero;
             Picture = picture;
-            var dimension = (int)Math.Sqrt(tilesNumber + 1);
-            if (dimension* dimension != tilesNumber + 1) return false;
+            switch (tilesNumber)
+            {
+                case 15:
+                    DimensionX = DimensionY = 4;
+                    break;
+                case 23:
+                    if (landscape)
+                    {
+                        DimensionX = 6;
+                        DimensionY = 4;
+                    }
+                    else
+                    {
+                        DimensionX = 4;
+                        DimensionY = 6;
+                    }
+                    break;
+                default:
+                    return false;
+            }
             Tiles.Clear();
-            Dimension = dimension;
             var index = 0;
-            for (var j = 0; j < dimension; j++)
-                for (var i = 0;i < dimension;i++)
+            for (var j = 0; j < DimensionY; j++)
+                for (var i = 0;i < DimensionX;i++)
                 {
                     if (index >= tilesNumber) break;
                     Tiles.Add(new Tile(index,i,j));
@@ -89,8 +107,8 @@ namespace _15Puzzle.Models
         {
             for (var i = 0; i < 20; i++)
             {
-                var index1 = random.Next(15);
-                var index2 = random.Next(15);
+                var index1 = random.Next(DimensionX* DimensionY-1);
+                var index2 = random.Next(DimensionX * DimensionY-1);
                 if (index1 != index2)
                 {
                     var x = Tiles[index1].IndexX;
@@ -108,8 +126,8 @@ namespace _15Puzzle.Models
         {
             var result = true;
             var index = 0;
-            for (var j = 0; j < Dimension; j++)
-                for (var i = 0; i < Dimension; i++)
+            for (var i = 0; i < DimensionX; i++)
+                for (var j = 0; j < DimensionY; j++)
                 {
                     if ((places[i][j] >= 0) && (places[i][j] < Tiles.Count))
                     {

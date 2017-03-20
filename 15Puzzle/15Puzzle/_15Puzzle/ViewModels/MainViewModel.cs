@@ -9,6 +9,7 @@ namespace _15Puzzle.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        private const int MaxTiles = 24;
         private int holeX = 3;
         private int holeY = 3;
 
@@ -44,24 +45,14 @@ namespace _15Puzzle.ViewModels
         public string SettingPicture => "Setting";
 
         public Action OnTilesMoved;
+
         private bool isPortrait;
-        private bool init;
 
         public ICommand ShuffleCommand { get;  private set; }
 
         public ICommand StartBreakCommand { get; set; }
 
         public string Picture => model.Picture;
-
-        public bool Init
-        {
-            get { return init; }
-            set
-            {
-                init = value;
-                ShowPicture = !init;
-            }
-        }
 
         public bool ShowPicture
         {
@@ -119,6 +110,8 @@ namespace _15Puzzle.ViewModels
 
         public MainViewModel(Models._15Puzzle model)
         {
+            holeX = model.DimensionX - 1;
+            holeY = model.DimensionY - 1;
             showPictureText = AppResource.ShowPictureText;
             hidePictureText = AppResource.HidePictureText;
             isPortrait = true;
@@ -156,13 +149,13 @@ namespace _15Puzzle.ViewModels
                     ShowPicture = true;
                 }
             });
-            Tiles = new TileViewModel[model.Tiles.Count];
-            places = new int[model.Dimension][];
-            lastPlaces = new int[model.Dimension][];
-            for (int i = 0; i < model.Dimension; i++)
+            Tiles = new TileViewModel[MaxTiles];
+            places = new int[model.DimensionX][];
+            lastPlaces = new int[model.DimensionX][];
+            for (int i = 0; i < model.DimensionX; i++)
             {
-                places[i] = new int[model.Dimension];
-                lastPlaces[i] = new int[model.Dimension];
+                places[i] = new int[model.DimensionY];
+                lastPlaces[i] = new int[model.DimensionY];
             }
             foreach (var tile in model.Tiles)
             {
@@ -172,8 +165,12 @@ namespace _15Puzzle.ViewModels
                 Tiles[tile.Index].canMoveX = CanMoveX;
                 Tiles[tile.Index].canMoveY = CanMoveY;
             }
+            for (int i = model.Tiles.Count; i < MaxTiles; i++)
+            {
+                Tiles[i] = new TileViewModel(null);
+            }
             FillPlaces();
-            Device.StartTimer(TimeSpan.FromSeconds(1),TimerOnTick );
+            Device.StartTimer(TimeSpan.FromSeconds(10),TimerOnTick );
         }
 
         internal bool TimerOnTick()
@@ -216,27 +213,57 @@ namespace _15Puzzle.ViewModels
                                 Tiles[places[indexX][indexY]].Move(tile.Delta, false);
                                 indexY--;
                                 if ((indexY >= 0) && (places[indexX][indexY] >= 0))
+                                {
                                     Tiles[places[indexX][indexY]].Move(tile.Delta, false);
+                                    indexY--;
+                                    if ((indexY >= 0) && (places[indexX][indexY] >= 0))
+                                    {
+                                        Tiles[places[indexX][indexY]].Move(tile.Delta, false);
+                                        indexY--;
+                                        if ((indexY >= 0) && (places[indexX][indexY] >= 0))
+                                            Tiles[places[indexX][indexY]].Move(tile.Delta, false);
+                                    }
+                                }
                             }
                             break;
                         case TileViewModel.Direction.Right:
                             indexX++;
-                            if ((indexX < 3) && (places[indexX][indexY] >= 0))
+                            if ((indexX < model.DimensionX-1) && (places[indexX][indexY] >= 0))
                             {
                                 Tiles[places[indexX][indexY]].Move(tile.Delta, true);
                                 indexX++;
-                                if ((indexX < 3) && (places[indexX][indexY] >= 0))
+                                if ((indexX < model.DimensionX - 1) && (places[indexX][indexY] >= 0))
+                                {
                                     Tiles[places[indexX][indexY]].Move(tile.Delta, true);
+                                    indexX++;
+                                    if ((indexX < model.DimensionX - 1) && (places[indexX][indexY] >= 0))
+                                    {
+                                        Tiles[places[indexX][indexY]].Move(tile.Delta, true);
+                                        indexX++;
+                                        if ((indexX < model.DimensionX - 1) && (places[indexX][indexY] >= 0))
+                                            Tiles[places[indexX][indexY]].Move(tile.Delta, true);
+                                    }
+                                }
                             }
                             break;
                         case TileViewModel.Direction.Down:
                             indexY++;
-                            if ((indexY < 3) && (places[indexX][indexY] >= 0))
+                            if ((indexY < model.DimensionY - 1) && (places[indexX][indexY] >= 0))
                             {
                                 Tiles[places[indexX][indexY]].Move(tile.Delta,false);
                                 indexY++;
-                                if ((indexY < 3) && (places[indexX][indexY] >= 0))
+                                if ((indexY < model.DimensionY - 1) && (places[indexX][indexY] >= 0))
+                                {
                                     Tiles[places[indexX][indexY]].Move(tile.Delta, false);
+                                    indexY++;
+                                    if ((indexY < model.DimensionY - 1) && (places[indexX][indexY] >= 0))
+                                    {
+                                        Tiles[places[indexX][indexY]].Move(tile.Delta, false);
+                                        indexY++;
+                                        if ((indexY < model.DimensionY - 1) && (places[indexX][indexY] >= 0))
+                                            Tiles[places[indexX][indexY]].Move(tile.Delta, false);
+                                    }
+                                }
                             }
                             break;
                         case TileViewModel.Direction.Left:
@@ -246,7 +273,17 @@ namespace _15Puzzle.ViewModels
                                 Tiles[places[indexX][indexY]].Move(tile.Delta, true);
                                 indexX--;
                                 if ((indexX >= 0) && (places[indexX][indexY] >= 0))
+                                {
                                     Tiles[places[indexX][indexY]].Move(tile.Delta, true);
+                                    indexX--;
+                                    if ((indexX >= 0) && (places[indexX][indexY] >= 0))
+                                    {
+                                        Tiles[places[indexX][indexY]].Move(tile.Delta, true);
+                                        indexX--;
+                                        if ((indexX >= 0) && (places[indexX][indexY] >= 0))
+                                            Tiles[places[indexX][indexY]].Move(tile.Delta, true);
+                                    }
+                                }
                             }
                             break;
                         default:
@@ -283,7 +320,7 @@ namespace _15Puzzle.ViewModels
         private bool CanMoveX(double x, double y, double dx)
         {
             if (model.Status != Models._15Puzzle.GameStatus.Activ) return false;
-                if (((x + dx) < 0) || ((x + dx) > 3)) return false;
+            if (((x + dx) < 0) || ((x + dx) > model.DimensionX-1)) return false;
             if (holeY != (int) y) return false;
             var hole = holeX;
             if (dx < 0)
@@ -291,17 +328,33 @@ namespace _15Puzzle.ViewModels
                 if ((x > 0) && (places[(int)x - 1][(int)y] >= 0))
                 {
                     hole++;
-                    if ((x > 1) && (places[(int)x - 2][(int)y] >= 0))
+                    if ((x > 1) && (places[(int) x - 2][(int) y] >= 0))
+                    {
                         hole++;
+                        if ((x > 2) && (places[(int) x - 3][(int) y] >= 0))
+                        {
+                            hole++;
+                            if ((x > 3) && (places[(int) x - 4][(int) y] >= 0))
+                                hole++;
+                        }
+                    }
                 }
             }
             else
             {
-                if ((x < 2) && (places[(int)x + 1][(int)y] >= 0))
+                if ((x < model.DimensionX - 3) && (places[(int)x + 1][(int)y] >= 0))
                 {
                     hole--;
-                    if ((x < 3) && (places[(int)x + 2][(int)y] >= 0))
+                    if ((x < model.DimensionX - 4) && (places[(int) x + 2][(int) y] >= 0))
+                    {
                         hole--;
+                        if ((x < model.DimensionX - 5) && (places[(int) x + 3][(int) y] >= 0))
+                        {
+                            hole--;
+                            if ((x < model.DimensionX - 6) && (places[(int) x + 4][(int) y] >= 0))
+                                hole--;
+                        }
+                    }
                 }
             }
             return (dx < 0) ? (x + dx) > hole : (x + dx) < hole;
@@ -310,7 +363,7 @@ namespace _15Puzzle.ViewModels
         private bool CanMoveY(double x, double y, double dy)
         {
             if (model.Status != Models._15Puzzle.GameStatus.Activ) return false;
-            if (((y + dy) < 0) || ((y + dy) > 3)) return false;
+            if (((y + dy) < 0) || ((y + dy) > model.DimensionY-1)) return false;
             if (holeX != (int) x) return false;
             var hole = holeY;
             if (dy < 0)
@@ -337,13 +390,14 @@ namespace _15Puzzle.ViewModels
         private void FillPlaces()
         {
             bool ok = true;
-            for (var i = 0; i < 4; i++)
-                for (var j = 0; j < 4; j++)
+            for (var i = 0; i < model.DimensionX; i++)
+                for (var j = 0; j < model.DimensionY; j++)
                     places[i][j] = -1;
             for (var index = 0; index < Tiles.Length; index++)
             {
-                var indexX = GetIndex(Tiles[index].X);
-                var indexY = GetIndex(Tiles[index].Y);
+                if (!Tiles[index].TileVisible) continue;
+                var indexX = GetIndex(Tiles[index].X,true);
+                var indexY = GetIndex(Tiles[index].Y,false);
                 if (places[indexX][indexY] < 0)
                     places[indexX][indexY] = index;
                 else
@@ -351,8 +405,8 @@ namespace _15Puzzle.ViewModels
                     ok = false;
                 }
             }
-            for (var i = 0;ok && (i < 4); i++)
-                for (var j = 0; j < 4; j++)
+            for (var i = 0;ok && (i < model.DimensionX); i++)
+                for (var j = 0; j < model.DimensionY; j++)
                     if (places[i][j] == -1)
                     {
                         holeX = i;
@@ -367,8 +421,8 @@ namespace _15Puzzle.ViewModels
             else
             {
                 bool hole = false;
-                for (var i = 0; ok && (i < 4); i++)
-                    for (var j = 0; ok && (j < 4); j++)
+                for (var i = 0; ok && (i < model.DimensionX); i++)
+                    for (var j = 0; ok && (j < model.DimensionY); j++)
                         if (places[i][j] == -1)
                             if (hole)
                                 ok = false;
@@ -393,9 +447,8 @@ namespace _15Puzzle.ViewModels
         private bool IsEqualSet(int[][] last, int[][] actual)
         {
             var result = true;
-            var dimension = actual.Length;
-            for (var j = 0; j < dimension; j++)
-                for (var i = 0; i < dimension; i++)
+            for (var i = 0; i < model.DimensionX; i++)
+                for (var j = 0; j < model.DimensionY; j++)
                 {
                     result &= last[i][j] == actual[i][j];
                     last[i][j] = actual[i][j];
@@ -403,9 +456,10 @@ namespace _15Puzzle.ViewModels
             return result;
         }
 
-        private int GetIndex(double value)
+        private int GetIndex(double value,bool isX)
         {
             var index = (int)value;
+            var maxIndex = isX ? model.DimensionX : model.DimensionY;
             if ((moveDirection == TileViewModel.Direction.Down) || (moveDirection == TileViewModel.Direction.Right))
             {
                 if ((value - index) > 0.1) index++;
@@ -420,7 +474,7 @@ namespace _15Puzzle.ViewModels
             else
                 if ((value - index) > 0.5) index++;
             if (index < 0) index = 0;
-            if (index > 3) index = 3;
+            if (index > maxIndex) index = maxIndex;
             return index;
         }
 

@@ -68,7 +68,31 @@ namespace _15Puzzle {
         private global::_15Puzzle.Views.TileView Tile15;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Frame Frame;
+        private global::_15Puzzle.Views.TileView Tile16;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::_15Puzzle.Views.TileView Tile17;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::_15Puzzle.Views.TileView Tile18;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::_15Puzzle.Views.TileView Tile19;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::_15Puzzle.Views.TileView Tile20;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::_15Puzzle.Views.TileView Tile21;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::_15Puzzle.Views.TileView Tile22;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::_15Puzzle.Views.TileView Tile23;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::_15Puzzle.Views.TileView Tile24;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image Picture;
@@ -96,7 +120,15 @@ namespace _15Puzzle {
             Tile13 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile13");
             Tile14 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile14");
             Tile15 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile15");
-            Frame = this.FindByName<global::Xamarin.Forms.Frame>("Frame");
+            Tile16 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile16");
+            Tile17 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile17");
+            Tile18 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile18");
+            Tile19 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile19");
+            Tile20 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile20");
+            Tile21 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile21");
+            Tile22 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile22");
+            Tile23 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile23");
+            Tile24 = this.FindByName<global::_15Puzzle.Views.TileView>("Tile24");
             Picture = this.FindByName<global::Xamarin.Forms.Image>("Picture");
             ShowPictureButton = this.FindByName<global::Xamarin.Forms.Button>("ShowPictureButton");
         }

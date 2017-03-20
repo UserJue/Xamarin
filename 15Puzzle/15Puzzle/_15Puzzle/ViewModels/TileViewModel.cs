@@ -35,6 +35,8 @@ namespace _15Puzzle.ViewModels
 
         public bool HasText => picture == null;
 
+        public bool TileVisible { get; }
+
         public string Picture
         {
             get { return picture; }
@@ -87,15 +89,22 @@ namespace _15Puzzle.ViewModels
             X = index - 4*Y;
             x0 = X;
             y0 = Y;
+            TileVisible = true;
         }
 
         public TileViewModel(Tile tile)
         {
-            Text = (tile.Index + 1).ToString();
-            Y = tile.IndexY;
-            X = tile.IndexX;
-            x0 = X;
-            y0 = Y;
+            if (tile == null)
+                TileVisible = false;
+            else
+            {
+                TileVisible = true;
+                Text = (tile.Index + 1).ToString();
+                Y = tile.IndexY;
+                X = tile.IndexX;
+                x0 = X;
+                y0 = Y;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
