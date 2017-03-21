@@ -1,0 +1,2 @@
+C:\Source\Repos\xamarin\Xamarin\15Puzzle\15Puzzle\_15Puzzle.UWP\_15Puzzle.UWP.csproj;x86
+C:\Source\Repos\xamarin\Xamarin\15Puzzle\15Puzzle\_15Puzzle\_15Puzzle.csproj;neutral

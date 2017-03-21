@@ -1,0 +1,2 @@
+C:\Source\Repos\xamarin\Xamarin\15Puzzle\15Puzzle\_15Puzzle.WinPhone\_15Puzzle.WinPhone.csproj;neutral
+C:\Source\Repos\xamarin\Xamarin\15Puzzle\15Puzzle\_15Puzzle\_15Puzzle.csproj;neutral

@@ -1,0 +1,11 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <LocalAssembly PathName="c:\source\repos\xamarin\xamarin\15puzzle\15puzzle\_15puzzle.winphone\obj\release\intermediatexaml\_15puzzle.winphone.exe" HashGuid="3014965b-9d20-2efa-40b4-e7bb8a6b12ba" />
+    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\15puzzle\packages\xamarin.forms.2.3.3.193\lib\wpa81\xamarin.forms.core.dll" HashGuid="c782f70f-077f-7e2d-5bd4-f6b5da067f8a" />
+    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\15puzzle\packages\xamarin.forms.2.3.3.193\lib\wpa81\xamarin.forms.platform.dll" HashGuid="6b938cd4-44c0-2618-7eb6-4caa3f482076" />
+    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\15puzzle\packages\xamarin.forms.2.3.3.193\lib\wpa81\xamarin.forms.platform.winrt.dll" HashGuid="739997af-d3af-47b8-5b3b-888c2ab8fd2b" />
+    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\15puzzle\packages\xamarin.forms.2.3.3.193\lib\wpa81\xamarin.forms.platform.winrt.phone.dll" HashGuid="63c58f91-4202-fe55-ec2a-7e34dee9505b" />
+    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\15puzzle\packages\xamarin.forms.2.3.3.193\lib\wpa81\xamarin.forms.xaml.dll" HashGuid="964969a0-caee-7d9d-82cd-9d1d01056ded" />
+    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\15puzzle\15puzzle\_15puzzle\bin\release\_15puzzle.dll" HashGuid="978052c2-63b1-f975-5ed8-57117eaba3cf" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>

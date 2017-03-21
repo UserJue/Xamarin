@@ -10,7 +10,10 @@
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
   </ContentPage.Padding>
-  <Grid>
+  <AbsoluteLayout>    
+  <views:AboutView BindingContext="{Binding Path=AboutViewModel}" x:Name="AboutView" IsVisible="{Binding Path=IsVisible}" />
+  <views:SettingsView BindingContext="{Binding Path=}"/>
+      <Grid x:Name="PuzzleView" IsVisible="{Binding Path=IsVisible}">
     <Grid.RowDefinitions>
       <RowDefinition Height="*" />
       <RowDefinition Height="Auto" />
@@ -85,11 +88,11 @@
         <RowDefinition Height="Auto" />
       </Grid.RowDefinitions>
       <Button Grid.Row="0" Text="{Binding Path=ShowPictureText}" Command="{Binding Path=ShowPictureCommand}" HorizontalOptions="Start"/>
-      <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Start">
+      <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Start">
         <Label Text="Moves : " />
         <Label Text="{Binding Path=UsedMoves}" />
       </StackLayout>
-      <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+      <StackLayout Grid.Row="2" Orientation="Vertical" HorizontalOptions="FillAndExpand">
         <Label Text="Used Time : " />
         <Label Text="{Binding Path=UsedTime}" />
       </StackLayout>
@@ -108,5 +111,5 @@
       </StackLayout>
     </Grid>
   </Grid>
-
+  </AbsoluteLayout>
 </ContentPage>

@@ -38,6 +38,7 @@ namespace _15Puzzle
 			var landScape = contentView.Width > contentView.Height;
             var hight = contentView.Height;
             var width = contentView.Width;
+            AbsoluteLayout.SetLayoutBounds(PuzzleView,new Rectangle(0,0,width,hight));
 			if (Device.OS == TargetPlatform.iOS)
 			    if (landScape)
 			        contentView.Padding = new Thickness(0, 0, 0, 0);

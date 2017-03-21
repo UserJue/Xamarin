@@ -62,6 +62,15 @@ namespace _15Puzzle {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die About ähnelt.
+        /// </summary>
+        internal static string AboutCommand {
+            get {
+                return ResourceManager.GetString("AboutCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die 15 Puzzle ähnelt.
         /// </summary>
         internal static string ApplicationTitle {
@@ -76,6 +85,42 @@ namespace _15Puzzle {
         internal static string BreakCommand {
             get {
                 return ResourceManager.GetString("BreakCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Close ähnelt.
+        /// </summary>
+        internal static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die for Android ähnelt.
+        /// </summary>
+        internal static string ForD {
+            get {
+                return ResourceManager.GetString("ForD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die for iOS ähnelt.
+        /// </summary>
+        internal static string ForI {
+            get {
+                return ResourceManager.GetString("ForI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die for Windows ähnelt.
+        /// </summary>
+        internal static string ForW {
+            get {
+                return ResourceManager.GetString("ForW", resourceCulture);
             }
         }
         

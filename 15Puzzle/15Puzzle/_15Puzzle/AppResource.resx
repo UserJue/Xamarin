@@ -117,11 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutCommand" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>15 Puzzle</value>
   </data>
   <data name="BreakCommand" xml:space="preserve">
     <value>Break</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ForD" xml:space="preserve">
+    <value>for Android</value>
+  </data>
+  <data name="ForI" xml:space="preserve">
+    <value>for iOS</value>
+  </data>
+  <data name="ForW" xml:space="preserve">
+    <value>for Windows</value>
   </data>
   <data name="HidePictureText" xml:space="preserve">
     <value>Hide Picture</value>

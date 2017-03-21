@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:_15Puzzle.Helpers;assembly=_15Puzzle"
+             x:Class="_15Puzzle.Views.AboutView">
+  <Grid IsVisible="{Binding Path=IsVisible}" VerticalOptions="Center" HorizontalOptions="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Button Grid.Row="0" Text="{Binding BackText}" HorizontalOptions="Start" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack1Visible}" TextColor="Yellow"/>
+    <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Vertical">
+      <Label Text="{Binding Title}" HorizontalOptions="Center" TextColor="Lime"/>
+      <Label Text="{Binding SubTitle}" HorizontalOptions="Center"  TextColor="Lime"/>
+      <Label Text="{Binding Version}" HorizontalOptions="Center" TextColor="Lime" />
+    </StackLayout>
+    <Image Source="{helpers:ImageResource _15Puzzle.Assets.JS.png}" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+    <StackLayout Grid.Row="3" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Vertical">
+      <Label Text="{Binding Copyright1}" HorizontalOptions="Center"  TextColor="Lime"/>
+      <Label Text="{Binding Copyright2}" HorizontalOptions="Center"  TextColor="Lime"/>
+      <Label Text="{Binding HomePage}" HorizontalOptions="Center"  TextColor="Lime"/>
+      <Label Text="{Binding EMail}" HorizontalOptions="Center"  TextColor="Lime"/>
+    </StackLayout>
+    <Button Grid.Row="4" Text="{Binding BackText}" HorizontalOptions="Center" Command="{Binding Path=BackCommand}"  IsVisible="{Binding Path=IsBack2Visible}" TextColor="Yellow"/>
+  </Grid>
+</ContentView>
