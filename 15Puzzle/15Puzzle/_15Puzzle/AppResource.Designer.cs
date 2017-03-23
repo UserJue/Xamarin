@@ -64,6 +64,15 @@ namespace _15Puzzle {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die About ähnelt.
         /// </summary>
+        internal static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die About ähnelt.
+        /// </summary>
         internal static string AboutCommand {
             get {
                 return ResourceManager.GetString("AboutCommand", resourceCulture);
@@ -134,6 +143,15 @@ namespace _15Puzzle {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Pcture ähnelt.
+        /// </summary>
+        internal static string PictureCapture {
+            get {
+                return ResourceManager.GetString("PictureCapture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Show Picture ähnelt.
         /// </summary>
         internal static string ShowPictureText {
@@ -148,6 +166,15 @@ namespace _15Puzzle {
         internal static string StartCommand {
             get {
                 return ResourceManager.GetString("StartCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Tiles ähnelt.
+        /// </summary>
+        internal static string Tiles {
+            get {
+                return ResourceManager.GetString("Tiles", resourceCulture);
             }
         }
         

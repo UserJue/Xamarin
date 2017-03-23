@@ -11,8 +11,8 @@
     <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
   </ContentPage.Padding>
   <AbsoluteLayout>    
-  <views:AboutView BindingContext="{Binding Path=AboutViewModel}" x:Name="AboutView" IsVisible="{Binding Path=IsVisible}" />
-  <views:SettingsView BindingContext="{Binding Path=}"/>
+  <views:AboutView BindingContext="{Binding Path=AboutViewModel}" x:Name="AboutView" IsVisible="{Binding Path=IsVisible}" HorizontalOptions="Center" />
+  <views:SettingsView BindingContext="{Binding Path=SettingsViewModel}" x:Name="SettingsView" IsVisible="{Binding Path=IsVisible}"/>
       <Grid x:Name="PuzzleView" IsVisible="{Binding Path=IsVisible}">
     <Grid.RowDefinitions>
       <RowDefinition Height="*" />
@@ -65,7 +65,7 @@
       <Label Text="Used Time" />
       <Label Text="{Binding Path=UsedTime}" />
     </StackLayout>
-    <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal" IsVisible="{Binding Path=IsPortrait}">
+    <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal" IsVisible="{Binding Path=IsPortrait}" HorizontalOptions="End">
       <Button Text="Shuffle" Command="{Binding Path=ShuffleCommand}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Path=ShowShuffle}"/>
       <Image Source="{Binding Path=StartBreakPicture,Converter={StaticResource ImageConverter}}" HeightRequest="40" VerticalOptions="FillAndExpand" HorizontalOptions="End">
         <Image.GestureRecognizers>

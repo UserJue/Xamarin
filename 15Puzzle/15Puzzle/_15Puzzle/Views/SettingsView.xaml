@@ -6,12 +6,32 @@
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
     <Button Grid.Row="0" Text="{Binding BackText}" HorizontalOptions="Start" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack1Visible}" TextColor="Yellow"/>
-    <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Center">
+    <StackLayout Grid.Row="1">
+      <Label Text="{Binding Path=PictureCapture}" />
+      <ListView ItemsSource="{Binding Path=PuzzleInfos}" SelectedItem="{Binding Path=SelectedPuzzleInfo}" >
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid HorizontalOptions="FillAndExpand" HeightRequest="200">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="2*" />
+                  <ColumnDefinition Width="2*" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" />
+                <Label Grid.Column="1" Text="{Binding Path=Name}" />
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+    <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
       <Button Text="{Binding BackText}" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack2Visible}" TextColor="Yellow"/>
       <Button Text="{Binding AboutText}" Command="{Binding Path=AboutCommand}" TextColor="Yellow"/>
     </StackLayout>

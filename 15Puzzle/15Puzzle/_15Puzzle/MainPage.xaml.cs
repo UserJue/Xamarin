@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using _15Puzzle.Models;
 using _15Puzzle.ViewModels;
 
 namespace _15Puzzle
@@ -7,19 +8,25 @@ namespace _15Puzzle
     public partial class MainPage : ContentPage
     {
         private Models._15Puzzle model;
+        private Settings settings;
         private MainViewModel mainViewModel;
         private ContentPage contentView;
         private double tileSize;
         private bool init;
         private double lastBoardLayoutHight = -1;
+        private double dimensionX;
+        private double dimensionY;
 
         public MainPage()
         {
             InitializeComponent();
+            settings = new Settings();
+            settings.PuzzleInfos.Add(new PuzzleInfo("Frankenberg", "Frankenberg",15,false));
+            settings.PuzzleInfos.Add(new PuzzleInfo("USA_Zion", "USA_Zion", 23, true));
+            settings.PuzzleInfo = settings.PuzzleInfos[0]; 
             model = new Models._15Puzzle();
-            //model.Create(15,"Frankenberg");
-            model.Create(23, "USA_Zion",true);
-            mainViewModel = new MainViewModel(model) {OnTilesMoved = SetTiles};
+            model.Create(settings.PuzzleInfo.Tiles, settings.PuzzleInfo.Picture, settings.PuzzleInfo.Landscape);
+            mainViewModel = new MainViewModel(model,settings) {OnTilesMoved = SetTiles};
             BindingContext = mainViewModel;
         }
         
@@ -39,7 +46,9 @@ namespace _15Puzzle
             var hight = contentView.Height;
             var width = contentView.Width;
             AbsoluteLayout.SetLayoutBounds(PuzzleView,new Rectangle(0,0,width,hight));
-			if (Device.OS == TargetPlatform.iOS)
+            AbsoluteLayout.SetLayoutBounds(AboutView, new Rectangle(0, 0, width, hight));
+            AbsoluteLayout.SetLayoutBounds(SettingsView, new Rectangle(0, 0, width, hight));
+            if (Device.OS == TargetPlatform.iOS)
 			    if (landScape)
 			        contentView.Padding = new Thickness(0, 0, 0, 0);
 			    else
@@ -55,6 +64,8 @@ namespace _15Puzzle
 			    lastBoardLayoutHight = BoardLayout.Height;
 			}
             tileSize = Math.Min(hight/model.DimensionY, width/model.DimensionX);
+            dimensionX = model.DimensionX;
+            dimensionY = model.DimensionY;
             AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0, 0, tileSize*model.DimensionX, tileSize*model.DimensionY));
             ShowPictureButton.WidthRequest = tileSize*4;
 			if (mainViewModel.IsLandscape != landScape)
@@ -76,7 +87,7 @@ namespace _15Puzzle
         {
             if (contentView.Width > 0)
             {
-                if (!init || (BoardLayout.Height != lastBoardLayoutHight))
+                if (!init || (BoardLayout.Height != lastBoardLayoutHight) || (dimensionX != model.DimensionX) || (dimensionY != model.DimensionY))
                 {
                     SetSize();
                 }
@@ -103,7 +114,7 @@ namespace _15Puzzle
                 AbsoluteLayout.SetLayoutBounds(Tile21, new Rectangle(tileSize * mainViewModel.Tiles[20].X, tileSize * mainViewModel.Tiles[20].Y, (mainViewModel.Tiles[20].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[20].TileVisible) ? tileSize : 0));
                 AbsoluteLayout.SetLayoutBounds(Tile22, new Rectangle(tileSize * mainViewModel.Tiles[21].X, tileSize * mainViewModel.Tiles[21].Y, (mainViewModel.Tiles[21].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[21].TileVisible) ? tileSize : 0));
                 AbsoluteLayout.SetLayoutBounds(Tile23, new Rectangle(tileSize * mainViewModel.Tiles[22].X, tileSize * mainViewModel.Tiles[22].Y, (mainViewModel.Tiles[22].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[22].TileVisible) ? tileSize : 0));
-                AbsoluteLayout.SetLayoutBounds(Tile24, new Rectangle(tileSize * mainViewModel.Tiles[23].X, tileSize * mainViewModel.Tiles[23].Y,(mainViewModel.Tiles[23].TileVisible)? tileSize:0, (mainViewModel.Tiles[23].TileVisible) ? tileSize : 0));
+                AbsoluteLayout.SetLayoutBounds(Tile24, new Rectangle(tileSize * mainViewModel.Tiles[23].X, tileSize * mainViewModel.Tiles[23].Y, (mainViewModel.Tiles[23].TileVisible) ? tileSize : 0, (mainViewModel.Tiles[23].TileVisible) ? tileSize : 0));
             }
         }
     }

@@ -1,14 +1,18 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
+using _15Puzzle.Models;
 
 namespace _15Puzzle.ViewModels
 {
     public class SettingsViewModel : INotifyPropertyChanged
     {
         private bool isVisible;
+
+        private Settings model;
 
         public bool IsVisible
         {
@@ -17,7 +21,7 @@ namespace _15Puzzle.ViewModels
             {
                 if (value == isVisible) return;
                 isVisible = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(IsVisible));
                 OnPropertyChanged(nameof(IsBack1Visible));
                 OnPropertyChanged(nameof(IsBack2Visible));
             }
@@ -58,15 +62,43 @@ namespace _15Puzzle.ViewModels
 
         public string BackText { get; set; }
 
+        public string AboutText { get; set; }
+
+        public string PictureCapture => AppResource.PictureCapture;
+
+        public Collection<PuzzleInfoViewModel> PuzzleInfos { get; }
+
+        public PuzzleInfoViewModel SelectedPuzzleInfo
+        {
+            get { return selectedPuzzleInfo; }
+            set
+            {
+                if (Equals(selectedPuzzleInfo,value)) return;
+                selectedPuzzleInfo = value;
+                if ((selectedPuzzleInfo == null) ||Equals(model.PuzzleInfo,selectedPuzzleInfo.Model)) return;
+                model.PuzzleInfo = selectedPuzzleInfo.Model;
+            }
+        }
+
         public Action AboutAction;
+        private PuzzleInfoViewModel selectedPuzzleInfo;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public SettingsViewModel()
+        public SettingsViewModel(Settings settings)
         {
+            model = settings;
             back1 = true;
             BackCommand = new Command(() => BackAction?.Invoke());
             AboutCommand = new Command(() => AboutAction?.Invoke());
-
+            PuzzleInfos = new Collection<PuzzleInfoViewModel>();
+            foreach (var puzzleInfo in settings.PuzzleInfos)
+            {
+                var viewModel = new PuzzleInfoViewModel(puzzleInfo);
+                PuzzleInfos.Add(viewModel);
+                if (puzzleInfo.Name == model.PuzzleInfo.Name)
+                    SelectedPuzzleInfo = viewModel;
+            }
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

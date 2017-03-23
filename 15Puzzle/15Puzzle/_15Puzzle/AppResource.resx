@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="AboutCommand" xml:space="preserve">
     <value>About</value>
   </data>
@@ -141,11 +144,17 @@
   <data name="HidePictureText" xml:space="preserve">
     <value>Hide Picture</value>
   </data>
+  <data name="PictureCapture" xml:space="preserve">
+    <value>Pcture</value>
+  </data>
   <data name="ShowPictureText" xml:space="preserve">
     <value>Show Picture</value>
   </data>
   <data name="StartCommand" xml:space="preserve">
     <value>Start</value>
+  </data>
+  <data name="Tiles" xml:space="preserve">
+    <value>Tiles</value>
   </data>
   <data name="WinMessage" xml:space="preserve">
     <value>Puzzle solved, Congratulation! </value>

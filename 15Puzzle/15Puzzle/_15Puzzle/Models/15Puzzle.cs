@@ -103,6 +103,49 @@ namespace _15Puzzle.Models
             return true;
         }
 
+        public bool Create(int tilesNumber, int holeIndex, bool landscape = false)
+        {
+            Status = GameStatus.Activ;
+            UsedMoves = 0;
+            usedTime = TimeSpan.Zero;
+            Picture = null;
+            switch (tilesNumber)
+            {
+                case 15:
+                    DimensionX = DimensionY = 4;
+                    break;
+                case 23:
+                    if (landscape)
+                    {
+                        DimensionX = 6;
+                        DimensionY = 4;
+                    }
+                    else
+                    {
+                        DimensionX = 4;
+                        DimensionY = 6;
+                    }
+                    break;
+                default:
+                    return false;
+            }
+            Tiles.Clear();
+            var index = 0;
+            var hole = false;
+            for (var j = 0; j < DimensionY; j++)
+                for (var i = 0; i < DimensionX; i++)
+                {
+                    if ((index == holeIndex) && !hole)
+                    {
+                        hole = true;
+                        continue;
+                    }
+                    Tiles.Add(new Tile(index, i, j));
+                    index++;
+                }
+            return true;
+        }
+
         public void Shuffle()
         {
             for (var i = 0; i < 20; i++)

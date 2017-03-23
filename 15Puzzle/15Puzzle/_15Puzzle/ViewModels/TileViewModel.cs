@@ -22,6 +22,7 @@ namespace _15Puzzle.ViewModels
         public Func<double, double, double, bool> canMoveX;
         public Func<double, double, double, bool> canMoveY;
         private string picture;
+        private bool tileVisible;
 
         public Direction MoveDirection { get; set; }
 
@@ -35,13 +36,23 @@ namespace _15Puzzle.ViewModels
 
         public bool HasText => picture == null;
 
-        public bool TileVisible { get; }
+        public bool TileVisible
+        {
+            get { return tileVisible; }
+            set
+            {
+                if (value == tileVisible) return;
+                tileVisible = value;
+                OnPropertyChanged(nameof(TileVisible));
+            }
+        }
 
         public string Picture
         {
             get { return picture; }
             set {
 				picture = value;
+                OnPropertyChanged(nameof(Picture));
 				OnPropertyChanged(nameof(HasText));
 				OnPropertyChanged(nameof(HasPictures));
 			}

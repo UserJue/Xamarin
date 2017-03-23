@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
 using _15Puzzle.Annotations;
+using _15Puzzle.Models;
 
 namespace _15Puzzle.ViewModels
 {
@@ -12,10 +13,12 @@ namespace _15Puzzle.ViewModels
         private const int MaxTiles = 24;
         private int holeX = 3;
         private int holeY = 3;
+        private bool init = false;
 
         private int[][] places;
         private int[][] lastPlaces;
         private Models._15Puzzle model;
+        private Settings settings;
         private int showPictureCount;
         private bool showPicture;
         private TileViewModel.Direction moveDirection;
@@ -124,8 +127,15 @@ namespace _15Puzzle.ViewModels
 
         public SettingsViewModel SettingsViewModel { get; }
 
-        public MainViewModel(Models._15Puzzle model)
+        public MainViewModel(Models._15Puzzle model,Settings settings,bool userTimer = true)
         {
+            this.model = model;
+            this.model.PropertyChanged += MainViewModel_PropertyChanged;
+
+            this.settings = settings;
+            if (settings != null)
+                this.settings.PropertyChanged += Settings_PropertyChanged;
+
             AboutViewModel = new AboutViewModel { Title = AppResource.ApplicationTitle, SubTitle = AppResource.ForW, Version = "1.0", BackText = AppResource.Close };
             switch (Device.OS)
             {
@@ -142,7 +152,7 @@ namespace _15Puzzle.ViewModels
                 AboutViewModel.IsVisible = false;
                 IsVisible = true;
             };
-            SettingsViewModel = new SettingsViewModel() { BackText = AppResource.Close };
+            SettingsViewModel = new SettingsViewModel(settings) { BackText = AppResource.Close,AboutText = AppResource.About};
             SettingsViewModel.AboutAction = () =>
             {
                 AboutViewModel.IsVisible = true;
@@ -159,12 +169,10 @@ namespace _15Puzzle.ViewModels
             hidePictureText = AppResource.HidePictureText;
             isPortrait = true;
             IsVisible = true;
-            this.model = model;
-            this.model.PropertyChanged += MainViewModel_PropertyChanged;
             SettingCommand = new Command(() =>
             {
                 IsVisible = false;
-                AboutViewModel.IsVisible = true;
+                SettingsViewModel.IsVisible = true;
             });
             ShuffleCommand = new Command(() =>
             {
@@ -209,7 +217,7 @@ namespace _15Puzzle.ViewModels
             foreach (var tile in model.Tiles)
             {
                 Tiles[tile.Index] = new TileViewModel(tile);
-                Tiles[tile.Index].Picture = $"{model.Picture}{tile.Index0Y}{tile.Index0X}"; 
+                Tiles[tile.Index].Picture = model.Picture == null ? null : $"{model.Picture}{tile.Index0Y}{tile.Index0X}"; 
                 Tiles[tile.Index].PropertyChanged += MainViewModel_PropertyChanged;
                 Tiles[tile.Index].canMoveX = CanMoveX;
                 Tiles[tile.Index].canMoveY = CanMoveY;
@@ -217,9 +225,48 @@ namespace _15Puzzle.ViewModels
             for (int i = model.Tiles.Count; i < MaxTiles; i++)
             {
                 Tiles[i] = new TileViewModel(null);
+                Tiles[i].PropertyChanged += MainViewModel_PropertyChanged;
+                Tiles[i].canMoveX = CanMoveX;
+                Tiles[i].canMoveY = CanMoveY;
             }
             FillPlaces();
-            Device.StartTimer(TimeSpan.FromSeconds(10),TimerOnTick );
+            if (userTimer)
+                Device.StartTimer(TimeSpan.FromSeconds(10),TimerOnTick );
+            init = true;
+        }
+
+        private void Settings_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(PuzzleInfo))
+            {
+                if (init &&(model != null) && (settings.PuzzleInfo != null))
+                {
+                    model.Create(settings.PuzzleInfo.Tiles, settings.PuzzleInfo.Picture, settings.PuzzleInfo.Landscape);
+                    foreach (var tile in model.Tiles)
+                    {
+                        Tiles[tile.Index].Picture = $"{model.Picture}{tile.Index0Y}{tile.Index0X}";
+                        Tiles[tile.Index].TileVisible = true;
+                        Tiles[tile.Index].Y = tile.IndexY;
+                        Tiles[tile.Index].X = tile.IndexX;
+                    }
+                    for (int i = model.Tiles.Count; i < MaxTiles; i++)
+                    {
+                        Tiles[i].Picture = null;
+                        Tiles[i].TileVisible = false;
+                        Tiles[i].Y = -1;
+                        Tiles[i].X = -1;
+                    }
+                    places = new int[model.DimensionX][];
+                    lastPlaces = new int[model.DimensionX][];
+                    for (int i = 0; i < model.DimensionX; i++)
+                    {
+                        places[i] = new int[model.DimensionY];
+                        lastPlaces[i] = new int[model.DimensionY];
+                    }
+                    FillPlaces();
+                    OnTilesMoved?.Invoke();
+                }
+            }
         }
 
         internal bool TimerOnTick()
@@ -374,7 +421,7 @@ namespace _15Puzzle.ViewModels
             }
         }
 
-        private bool CanMoveX(double x, double y, double dx)
+        protected bool CanMoveX(double x, double y, double dx)
         {
             if (model.Status != Models._15Puzzle.GameStatus.Activ) return false;
             if (((x + dx) < 0) || ((x + dx) > model.DimensionX-1)) return false;
@@ -496,7 +543,6 @@ namespace _15Puzzle.ViewModels
             }
             catch (Exception)
             {
-
                 ok = false;
             }
             if (!ok || !hole)
