@@ -172,6 +172,7 @@ namespace _15Puzzle.ViewModels
             Moving = false;
             MoveDirection = Direction.None;
             Delta = 0;
+            usedDelta = 0;
         }
 
         protected void OnStartMove()
