@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Xamarin.Forms;
 using _15Puzzle.Annotations;
 
 namespace _15Puzzle.Models
@@ -25,6 +26,29 @@ namespace _15Puzzle.Models
         public Settings()
         {
             PuzzleInfos = new List<PuzzleInfo>();
+        }
+
+        public bool LoadFromProperties()
+        {
+            IDictionary<string, object> settingsDictionary = Application.Current.Properties;
+            if (settingsDictionary.ContainsKey("SelectedName"))
+            {
+                var name = settingsDictionary["SelectedName"] as string;
+                foreach (var info in PuzzleInfos)
+                {
+                    if (info.Name == name)
+                    {
+                        puzzleInfo = info;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public void SaveToProperties()
+        {
+            Application.Current.Properties["SelectedName"] = PuzzleInfo.Name;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

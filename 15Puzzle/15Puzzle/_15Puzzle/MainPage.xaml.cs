@@ -23,9 +23,11 @@ namespace _15Puzzle
             settings = new Settings();
             settings.PuzzleInfos.Add(new PuzzleInfo("Frankenberg", "Frankenberg",15,false));
             settings.PuzzleInfos.Add(new PuzzleInfo("USA_Zion", "USA_Zion", 23, true));
-            settings.PuzzleInfo = settings.PuzzleInfos[0]; 
+            if (!settings.LoadFromProperties())
+                settings.PuzzleInfo = settings.PuzzleInfos[0]; 
             model = new Models._15Puzzle();
-            model.Create(settings.PuzzleInfo.Tiles, settings.PuzzleInfo.Picture, settings.PuzzleInfo.Landscape);
+            if (!model.LoadFromProperties())
+                model.Create(settings.PuzzleInfo.Tiles, settings.PuzzleInfo.Picture, settings.PuzzleInfo.Landscape);
             mainViewModel = new MainViewModel(model,settings) {OnTilesMoved = SetTiles};
             BindingContext = mainViewModel;
         }

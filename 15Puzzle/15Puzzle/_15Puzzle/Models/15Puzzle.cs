@@ -30,7 +30,11 @@ namespace _15Puzzle.Models
             {
                 if (value == status) return;
                 if (status == GameStatus.Activ)
+                {
                     usedTime += DateTime.Now - startTime;
+                    status = value;
+                    SaveToProperties();
+                }
                 else if (value == GameStatus.None)
                 {
                     usedTime = TimeSpan.Zero;
@@ -62,6 +66,66 @@ namespace _15Puzzle.Models
             Status = GameStatus.None;
             random = new Random();
             Tiles = new List<Tile>();
+        }
+
+        public bool LoadFromProperties()
+        {
+            int? intValue1;
+            int? intValue2;
+            IDictionary<string, object> settingsDictionary = Application.Current.Properties;
+            if (!settingsDictionary.ContainsKey("Picture")) return false;
+            var picture = settingsDictionary["Picture"] as string;
+            if (picture == null) return false;
+            Picture = picture;
+            if (!settingsDictionary.ContainsKey("DimensionX")) return false;
+            intValue1 = settingsDictionary["DimensionX"] as int?;
+            if (intValue1 == null) return false;
+            DimensionX = intValue1.Value;
+            if (!settingsDictionary.ContainsKey("DimensionY")) return false;
+            intValue1 = settingsDictionary["DimensionY"] as int?;
+            if (intValue1 == null) return false;
+            DimensionY = intValue1.Value;
+            Tiles.Clear();
+            for (var i = 0; i < DimensionX*DimensionY-1; i++)
+            {
+                var key = $"Tile_{i}_0X";
+                if (!settingsDictionary.ContainsKey(key)) return false;
+                intValue1 = settingsDictionary[key] as int?;
+                if (intValue1 == null) return false;
+                key = $"Tile_{i}_0Y";
+                if (!settingsDictionary.ContainsKey(key)) return false;
+                intValue2 = settingsDictionary[key] as int?;
+                if (intValue2 == null) return false;
+                var tile = new Tile(i, intValue1.Value, intValue2.Value);
+                key = $"Tile_{i}_X";
+                if (!settingsDictionary.ContainsKey(key)) return false;
+                intValue1 = settingsDictionary[key] as int?;
+                if (intValue1 == null) return false;
+                tile.IndexX = intValue1.Value;
+                key = $"Tile_{i}_Y";
+                if (!settingsDictionary.ContainsKey(key)) return false;
+                intValue2 = settingsDictionary[key] as int?;
+                if (intValue2 == null) return false;
+                tile.IndexY = intValue2.Value;
+                Tiles.Add(tile);
+            }
+            return true;
+        }
+
+        public void SaveToProperties()
+        {
+//            Application.Current.Properties["Status"] = Status;
+            foreach (var tile in Tiles)
+            {
+                var key = $"Tile_{tile.Index}_0X";
+                Application.Current.Properties[key] = tile.Index0X;
+                key = $"Tile_{tile.Index}_0Y";
+                Application.Current.Properties[key] = tile.Index0Y;
+                key = $"Tile_{tile.Index}_X";
+                Application.Current.Properties[key] = tile.IndexX;
+                key = $"Tile_{tile.Index}_Y";
+                Application.Current.Properties[key] = tile.IndexY;
+            }
         }
 
         public bool Create(int tilesNumber,string picture=null,bool landscape=false)
@@ -100,6 +164,10 @@ namespace _15Puzzle.Models
                     index++;
                 }
             Shuffle();
+            Application.Current.Properties["Picture"] = Picture;
+            Application.Current.Properties["DimensionX"] = DimensionX;
+            Application.Current.Properties["DimensionY"] = DimensionY;
+            SaveToProperties();
             return true;
         }
 

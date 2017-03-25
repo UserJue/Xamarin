@@ -77,6 +77,7 @@ namespace _15Puzzle.ViewModels
                 selectedPuzzleInfo = value;
                 if ((selectedPuzzleInfo == null) ||Equals(model.PuzzleInfo,selectedPuzzleInfo.Model)) return;
                 model.PuzzleInfo = selectedPuzzleInfo.Model;
+                model.SaveToProperties();
             }
         }
 
