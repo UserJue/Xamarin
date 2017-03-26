@@ -11,7 +11,7 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    <Button Grid.Row="0" Text="{Binding BackText}" HorizontalOptions="Start" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack1Visible}" TextColor="Yellow"/>
+    <Button Grid.Row="0" Text="{Binding BackText}" HorizontalOptions="Start" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack1Visible}" />
     <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Vertical">
       <Label Text="{Binding Title}" HorizontalOptions="Center" TextColor="Lime"/>
       <Label Text="{Binding SubTitle}" HorizontalOptions="Center"  TextColor="Lime"/>
@@ -24,6 +24,6 @@
       <Label Text="{Binding HomePage}" HorizontalOptions="Center"  TextColor="Lime"/>
       <Label Text="{Binding EMail}" HorizontalOptions="Center"  TextColor="Lime"/>
     </StackLayout>
-    <Button Grid.Row="4" Text="{Binding BackText}" HorizontalOptions="Center" Command="{Binding Path=BackCommand}"  IsVisible="{Binding Path=IsBack2Visible}" TextColor="Yellow"/>
+    <Button Grid.Row="4" Text="{Binding BackText}" HorizontalOptions="Center" Command="{Binding Path=BackCommand}"  IsVisible="{Binding Path=IsBack2Visible}"/>
   </Grid>
 </ContentView>

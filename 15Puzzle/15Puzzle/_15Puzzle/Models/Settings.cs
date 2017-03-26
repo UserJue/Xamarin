@@ -10,6 +10,7 @@ namespace _15Puzzle.Models
     public class Settings : INotifyPropertyChanged
     {
         private PuzzleInfo puzzleInfo;
+        private bool showPreview;
         public List<PuzzleInfo> PuzzleInfos { get; }
 
         public PuzzleInfo PuzzleInfo
@@ -23,6 +24,18 @@ namespace _15Puzzle.Models
             }
         }
 
+        public bool ShowPreview
+        {
+            get { return showPreview; }
+            set
+            {
+                if (value == showPreview) return;
+                showPreview = value;
+                Application.Current.Properties["ShowPreview"] = showPreview;
+                OnPropertyChanged();
+            }
+        }
+
         public Settings()
         {
             PuzzleInfos = new List<PuzzleInfo>();
@@ -31,6 +44,11 @@ namespace _15Puzzle.Models
         public bool LoadFromProperties()
         {
             IDictionary<string, object> settingsDictionary = Application.Current.Properties;
+            if (settingsDictionary.ContainsKey("ShowPreview"))
+            {
+                bool? show = settingsDictionary["ShowPreview"] as bool?;
+                showPreview = (show != null) && show.Value;
+            }
             if (settingsDictionary.ContainsKey("SelectedName"))
             {
                 var name = settingsDictionary["SelectedName"] as string;
@@ -49,6 +67,7 @@ namespace _15Puzzle.Models
         public void SaveToProperties()
         {
             Application.Current.Properties["SelectedName"] = PuzzleInfo.Name;
+            Application.Current.Properties["ShowPreview"] = ShowPreview;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

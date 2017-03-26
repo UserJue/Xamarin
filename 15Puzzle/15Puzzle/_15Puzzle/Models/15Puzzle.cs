@@ -73,6 +73,14 @@ namespace _15Puzzle.Models
             int? intValue1;
             int? intValue2;
             IDictionary<string, object> settingsDictionary = Application.Current.Properties;
+            if (!settingsDictionary.ContainsKey("UsedMoves")) return false;
+            intValue1 = settingsDictionary["UsedMoves"] as int?;
+            if (intValue1 == null) return false;
+            usedMoves = intValue1.Value;
+            if (!settingsDictionary.ContainsKey("UsedTime")) return false;
+            intValue1 = settingsDictionary["UsedTime"] as int?;
+            if (intValue1 == null) return false;
+            usedTime = TimeSpan.FromSeconds(intValue1.Value);
             if (!settingsDictionary.ContainsKey("Picture")) return false;
             var picture = settingsDictionary["Picture"] as string;
             if (picture == null) return false;
@@ -114,7 +122,9 @@ namespace _15Puzzle.Models
 
         public void SaveToProperties()
         {
-//            Application.Current.Properties["Status"] = Status;
+            //            Application.Current.Properties["Status"] = Status;
+            Application.Current.Properties["UsedMoves"] = usedMoves;
+            Application.Current.Properties["UsedTime"] = (int)usedTime.TotalSeconds;
             foreach (var tile in Tiles)
             {
                 var key = $"Tile_{tile.Index}_0X";

@@ -83,6 +83,8 @@ namespace _15Puzzle.ViewModels
             }
         }
 
+        public bool ShowPreview => settings.ShowPreview;
+
         public bool ShowShuffle => model.Status != Models._15Puzzle.GameStatus.Activ;
 
         public bool IsPortrait
@@ -231,7 +233,7 @@ namespace _15Puzzle.ViewModels
             }
             FillPlaces();
             if (userTimer)
-                Device.StartTimer(TimeSpan.FromSeconds(10),TimerOnTick );
+                Device.StartTimer(TimeSpan.FromSeconds(1),TimerOnTick );
             init = true;
         }
 
@@ -239,6 +241,7 @@ namespace _15Puzzle.ViewModels
         {
             if (e.PropertyName == nameof(PuzzleInfo))
             {
+                OnPropertyChanged(nameof(Picture));
                 if (init &&(model != null) && (settings.PuzzleInfo != null))
                 {
                     model.Create(settings.PuzzleInfo.Tiles, settings.PuzzleInfo.Picture, settings.PuzzleInfo.Landscape);
@@ -266,6 +269,10 @@ namespace _15Puzzle.ViewModels
                     FillPlaces();
                     OnTilesMoved?.Invoke();
                 }
+            }
+            else if (e.PropertyName == "ShowPreview")
+            {
+                OnPropertyChanged(nameof(ShowPreview));
             }
         }
 

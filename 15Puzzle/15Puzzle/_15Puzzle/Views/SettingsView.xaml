@@ -10,7 +10,7 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    <Button Grid.Row="0" Text="{Binding BackText}" HorizontalOptions="Start" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack1Visible}" TextColor="Yellow"/>
+    <Button Grid.Row="0" Text="{Binding BackText}" HorizontalOptions="Start" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack1Visible}"/>
     <StackLayout Grid.Row="1">
       <Label Text="{Binding Path=PictureCapture}" />
       <ListView ItemsSource="{Binding Path=PuzzleInfos}" SelectedItem="{Binding Path=SelectedPuzzleInfo}" >
@@ -31,9 +31,15 @@
         </ListView.ItemTemplate>
       </ListView>
     </StackLayout>
+    <Picker Grid.Row="3" SelectedIndex="{Binding Path=ShowPreviewIndex}">
+      <Picker.Items>
+        <x:String>Hide preview</x:String>
+        <x:String>Show preview</x:String>
+      </Picker.Items>
+    </Picker>
     <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
-      <Button Text="{Binding BackText}" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack2Visible}" TextColor="Yellow"/>
-      <Button Text="{Binding AboutText}" Command="{Binding Path=AboutCommand}" TextColor="Yellow"/>
+      <Button Text="{Binding BackText}" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack2Visible}" />
+      <Button Text="{Binding AboutText}" Command="{Binding Path=AboutCommand}"/>
     </StackLayout>
   </Grid>
 </ContentView>

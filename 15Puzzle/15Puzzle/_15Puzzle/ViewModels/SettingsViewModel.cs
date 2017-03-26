@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -26,6 +28,20 @@ namespace _15Puzzle.ViewModels
                 OnPropertyChanged(nameof(IsBack2Visible));
             }
         }
+
+        public int ShowPreviewIndex
+        {
+            get { return model.ShowPreview ? 1 : 0; }
+            set
+            {
+                if (showPreview != value)
+                {
+                    model.ShowPreview = value == 1;
+                }
+            }
+        }
+
+        public ICollection<string> ShowPreviewTexts { get; private set; }
 
         private bool back1;
 
@@ -83,6 +99,7 @@ namespace _15Puzzle.ViewModels
 
         public Action AboutAction;
         private PuzzleInfoViewModel selectedPuzzleInfo;
+        private int showPreview;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -100,6 +117,7 @@ namespace _15Puzzle.ViewModels
                 if (puzzleInfo.Name == model.PuzzleInfo.Name)
                     SelectedPuzzleInfo = viewModel;
             }
+            ShowPreviewTexts = new List<string> { "show preview", "hide preview"};
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

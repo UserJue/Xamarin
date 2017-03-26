@@ -23,6 +23,7 @@ namespace _15Puzzle
             settings = new Settings();
             settings.PuzzleInfos.Add(new PuzzleInfo("Frankenberg", "Frankenberg",15,false));
             settings.PuzzleInfos.Add(new PuzzleInfo("USA_Zion", "USA_Zion", 23, true));
+            settings.PuzzleInfos.Add(new PuzzleInfo("RotenburgOdT", "RotenburgOdT", 23, false));
             if (!settings.LoadFromProperties())
                 settings.PuzzleInfo = settings.PuzzleInfos[0]; 
             model = new Models._15Puzzle();
@@ -47,17 +48,19 @@ namespace _15Puzzle
 			var landScape = contentView.Width > contentView.Height;
             var hight = contentView.Height;
             var width = contentView.Width;
-            AbsoluteLayout.SetLayoutBounds(PuzzleView,new Rectangle(0,0,width,hight));
-            AbsoluteLayout.SetLayoutBounds(AboutView, new Rectangle(0, 0, width, hight));
-            AbsoluteLayout.SetLayoutBounds(SettingsView, new Rectangle(0, 0, width, hight));
             if (Device.OS == TargetPlatform.iOS)
-			    if (landScape)
+            {
+                if (landScape)
 			        contentView.Padding = new Thickness(0, 0, 0, 0);
 			    else
 			    {
                     contentView.Padding = new Thickness(0, 20, 0, 0);
                     hight -= 20;
 			    }
+            }
+            AbsoluteLayout.SetLayoutBounds(PuzzleView,new Rectangle(0,0,width,hight));
+            AbsoluteLayout.SetLayoutBounds(AboutView, new Rectangle(0, 0, width, hight));
+            AbsoluteLayout.SetLayoutBounds(SettingsView, new Rectangle(0, 0, width, hight));
 			if (BoardLayout.Height > 100)
 			{
                 hight = BoardLayout.Height;
