@@ -226,7 +226,7 @@ namespace _15Puzzle.Models
 
         public void Shuffle()
         {
-            for (var i = 0; i < 0; i++)
+            for (var i = 0; i < 50; i++)
             {
                 var index1 = random.Next(DimensionX* DimensionY-1);
                 var index2 = random.Next(DimensionX * DimensionY-1);
