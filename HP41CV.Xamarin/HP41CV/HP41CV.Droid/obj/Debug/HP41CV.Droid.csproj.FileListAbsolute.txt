@@ -72,4 +72,6 @@ C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.Droid\obj\Debug\android\assets\
 C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.Droid\obj\Debug\HP41CV.Droid.dll.mdb
-C:\Source\Repos\Jue\HP41CV.Xamarin\HP41CV\HP41CV.Droid\bin\Debug\HP41CV.Droid.dll.mdb
+C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Droid\obj\Debug\HP41CV.Droid.csprojResolveAssemblyReference.cache
+C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Droid\obj\Debug\HP41CV.Droid.dll
+C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Droid\obj\Debug\HP41CV.Droid.pdb

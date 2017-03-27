@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -417,18 +418,21 @@ namespace HP41CV.ViewModels
         public bool Flag4Visibel => !isInit || this.Model.IsFlagSet(4);
 
         public bool GradVisibel => !isInit || this.Model.IsFlagSet(42);
-        public bool NumVisible => !isInit || IsBin();
+        public bool NumVisible => !isInit || !IsBin();
         public bool ProgVisibel => !isInit || this.Model.IsFlagSet(52);
         public bool RadVisibel => !isInit || this.Model.IsFlagSet(43);
         public bool ShiftVisibel => !isInit || this._shift;
         public bool UserVisibel => !isInit || this.Model.IsFlagSet(27);
         public bool BinVisible => !isInit || IsBin();
         public bool FormulaVisible => !isInit || Model.IsUpn;
+        public bool Byte2Visible => !isInit || (IsBin() && Model.Precision >= 2);
+        public bool Byte3Visible => !isInit || (IsBin() && Model.Precision >= 3);
+        public bool Byte4Visible => !isInit || (IsBin() && Model.Precision >= 4);
 
         public Collection<ToggleViewModel> Toggles { get; private set; }
         public Collection<ButtonViewModel> Buttons { get; private set; }
 
-        public ObservableCollection<ByteViewModel> Bytes { get; private set; }
+        public Color[] Bits { get; private set; }
 
 
         public CalculatorViewModel() : this(new CalculatorModel())
@@ -445,7 +449,7 @@ namespace HP41CV.ViewModels
             AssignKeys();
             AssignKeysButtonDictionary();
 
-            Bytes = new ObservableCollection<ByteViewModel>();
+            Bits = new Color[32];
 
             this._display2 = new StringBuilder("0.0000");
             foramula = new StringBuilder(string.Empty);
@@ -1332,6 +1336,7 @@ namespace HP41CV.ViewModels
                 OnPropertyChanged("Display2Margin");
                 OnPropertyChanged("Foramula");
                 OnPropertyChanged("NumVisible");
+                OnPropertyChanged(nameof(BinVisible));
             }
             else if (e.PropertyName == "KeyHex")
             {
@@ -1339,14 +1344,20 @@ namespace HP41CV.ViewModels
             }
             else if (e.PropertyName == "Bytes")
             {
-                Bytes.Clear();
-                var help = (int)Math.Floor(this.Model.X);
-                for (var i = 0; i < this.Model.Precision; i++)
-                {
-                    Bytes.Insert(0, new ByteViewModel((byte)(help & 0xFF), i + 1, this.Model.Precision > 4));
-                    help = help >> 8;
-                }
-                OnPropertyChanged("Bytes");
+                var help = new [] { (int)Math.Floor(this.Model.X) } ;
+                var bits = new BitArray(help);
+                for (var i = 0; i < 32; i++)
+                    Bits[i] = bits[i] ? Color.Black : Color.White;
+                //for (var i = 0; i < this.Model.Precision; i++)
+                //{
+                //    var viewModel = new ByteViewModel((byte) (help & 0xFF), i + 1, this.Model.Precision > 4);
+                //    Bytes[i] = viewModel;
+                //    help = help >> 8;
+                //}
+                OnPropertyChanged(nameof(Bits));
+                OnPropertyChanged(nameof(Byte2Visible));
+                OnPropertyChanged(nameof(Byte3Visible));
+                OnPropertyChanged(nameof(Byte4Visible));
             }
             else if (e.PropertyName == "IsUpn")
             {
@@ -1418,6 +1429,7 @@ namespace HP41CV.ViewModels
             OnPropertyChanged(nameof(AlphaVisibel));
             OnPropertyChanged(nameof(ProgVisibel));
             OnPropertyChanged(nameof(ShiftVisibel));
+            OnPropertyChanged(nameof(BinVisible));
         }
 
         private void DoPrgm()

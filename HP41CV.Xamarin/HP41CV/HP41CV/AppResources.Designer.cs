@@ -620,6 +620,15 @@ namespace HP41CV {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Binary display ähnelt.
+        /// </summary>
+        internal static string HelpBIN {
+            get {
+                return ResourceManager.GetString("HelpBIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Back step ähnelt.
         /// </summary>
         internal static string HelpBST {
@@ -706,6 +715,15 @@ namespace HP41CV {
         internal static string HelpCLRG {
             get {
                 return ResourceManager.GetString("HelpCLRG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die binomial coefficient ähnelt.
+        /// </summary>
+        internal static string HelpCNK {
+            get {
+                return ResourceManager.GetString("HelpCNK", resourceCulture);
             }
         }
         
@@ -836,6 +854,15 @@ namespace HP41CV {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Extention functions ähnelt.
+        /// </summary>
+        internal static string HelpExtention {
+            get {
+                return ResourceManager.GetString("HelpExtention", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Factorial ähnelt.
         /// </summary>
         internal static string HelpFACT {
@@ -904,6 +931,15 @@ namespace HP41CV {
         internal static string HelpGRAD {
             get {
                 return ResourceManager.GetString("HelpGRAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hexadecimal display ähnelt.
+        /// </summary>
+        internal static string HelpHEX {
+            get {
+                return ResourceManager.GetString("HelpHEX", resourceCulture);
             }
         }
         
@@ -1624,6 +1660,15 @@ namespace HP41CV {
         internal static string HelpSST {
             get {
                 return ResourceManager.GetString("HelpSST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Standard functions ähnelt.
+        /// </summary>
+        internal static string HelpStandard {
+            get {
+                return ResourceManager.GetString("HelpStandard", resourceCulture);
             }
         }
         

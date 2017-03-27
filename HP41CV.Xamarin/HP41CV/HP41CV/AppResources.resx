@@ -801,4 +801,19 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="HelpBIN" xml:space="preserve">
+    <value>Binary display</value>
+  </data>
+  <data name="HelpCNK" xml:space="preserve">
+    <value>binomial coefficient</value>
+  </data>
+  <data name="HelpExtention" xml:space="preserve">
+    <value>Extention functions</value>
+  </data>
+  <data name="HelpHEX" xml:space="preserve">
+    <value>Hexadecimal display</value>
+  </data>
+  <data name="HelpStandard" xml:space="preserve">
+    <value>Standard functions</value>
+  </data>
 </root>

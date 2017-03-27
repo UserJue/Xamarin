@@ -1665,16 +1665,15 @@ namespace HP41CV.Models
                 UsedFormat = Format.Hex;
                 SetValue(X);
             }, (v) => IsBetween(v, 1, 8), false, "HEX")
-            { IsFormat = true };
+            { IsFormat = true ,Description = AppResources.HelpHEX};
             ActionModels.AddExtension(action.Text, "FORMAT", action);
             action = new SelectActionModel(this, (v) =>
             {
-                Messenger.ShowDialogAsync(AppResources.NotYet);
-                //Precision = v;
-                //UsedFormat = Format.Bin;
-                //SetValue(X);
-            }, (v) => IsBetween(v, 1, 8), false, "BIN")
-            { IsFormat = true };
+                Precision = v;
+                UsedFormat = Format.Bin;
+                SetValue(X);
+            }, (v) => IsBetween(v, 1, 4), false, "BIN")
+            { IsFormat = true ,Description = AppResources.HelpBIN};
             ActionModels.AddExtension(action.Text, "FORMAT", action);
 
             action = new ModelActionModel(this, () =>
@@ -1714,7 +1713,7 @@ namespace HP41CV.Models
             }, "NOUPN")
             { IsUpn = false };
             ActionModels.AddExtension(action.Text, "NOUPN", action);
-            action = new BinaryOperationModel(this, (a, b) => Cnk(a,b), "CNK");
+            action = new BinaryOperationModel(this, (a, b) => Cnk(a,b), "CNK") {Description = AppResources.HelpCNK};
             ActionModels.AddExtension(action.Text,"CNK", action);
             action = new ModelActionModel(this, () =>
             {

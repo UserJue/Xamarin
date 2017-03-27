@@ -108,9 +108,15 @@ namespace HP41CV.ViewModels
             AboutCommand = new Command(() => AboutAction?.Invoke());
 
             Keys = new Collection<HelpKeyViewModel>();
+            Keys.Add(new HelpKeyViewModel(null,AppResources.HelpStandard));
             foreach (var action in ActionModels.GetActionDescritions(m => !string.IsNullOrEmpty(m.Description)))
             {
                 Keys.Add(new HelpKeyViewModel(action.Item1,action.Item2));
+            }
+            Keys.Add(new HelpKeyViewModel(null, AppResources.HelpExtention));
+            foreach (var action in ActionModels.GetExtentionActionDescritions(m => !string.IsNullOrEmpty(m.Description)))
+            {
+                Keys.Add(new HelpKeyViewModel(action.Item1, action.Item2));
             }
             Course = new Collection<HelpCourseVewModel>
             {

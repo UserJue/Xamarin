@@ -336,6 +336,9 @@
   <data name="OnlyUpn" xml:space="preserve">
     <value>This function requires UPN mode</value>
   </data>
+  <data name="HelpStandard" xml:space="preserve">
+    <value>Standard functions</value>
+  </data>
   <data name="Chapter2Remark" xml:space="preserve">
     <value />
   </data>
@@ -744,6 +747,9 @@
   <data name="HelpAbs" xml:space="preserve">
     <value>Absolute value</value>
   </data>
+  <data name="HelpBIN" xml:space="preserve">
+    <value>Binary display</value>
+  </data>
   <data name="HelpMOD" xml:space="preserve">
     <value>Modulo (remainder)</value>
   </data>
@@ -752,6 +758,9 @@
   </data>
   <data name="HelpCOS" xml:space="preserve">
     <value>Cosine</value>
+  </data>
+  <data name="HelpCNK" xml:space="preserve">
+    <value>binomial coefficient</value>
   </data>
   <data name="HelpCAT" xml:space="preserve">
     <value>Catalog list of </value>
@@ -783,11 +792,17 @@
   <data name="HelpHMS" xml:space="preserve">
     <value>Hours (decimal) to hours minutes, seconds conversion</value>
   </data>
+  <data name="HelpHEX" xml:space="preserve">
+    <value>Hexadecimal display</value>
+  </data>
   <data name="ResultText" xml:space="preserve">
     <value>Result</value>
   </data>
   <data name="Function6Title" xml:space="preserve">
     <value>Register function</value>
+  </data>
+  <data name="HelpExtention" xml:space="preserve">
+    <value>Extention functions</value>
   </data>
   <data name="ForW" xml:space="preserve">
     <value>for Windows</value>

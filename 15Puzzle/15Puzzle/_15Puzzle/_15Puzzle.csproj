@@ -49,13 +49,27 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\15Puzzle.cs" />
+    <Compile Include="Models\PuzzleInfo.cs" />
+    <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\Tile.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\IPanViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PuzzleInfoViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\TileViewModel.cs" />
+    <Compile Include="Views\15PuzzleView.xaml.cs">
+      <DependentUpon>15PuzzleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PanContainer.cs" />
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TileView.xaml.cs">
       <DependentUpon>TileView.xaml</DependentUpon>
     </Compile>
@@ -123,6 +137,59 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pictures\Setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pictures\USA_Zion00.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion01.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion02.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion03.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion04.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion05.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion10.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion11.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion12.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion13.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion14.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion15.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion20.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion21.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion22.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion23.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion24.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion25.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion30.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion31.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion32.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion33.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion34.png" />
+    <EmbeddedResource Include="Pictures\USA_Zion35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pictures\USA_Zion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\15PuzzleView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AboutView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\JS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SettingsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pictures\RotenburgOdT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
