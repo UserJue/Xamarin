@@ -15,6 +15,8 @@ namespace _15Puzzle.ViewModels
 
         public string Picture => model.Picture;
 
+        public string Size => (model.Tiles == 15) ? "4 * 4" : (model.Landscape) ? "6 * 4" : "4 * 6";
+
         public PuzzleInfo Model => model;
 
         public PuzzleInfoViewModel(PuzzleInfo model)

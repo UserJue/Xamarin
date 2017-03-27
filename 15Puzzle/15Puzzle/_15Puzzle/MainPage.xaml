@@ -56,40 +56,53 @@
       <views:TileView x:Name="Tile24" BindingContext="{Binding Path=Tiles[23]}" />
     </AbsoluteLayout>
     <Image Grid.Row="0" Grid.Column="0" x:Name="Picture" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  IsVisible="{Binding Path=ShowPicture}" Aspect="AspectFit"/>
-    <Button Grid.Row="1" Grid.Column="0" x:Name="ShowPictureButton" Text="{Binding Path=ShowPictureText}" Command="{Binding Path=ShowPictureCommand}" IsVisible="{Binding Path=IsPortrait}"/>
-    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Start" IsVisible="{Binding Path=IsPortrait}">
-      <Label Text="Moves" />
-      <Label Text="{Binding Path=UsedMoves}" />
-    </StackLayout>
-    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="End" IsVisible="{Binding Path=IsPortrait}">
-      <Label Text="Used Time" />
-      <Label Text="{Binding Path=UsedTime}" />
-    </StackLayout>
-    <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal" IsVisible="{Binding Path=IsPortrait}" HorizontalOptions="End">
-      <Button Text="Shuffle" Command="{Binding Path=ShuffleCommand}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Path=ShowShuffle}"/>
-      <Image Source="{Binding Path=StartBreakPicture,Converter={StaticResource ImageConverter}}" VerticalOptions="FillAndExpand" HorizontalOptions="End">
-        <Image.HeightRequest>
-          <OnPlatform x:TypeArguments="x:Double"
-                      iOS="80"
-                      Android="50"
-                      WinPhone="50"/>
-        </Image.HeightRequest>
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding Path=StartBreakCommand}"></TapGestureRecognizer>
-        </Image.GestureRecognizers>
-      </Image>
-      <Image Source="{Binding Path=SettingPicture,Converter={StaticResource ImageConverter}}}" VerticalOptions="FillAndExpand" HorizontalOptions="End">
-        <Image.HeightRequest>
-          <OnPlatform x:TypeArguments="x:Double"
-                      iOS="80"
-                      Android="50"
-                      WinPhone="50"/>
-        </Image.HeightRequest>
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding Path=SettingCommand}"></TapGestureRecognizer>
-        </Image.GestureRecognizers>
-      </Image>
-    </StackLayout>
+    <Grid Grid.Row="1" Grid.Column="0" IsVisible="{Binding Path=IsPortrait}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Image Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="150" IsVisible="{Binding Path=ShowPreview}" Aspect="AspectFit"/>
+      <Button Grid.Row="0" Grid.Column="1" Text="{Binding Path=ShowPictureText}" Command="{Binding Path=ShowPictureCommand}" />
+      <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
+        <Label Text="Moves" />
+        <Label Text="{Binding Path=UsedMoves}" />
+      </StackLayout>
+      <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
+        <Label Text="Used Time" />
+        <Label Text="{Binding Path=UsedTime}" />
+      </StackLayout>
+      <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
+        <Button Text="Shuffle" Command="{Binding Path=ShuffleCommand}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Path=ShowShuffle}"/>
+        <Image Source="{Binding Path=StartBreakPicture,Converter={StaticResource ImageConverter}}" VerticalOptions="FillAndExpand" HorizontalOptions="End">
+          <Image.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+                        iOS="80"
+                        Android="50"
+                        WinPhone="50"/>
+          </Image.HeightRequest>
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding Path=StartBreakCommand}"></TapGestureRecognizer>
+          </Image.GestureRecognizers>
+        </Image>
+        <Image Source="{Binding Path=SettingPicture,Converter={StaticResource ImageConverter}}}" VerticalOptions="FillAndExpand" HorizontalOptions="End">
+          <Image.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+                        iOS="80"
+                        Android="50"
+                        WinPhone="50"/>
+          </Image.HeightRequest>
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding Path=SettingCommand}"></TapGestureRecognizer>
+          </Image.GestureRecognizers>
+        </Image>
+      </StackLayout>
+    </Grid>
     <Grid Grid.Row="0" Grid.Column="1" IsVisible="{Binding Path=IsLandscape}" HorizontalOptions="Start" VerticalOptions="Fill">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />

@@ -226,7 +226,7 @@ namespace _15Puzzle.Models
 
         public void Shuffle()
         {
-            for (var i = 0; i < 20; i++)
+            for (var i = 0; i < 0; i++)
             {
                 var index1 = random.Next(DimensionX* DimensionY-1);
                 var index2 = random.Next(DimensionX * DimensionY-1);
@@ -247,8 +247,8 @@ namespace _15Puzzle.Models
         {
             var result = true;
             var index = 0;
-            for (var i = 0; i < DimensionX; i++)
-                for (var j = 0; j < DimensionY; j++)
+            for (var j = 0; j < DimensionY; j++)
+                for (var i = 0; i < DimensionX; i++)
                 {
                     if ((places[i][j] >= 0) && (places[i][j] < Tiles.Count))
                     {

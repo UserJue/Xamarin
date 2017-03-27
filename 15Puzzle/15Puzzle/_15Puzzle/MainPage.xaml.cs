@@ -72,7 +72,6 @@ namespace _15Puzzle
             dimensionX = model.DimensionX;
             dimensionY = model.DimensionY;
             AbsoluteLayout.SetLayoutBounds(Board, new Rectangle(0, 0, tileSize*model.DimensionX, tileSize*model.DimensionY));
-            ShowPictureButton.WidthRequest = tileSize*4;
 			if (mainViewModel.IsLandscape != landScape)
 			{
 				mainViewModel.IsLandscape = landScape;

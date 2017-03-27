@@ -36,6 +36,7 @@ namespace _15Puzzle.ViewModels
             {
                 if (showPreview != value)
                 {
+                    showPreview = value;
                     model.ShowPreview = value == 1;
                 }
             }

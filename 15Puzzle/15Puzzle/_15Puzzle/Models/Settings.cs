@@ -32,7 +32,7 @@ namespace _15Puzzle.Models
                 if (value == showPreview) return;
                 showPreview = value;
                 Application.Current.Properties["ShowPreview"] = showPreview;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(ShowPreview));
             }
         }
 

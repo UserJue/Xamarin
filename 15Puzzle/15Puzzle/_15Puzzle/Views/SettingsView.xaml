@@ -13,7 +13,7 @@
     <Button Grid.Row="0" Text="{Binding BackText}" HorizontalOptions="Start" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack1Visible}"/>
     <StackLayout Grid.Row="1">
       <Label Text="{Binding Path=PictureCapture}" />
-      <ListView ItemsSource="{Binding Path=PuzzleInfos}" SelectedItem="{Binding Path=SelectedPuzzleInfo}" >
+      <ListView ItemsSource="{Binding Path=PuzzleInfos}" SelectedItem="{Binding Path=SelectedPuzzleInfo}" HasUnevenRows="True" >
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
@@ -23,8 +23,9 @@
                   <ColumnDefinition Width="2*" />
                   <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" />
-                <Label Grid.Column="1" Text="{Binding Path=Name}" />
+                <Image Grid.Column="0" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="{Binding Path=Name}" VerticalOptions="Center" />
+                <Label Grid.Column="2" Text="{Binding Path=Size}" VerticalOptions="Center" />
               </Grid>
             </ViewCell>
           </DataTemplate>
