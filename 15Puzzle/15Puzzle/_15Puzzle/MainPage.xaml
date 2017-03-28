@@ -67,15 +67,8 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Image Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding Path=ShowPreview}" Aspect="AspectFit">
-        <Image.HeightRequest>
-          <OnPlatform x:TypeArguments="x:Double"
-                      iOS="100"
-                      Android="150"
-                      WinPhone="150"/>
-          </Image.HeightRequest>
-        </Image>
-        <Button Grid.Row="0" Grid.Column="1" Text="{Binding Path=ShowPictureText}" Command="{Binding Path=ShowPictureCommand}" />
+      <Image x:Name="PreviewP" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding Path=ShowPreview}" Aspect="AspectFit" />
+      <Button Grid.Row="0" Grid.Column="1" Text="{Binding Path=ShowPictureText}" Command="{Binding Path=ShowPictureCommand}" />
       <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
         <Label Text="Moves" />
         <Label Text="{Binding Path=UsedMoves}" />
@@ -128,7 +121,7 @@
         <Label Text="Used Time : " />
         <Label Text="{Binding Path=UsedTime}" />
       </StackLayout>
-      <Image Grid.Row="3" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="150" IsVisible="{Binding Path=ShowPreview}" Aspect="AspectFit"/>
+      <Image x:Name="PreviewL" Grid.Row="3" Source="{Binding Path=Picture,Converter={StaticResource ImageConverter}}" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding Path=ShowPreview}" Aspect="AspectFit"/>
       <Button Grid.Row="4" Text="Shuffle" Command="{Binding Path=ShuffleCommand}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Path=ShowShuffle}"/>
       <StackLayout Grid.Row="5" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
         <Image Source="{Binding Path=StartBreakPicture,Converter={StaticResource ImageConverter}}" VerticalOptions="FillAndExpand" HorizontalOptions="End">

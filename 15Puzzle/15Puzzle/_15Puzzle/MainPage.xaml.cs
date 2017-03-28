@@ -78,7 +78,9 @@ namespace _15Puzzle
                 contentView.ForceLayout();
 				init = false;
 			}
-		}
+            PreviewP.HeightRequest = 120;
+            PreviewL.WidthRequest = 120;
+        }
 
         protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
         {

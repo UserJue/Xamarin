@@ -217,21 +217,56 @@ namespace _15PuzzleUnitTests
             for (var holeIndex = 0; holeIndex < tilesCount + 1; holeIndex++)
                 CheckMove(tilesCount, model, holeIndex, settings, dX, dY);
         }
-        private void CheckMove(int tilesCount, _15Puzzle.Models._15Puzzle model, int holeIndex, Settings settings, double dX, int dY)
+
+        [TestMethod]
+        public void OnMoveX_notMoved_Left12()
+        {
+            var tilesCount = 23;
+            var dX = -1.2;
+            var dY = 0;
+            model = new _15Puzzle.Models._15Puzzle();
+            var settings = new Settings();
+            settings.PuzzleInfos.Add(new PuzzleInfo("dummy", "dummy", 15, false));
+            settings.PuzzleInfo = settings.PuzzleInfos[0];
+            for (var holeIndex = 0; holeIndex < tilesCount + 1; holeIndex++)
+                CheckMove(tilesCount, model, holeIndex, settings, dX, dY,0);
+        }
+
+        [TestMethod]
+        public void OnMoveX_notMoved_Left_8_3()
+        {
+            var tilesCount = 23;
+            var dX = -0.3;
+            var dY = 0;
+            model = new _15Puzzle.Models._15Puzzle();
+            var settings = new Settings();
+            settings.PuzzleInfos.Add(new PuzzleInfo("dummy", "dummy", 15, false));
+            settings.PuzzleInfo = settings.PuzzleInfos[0];
+            for (var holeIndex = 0; holeIndex < tilesCount + 1; holeIndex++)
+                CheckMove(tilesCount, model, holeIndex, settings, dX, dY, 3,8);
+        }
+
+        private void CheckMove(int tilesCount, _15Puzzle.Models._15Puzzle model, int holeIndex, Settings settings, double dX, int dY,int possibleCount = 1,int count = 1)
         {
             for (var i = 0; i < tilesCount; i++)
             {
                 model.Create(tilesCount, holeIndex, true);
                 var sut = new MainViewModel(model, settings, false);
-                sut.Tiles[i].OnMove(dX, dY);
-                for (var j = 0; j < tilesCount; j++)
+                for (var k = 1; k <= count; k++)
                 {
-                    var dx = 0.0;
-                    var dy = 0.0;
-                    if ((dX > 0) && (j >= i) && SameRow(i, holeIndex) && SameRow(j, holeIndex) && LeftOf(j, holeIndex)) dx = dX;
-                    if ((dX < 0) && (j <= i) && SameRow(i, holeIndex) && SameRow(j, holeIndex) && RightOf(j, holeIndex)) dx = dX;
-                    Assert.AreEqual(posesX[holeIndex][j] + dx, sut.Tiles[j].X, string.Format("falsches X {0},{1},{2}", holeIndex,i,j));
-                    Assert.AreEqual(posesY[holeIndex/6][j] + dy, sut.Tiles[j].Y, "falsches Y");
+                    sut.Tiles[i].OnMove(dX*k, dY*k);
+                    for (var j = 0; j < tilesCount; j++)
+                    {
+                        var dx = 0.0;
+                        var dy = 0.0;
+                        if ( (dX > 0) && (j >= i) && SameRow(i, holeIndex) && SameRow(j, holeIndex) &&
+                            LeftOf(j, holeIndex)) dx = dX * Math.Min(k,possibleCount);
+                        if ( (dX < 0) && (j <= i) && SameRow(i, holeIndex) && SameRow(j, holeIndex) &&
+                            RightOf(j, holeIndex)) dx = dX * Math.Min(k, possibleCount);
+                        Assert.AreEqual(posesX[holeIndex][j] + dx, sut.Tiles[j].X,
+                            string.Format("falsches X {0},{1},{2},{3}", holeIndex, i, j,k));
+                        Assert.AreEqual(posesY[holeIndex/6][j] + dy, sut.Tiles[j].Y, "falsches Y");
+                    }
                 }
             }
         }
