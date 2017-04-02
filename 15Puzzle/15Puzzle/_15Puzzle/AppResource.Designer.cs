@@ -143,7 +143,7 @@ namespace _15Puzzle {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Pcture ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Picture ähnelt.
         /// </summary>
         internal static string PictureCapture {
             get {
