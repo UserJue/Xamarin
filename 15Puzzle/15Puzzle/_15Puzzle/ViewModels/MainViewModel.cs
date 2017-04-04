@@ -50,10 +50,10 @@ namespace _15Puzzle.ViewModels
 
         public string StartBreakPicture => (model.Status == Models._15Puzzle.GameStatus.None) ||
                        (model.Status == Models._15Puzzle.GameStatus.Inactiv)
-                    ? "Start"
-                    : (model.Status == Models._15Puzzle.GameStatus.Activ) ? "Break" : null;
+                    ? (Device.OS == TargetPlatform.iOS) ? "Start@3" : "Start"
+                    : (model.Status == Models._15Puzzle.GameStatus.Activ) ? (Device.OS == TargetPlatform.iOS) ? "Break@3" : "Break" : null;
 
-        public string SettingPicture => "Setting";
+        public string SettingPicture => (Device.OS == TargetPlatform.iOS) ? "Setting@3" :"Setting";
 
         public Action OnTilesMoved;
 

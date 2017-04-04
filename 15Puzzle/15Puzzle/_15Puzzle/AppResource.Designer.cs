@@ -179,7 +179,7 @@ namespace _15Puzzle {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Puzzle solved, Congratulation!  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Puzzle solved, Congratulation! Your score is  ähnelt.
         /// </summary>
         internal static string WinMessage {
             get {

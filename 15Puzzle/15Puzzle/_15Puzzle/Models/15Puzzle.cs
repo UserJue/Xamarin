@@ -341,8 +341,15 @@ namespace _15Puzzle.Models
             UsedMoves++;
             if (result)
             {
+                usedTime += (DateTime.Now - startTime);
+                startTime = DateTime.Now;
+                var factor = ((usedTime.Minutes >= 60)
+                    ? 1
+                    : (usedTime.Minutes > 10) ? (600 - usedTime.Minutes + 10) : 6000 - usedTime.TotalSeconds);
+                var score = (usedMoves < 100) ? 100000 + (100 - usedMoves)* factor : 
+                    (1000 - usedMoves) * (factor/10+1);
                 if (Application.Current.MainPage != null)
-                    Application.Current.MainPage.DisplayAlert(AppResource.ApplicationTitle, AppResource.WinMessage, "OK");
+                    Application.Current.MainPage.DisplayAlert(AppResource.ApplicationTitle, AppResource.WinMessage + (int)score, "OK");
                 Status = GameStatus.Finished;
             }
             return result;

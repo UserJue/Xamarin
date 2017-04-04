@@ -157,6 +157,6 @@
     <value>Tiles</value>
   </data>
   <data name="WinMessage" xml:space="preserve">
-    <value>Puzzle solved, Congratulation! </value>
+    <value>Puzzle solved, Congratulation! Your score is </value>
   </data>
 </root>
