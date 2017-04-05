@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization.Json;
 using Xamarin.Forms;
 using _15Puzzle.Annotations;
 
@@ -20,8 +21,11 @@ namespace _15Puzzle.Models
 
         public IList<Tile> Tiles { get; set; }
 
+        public int[][] Places { get; private set; }
         public int DimensionX { get; private set; }
         public int DimensionY { get; private set; }
+        public int HoleX { get; set; }
+        public int HoleY { get; set; }
 
         public GameStatus Status
         {
@@ -94,6 +98,13 @@ namespace _15Puzzle.Models
             if (intValue1 == null) return false;
             DimensionY = intValue1.Value;
             Tiles.Clear();
+            Places = new int[DimensionX][];
+            for (int i = 0; i < DimensionX; i++)
+            {
+                Places[i] = new int[DimensionY];
+                for (var j = 0; j < DimensionY; j++)
+                    Places[i][j] = -1;
+            }
             for (var i = 0; i < DimensionX*DimensionY-1; i++)
             {
                 var key = $"Tile_{i}_0X";
@@ -105,24 +116,34 @@ namespace _15Puzzle.Models
                 intValue2 = settingsDictionary[key] as int?;
                 if (intValue2 == null) return false;
                 var tile = new Tile(i, intValue1.Value, intValue2.Value);
-                key = $"Tile_{i}_X";
-                if (!settingsDictionary.ContainsKey(key)) return false;
-                intValue1 = settingsDictionary[key] as int?;
-                if (intValue1 == null) return false;
-                tile.IndexX = intValue1.Value;
-                key = $"Tile_{i}_Y";
-                if (!settingsDictionary.ContainsKey(key)) return false;
-                intValue2 = settingsDictionary[key] as int?;
-                if (intValue2 == null) return false;
-                tile.IndexY = intValue2.Value;
+                if (usedMoves > 0)
+                {
+                    key = $"Tile_{i}_X";
+                    if (!settingsDictionary.ContainsKey(key)) return false;
+                    intValue1 = settingsDictionary[key] as int?;
+                    if (intValue1 == null) return false;
+                    tile.IndexX = intValue1.Value;
+                    key = $"Tile_{i}_Y";
+                    if (!settingsDictionary.ContainsKey(key)) return false;
+                    intValue2 = settingsDictionary[key] as int?;
+                    if (intValue2 == null) return false;
+                    tile.IndexY = intValue2.Value;
+                }
                 Tiles.Add(tile);
+                Places[tile.IndexX][tile.IndexY] = tile.Index;
+            }
+            if (settingsDictionary.ContainsKey("Status"))
+            {
+                intValue1 = settingsDictionary["Status"] as int?;
+                if (intValue1 != null)
+                    status = (GameStatus) intValue1;
             }
             return true;
         }
 
         public void SaveToProperties()
         {
-            //            Application.Current.Properties["Status"] = Status;
+            Application.Current.Properties["Status"] = (int)Status;
             Application.Current.Properties["UsedMoves"] = usedMoves;
             Application.Current.Properties["UsedTime"] = (int)usedTime.TotalSeconds;
             foreach (var tile in Tiles)
@@ -165,14 +186,23 @@ namespace _15Puzzle.Models
                     return false;
             }
             Tiles.Clear();
+            Places = new int[DimensionX][];
+            for (int i = 0; i < DimensionX; i++)
+            {
+                Places[i] = new int[DimensionY];
+            }
             var index = 0;
             for (var j = 0; j < DimensionY; j++)
                 for (var i = 0;i < DimensionX;i++)
                 {
                     if (index >= tilesNumber) break;
                     Tiles.Add(new Tile(index,i,j));
+                    Places[i][j] = index;
                     index++;
                 }
+            HoleX = DimensionX-1;
+            HoleY = DimensionY-1;
+            Places[HoleX][HoleY] = -1;
             Shuffle();
             Application.Current.Properties["Picture"] = Picture;
             Application.Current.Properties["DimensionX"] = DimensionX;
@@ -210,15 +240,24 @@ namespace _15Puzzle.Models
             Tiles.Clear();
             var index = 0;
             var hole = false;
+            Places = new int[DimensionX][];
+            for (int i = 0; i < DimensionX; i++)
+            {
+                Places[i] = new int[DimensionY];
+            }
             for (var j = 0; j < DimensionY; j++)
                 for (var i = 0; i < DimensionX; i++)
                 {
                     if ((index == holeIndex) && !hole)
                     {
+                        HoleX = i;
+                        HoleY = j;
+                        Places[HoleX][HoleY] = -1;
                         hole = true;
                         continue;
                     }
                     Tiles.Add(new Tile(index, i, j));
+                    Places[i][j] = index;
                     index++;
                 }
             return true;
@@ -226,21 +265,74 @@ namespace _15Puzzle.Models
 
         public void Shuffle()
         {
-            for (var i = 0; i < 50; i++)
+            Status = GameStatus.None;
+            usedTime = TimeSpan.Zero;
+            usedMoves = 0;
+            OnPropertyChanged(nameof(Status));
+            OnPropertyChanged(nameof(UsedMoves));
+            OnPropertyChanged(nameof(UsedTime));
+            for (var i = 0; i < 1500; i++)
             {
-                var index1 = random.Next(DimensionX* DimensionY-1);
-                var index2 = random.Next(DimensionX * DimensionY-1);
-                if (index1 != index2)
+                int dir;
+                try
                 {
-                    var x = Tiles[index1].IndexX;
-                    var y = Tiles[index1].IndexY;
-                    Tiles[index1].IndexX = Tiles[index2].IndexX;
-                    Tiles[index1].IndexY = Tiles[index2].IndexY;
-                    Tiles[index2].IndexX = x;
-                    Tiles[index2].IndexY = y;
+                    dir = random.Next(4);
+                    if(!Move(dir))
+                        i--;
+                }
+                catch (Exception)
+                {
+                    dir = 0;
                 }
             }
+            //var index1 = random.Next(DimensionX* DimensionY-1);
+            //var index2 = random.Next(DimensionX * DimensionY-1);
+            //if (index1 != index2)
+            //{
+            //    var x = Tiles[index1].IndexX;
+            //    var y = Tiles[index1].IndexY;
+            //    Tiles[index1].IndexX = Tiles[index2].IndexX;
+            //    Tiles[index1].IndexY = Tiles[index2].IndexY;
+            //    Tiles[index2].IndexX = x;
+            //    Tiles[index2].IndexY = y;
+            //}
             Status = GameStatus.None;
+        }
+
+        public bool Move(int dir)
+        {
+            switch (dir)
+            {
+                case 0: // Up
+                    if (HoleY == DimensionY - 1) return false;
+                    Tiles[Places[HoleX][HoleY + 1]].IndexY--;
+                    Places[HoleX][HoleY] = Places[HoleX][HoleY + 1];
+                    HoleY++;
+                    Places[HoleX][HoleY] = -1;
+                    break;
+                case 1: // Right
+                    if (HoleX == 0) return false;
+                    Tiles[Places[HoleX - 1][HoleY]].IndexX++;
+                    Places[HoleX][HoleY] = Places[HoleX - 1][HoleY];
+                    HoleX--;
+                    Places[HoleX][HoleY] = -1;
+                    break;
+                case 2: // Down
+                    if (HoleY == 0) return false;
+                    Tiles[Places[HoleX][HoleY - 1]].IndexY++;
+                    Places[HoleX][HoleY] = Places[HoleX][HoleY - 1];
+                    HoleY--;
+                    Places[HoleX][HoleY] = -1;
+                    break;
+                default: // Left
+                    if (HoleX == DimensionX - 1) return false;
+                    Tiles[Places[HoleX + 1][HoleY]].IndexX--;
+                    Places[HoleX][HoleY] = Places[HoleX + 1][HoleY];
+                    HoleX++;
+                    Places[HoleX][HoleY] = -1;
+                    break;
+            }
+            return true;
         }
 
         public bool CheckFinished(int[][] places)
@@ -261,8 +353,15 @@ namespace _15Puzzle.Models
             UsedMoves++;
             if (result)
             {
+                usedTime += (DateTime.Now - startTime);
+                startTime = DateTime.Now;
+                var factor = ((usedTime.Minutes >= 60)
+                    ? 1
+                    : (usedTime.Minutes > 10) ? (600 - usedTime.Minutes + 10) : 6000 - usedTime.TotalSeconds);
+                var score = (usedMoves < 100) ? 100000 + (100 - usedMoves)* factor : 
+                    (1000 - usedMoves) * (factor/10+1);
                 if (Application.Current.MainPage != null)
-                    Application.Current.MainPage.DisplayAlert(AppResource.ApplicationTitle, AppResource.WinMessage, "OK");
+                    Application.Current.MainPage.DisplayAlert(AppResource.ApplicationTitle, AppResource.WinMessage + (int)score, "OK");
                 Status = GameStatus.Finished;
             }
             return result;

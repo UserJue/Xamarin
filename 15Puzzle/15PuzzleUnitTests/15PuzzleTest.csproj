@@ -55,6 +55,7 @@
     <Compile Include="MainViewModelTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_15PuzzleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\15Puzzle\_15Puzzle\_15Puzzle.csproj">

@@ -27,7 +27,7 @@ namespace _15Puzzle
             if (!settings.LoadFromProperties())
                 settings.PuzzleInfo = settings.PuzzleInfos[0]; 
             model = new Models._15Puzzle();
-            if (!model.LoadFromProperties())
+            if (!model.LoadFromProperties() || (model.Picture != settings.PuzzleInfo.Picture) || (model.Status == Models._15Puzzle.GameStatus.None) || (model.Status == Models._15Puzzle.GameStatus.Finished))
                 model.Create(settings.PuzzleInfo.Tiles, settings.PuzzleInfo.Picture, settings.PuzzleInfo.Landscape);
             mainViewModel = new MainViewModel(model,settings) {OnTilesMoved = SetTiles};
             BindingContext = mainViewModel;
@@ -78,7 +78,9 @@ namespace _15Puzzle
                 contentView.ForceLayout();
 				init = false;
 			}
-		}
+            PreviewP.HeightRequest = 120;
+            PreviewL.WidthRequest = 120;
+        }
 
         protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
         {
