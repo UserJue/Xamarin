@@ -12,6 +12,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -25,7 +26,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>_15Puzzle</string>
 	<key>CFBundleIdentifier</key>
-	<string>UserJue._15Puzzle</string>
+	<string>UserJue.-15Puzzle</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
@@ -49,6 +50,6 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleShortVersionString</key>
-	<string></string>
+	<string>1.0.2</string>
 </dict>
 </plist>

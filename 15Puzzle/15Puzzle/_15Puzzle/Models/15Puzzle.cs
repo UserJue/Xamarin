@@ -132,12 +132,18 @@ namespace _15Puzzle.Models
                 Tiles.Add(tile);
                 Places[tile.IndexX][tile.IndexY] = tile.Index;
             }
+            if (settingsDictionary.ContainsKey("Status"))
+            {
+                intValue1 = settingsDictionary["Status"] as int?;
+                if (intValue1 != null)
+                    status = (GameStatus) intValue1;
+            }
             return true;
         }
 
         public void SaveToProperties()
         {
-            //            Application.Current.Properties["Status"] = Status;
+            Application.Current.Properties["Status"] = (int)Status;
             Application.Current.Properties["UsedMoves"] = usedMoves;
             Application.Current.Properties["UsedTime"] = (int)usedTime.TotalSeconds;
             foreach (var tile in Tiles)
@@ -259,7 +265,13 @@ namespace _15Puzzle.Models
 
         public void Shuffle()
         {
-            for (var i = 0; i < 200; i++)
+            Status = GameStatus.None;
+            usedTime = TimeSpan.Zero;
+            usedMoves = 0;
+            OnPropertyChanged(nameof(Status));
+            OnPropertyChanged(nameof(UsedMoves));
+            OnPropertyChanged(nameof(UsedTime));
+            for (var i = 0; i < 1500; i++)
             {
                 int dir;
                 try
