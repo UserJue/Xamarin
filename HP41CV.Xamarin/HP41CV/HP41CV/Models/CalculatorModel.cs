@@ -460,9 +460,6 @@ namespace HP41CV.Models
             var program = new ProgramModel(this, "HEX 8");
             program.AddStep(GetActionModel("HEX"), 8);
             this.Programs.Add(program.Text, program);
-            program = new ProgramModel(this, "BIN 8");
-            program.AddStep(GetActionModel("BIN"), 8);
-            this.Programs.Add(program.Text, program);
             program = new ProgramModel(this, "FIX 4");
             program.AddStep(GetActionModel("FIX"), 4);
             this.Programs.Add(program.Text, program);
@@ -1667,14 +1664,14 @@ namespace HP41CV.Models
             }, (v) => IsBetween(v, 1, 8), false, "HEX")
             { IsFormat = true ,Description = AppResources.HelpHEX};
             ActionModels.AddExtension(action.Text, "FORMAT", action);
-            action = new SelectActionModel(this, (v) =>
-            {
-                Precision = v;
-                UsedFormat = Format.Bin;
-                SetValue(X);
-            }, (v) => IsBetween(v, 1, 4), false, "BIN")
-            { IsFormat = true ,Description = AppResources.HelpBIN};
-            ActionModels.AddExtension(action.Text, "FORMAT", action);
+            //action = new SelectActionModel(this, (v) =>
+            //{
+            //    Precision = v;
+            //    UsedFormat = Format.Bin;
+            //    SetValue(X);
+            //}, (v) => IsBetween(v, 1, 4), false, "BIN")
+            //{ IsFormat = true ,Description = AppResources.HelpBIN};
+            //ActionModels.AddExtension(action.Text, "FORMAT", action);
 
             action = new ModelActionModel(this, () =>
             {
