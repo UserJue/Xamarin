@@ -67,6 +67,12 @@ namespace HP41CV.ViewModels
 
         public string AboutText { get; set; }
 
+        public Action OptionAction;
+
+        public ICommand OptionCommand { get; private set; }
+
+        public string OptionText { get; set; }
+
         public string Title { get; set; }
 
         public string Topic { get; set; }
@@ -100,12 +106,14 @@ namespace HP41CV.ViewModels
             back1 = true;
             Title = !useAppResource ? "HelpTitle" : AppResources.HelpTitle;
             AboutText = !useAppResource ? "AboutCommand" : AppResources.AboutCommand;
+            OptionText = !useAppResource ? "OptionCommand" : AppResources.OptionCommand;
             Topics = new List<string> { !useAppResource ? "FunctionTitle" : AppResources.FunctionTitle, !useAppResource ? "UPNCourseTitle" : AppResources.UPNCourseTitle, };
             SelectedIndex = 0;
             KeysVisible = true;
             CourseVisible = false;
             BackCommand = new Command(() => BackAction?.Invoke());
             AboutCommand = new Command(() => AboutAction?.Invoke());
+            OptionCommand = new Command(() => OptionAction?.Invoke());
 
             Keys = new Collection<HelpKeyViewModel>();
             Keys.Add(new HelpKeyViewModel(null,AppResources.HelpStandard));

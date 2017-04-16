@@ -816,4 +816,16 @@
   <data name="HelpStandard" xml:space="preserve">
     <value>Standard functions</value>
   </data>
+  <data name="OptionCommand" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="OptionConstants" xml:space="preserve">
+    <value>Lock up the most importend physical constants</value>
+  </data>
+  <data name="OptionConstants1" xml:space="preserve">
+    <value>use the value in calculation or programs by typing in the name</value>
+  </data>
+  <data name="OptionsTitle" xml:space="preserve">
+    <value>Options</value>
+  </data>
 </root>

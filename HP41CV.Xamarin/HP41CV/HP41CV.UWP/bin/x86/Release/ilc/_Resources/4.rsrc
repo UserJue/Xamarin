@@ -14,8 +14,7 @@
     <StackLayout AbsoluteLayout.LayoutBounds="330,10,70,44" Orientation="Horizontal" IsVisible="{Binding Path=NumVisible}">
       <Label Text="{Binding Path=Display4}"  TextColor="#FF080808" FontAttributes="Bold" FontFamily="Courier New" FontSize="24"/>
       <Label Text="{Binding Path=DisplayC2}" TextColor="#FF080808" FontAttributes="Bold" FontFamily="Courier New" FontSize="24"/>
-    </StackLayout>
-    <Grid AbsoluteLayout.LayoutBounds="34,10,350,44" IsVisible="{Binding Path=BinVisible}">
+    </StackLayout>    <Grid AbsoluteLayout.LayoutBounds="34,10,350,44" IsVisible="{Binding Path=BinVisible}">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="*" />

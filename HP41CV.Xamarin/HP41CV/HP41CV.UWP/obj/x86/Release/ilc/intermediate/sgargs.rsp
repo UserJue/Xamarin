@@ -1,0 +1,11 @@
+/out:"C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\intermediate\SgGenerated\\"
+/int:"C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\intermediate\\"
+/ref:"C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\intermediate\PreMergeILTransformed\\"
+/ref:"C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\intermediate\TransformedSRWR\\"
+/ref:"C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\in\\"
+/ref:"C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\in\\"
+/ref:"C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\in\\"
+/ref:"C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\x86\ilc\lib\Private\\"
+/ref:"C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\in\WinMetadata\\"
+/ca:System.Private.CoreLib
+"@C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Release\ilc\intermediate\PreMergeILTransformed\ComputedSerializationInput.txt"

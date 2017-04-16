@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HP41CV.Views.ToggleView">
+  <Grid HeightRequest="40" BackgroundColor="#FF2D1D18" VerticalOptions="Center">
+    <Grid.GestureRecognizers>
+      <TapGestureRecognizer Command="{Binding Path=PerfomKeyCommand}" />
+    </Grid.GestureRecognizers>
+    <Frame OutlineColor="#FFF0E0A0"  BackgroundColor="#FF2D1D18" HorizontalOptions="Fill" VerticalOptions="Fill" />
+    <Label Text="{Binding Path=Text}" TextColor="#FFF0E0A0"  FontSize="14" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+  </Grid>
+</ContentView>

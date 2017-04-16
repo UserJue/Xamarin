@@ -88,6 +88,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Helpers\PlatformMarketPlace.cs" />
     <Compile Include="Helpers\PlatformMessenger.cs" />
     <Compile Include="Helpers\PlatformSoundPlayer.cs" />
     <Compile Include="Helpers\PlattformLocalize.cs" />

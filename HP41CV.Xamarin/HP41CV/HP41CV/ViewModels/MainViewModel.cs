@@ -11,6 +11,8 @@ namespace HP41CV.ViewModels
     {
         private bool helpVisible;
 
+        private bool optionVisible;
+
         public bool OneView { get; set; }
 
         public bool ThreeViews { get; set; }
@@ -22,6 +24,8 @@ namespace HP41CV.ViewModels
         public AboutViewModel AboutViewModel { get; }
 
         public HelpViewModel HelpViewModel { get; }
+
+        public OptionsViewModel OptionsViewModel { get; }
 
         public MainViewModel()
         {
@@ -39,13 +43,19 @@ namespace HP41CV.ViewModels
                     break;
             }
             HelpViewModel = new HelpViewModel() { BackText = !useAppResource ? "Close" : AppResources.Close };
+            OptionsViewModel = new OptionsViewModel() { BackText = !useAppResource ? "Close" : AppResources.Close };
+
             CalculatorViewModel.IsVisible = true;
             AboutViewModel.IsVisible = helpVisible;
             AboutViewModel.IsBack2Visible = true;
             CalculatorViewModel.ShowHelpAction = () =>
             {
-                helpVisible = !helpVisible;
+                if (optionVisible)
+                    optionVisible = false;
+                else
+                    helpVisible = !helpVisible;
                 HelpViewModel.IsVisible = helpVisible;
+                OptionsViewModel.IsVisible = optionVisible;
                 AboutViewModel.IsVisible = false;
                 CalculatorViewModel.IsVisible = !helpVisible || !OneView;
             };
@@ -60,13 +70,39 @@ namespace HP41CV.ViewModels
                 AboutViewModel.IsVisible = true;
                 HelpViewModel.IsVisible = ThreeViews;
             };
+            HelpViewModel.OptionAction = async () =>
+            {
+                await OptionsViewModel.LoadOptions();
+                optionVisible = true;
+                helpVisible = false;
+                OptionsViewModel.IsVisible = optionVisible;
+                HelpViewModel.IsVisible = helpVisible;
+            };
             AboutViewModel.BackAction = () =>
             {
                 AboutViewModel.IsVisible = false;
                 if (OneView)
+                {
                     helpVisible = false;
+                    optionVisible = false;
+                }
                 HelpViewModel.IsVisible = helpVisible;
+                OptionsViewModel.IsVisible = optionVisible;
                 CalculatorViewModel.IsVisible = true;
+            };
+            OptionsViewModel.IsVisible = false;
+            OptionsViewModel.BackAction = () =>
+            {
+                helpVisible = true;
+                optionVisible = false;
+                HelpViewModel.IsVisible = helpVisible;
+                OptionsViewModel.IsVisible = optionVisible;
+                CalculatorViewModel.IsVisible = !helpVisible || !OneView;
+            };
+            OptionsViewModel.AboutAction = () =>
+            {
+                AboutViewModel.IsVisible = true;
+                OptionsViewModel.IsVisible = ThreeViews;
             };
         }
 

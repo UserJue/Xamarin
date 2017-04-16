@@ -408,3 +408,4 @@ C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Debug\r
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Debug\resources.en.resfiles.intermediate
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\obj\x86\Debug\ProjectArchitectures.txt
+C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Debug\Data\in-app-purchase.xml

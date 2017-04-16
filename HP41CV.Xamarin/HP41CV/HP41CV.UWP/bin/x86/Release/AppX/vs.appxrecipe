@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-19T21:53:34.211</Modified>
+      <Modified>2017-04-14T09:44:02.561</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -76,71 +76,71 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\de\HP41CV.resources.dll">
       <PackagePath>de\HP41CV.resources.dll</PackagePath>
-      <Modified>2017-03-19T21:52:10.544</Modified>
+      <Modified>2017-04-14T09:42:45.809</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.dll">
       <PackagePath>HP41CV.UWP.dll</PackagePath>
-      <Modified>2017-03-19T21:53:33.340</Modified>
+      <Modified>2017-04-14T09:44:01.655</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.exe">
       <PackagePath>HP41CV.UWP.exe</PackagePath>
-      <Modified>2017-03-19T21:53:34.177</Modified>
+      <Modified>2017-04-14T09:44:02.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\HP41CV.UWP.pdb">
       <PackagePath>HP41CV.UWP.pdb</PackagePath>
-      <Modified>2017-03-19T21:53:34.165</Modified>
+      <Modified>2017-04-14T09:44:02.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2017-03-19T21:52:14.378</Modified>
+      <Modified>2017-04-14T09:42:48.774</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\0.rsrc">
       <PackagePath>_Resources\0.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.680</Modified>
+      <Modified>2017-04-14T09:43:18.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\1.rsrc">
       <PackagePath>_Resources\1.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.681</Modified>
+      <Modified>2017-04-14T09:43:18.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\10.rsrc">
       <PackagePath>_Resources\10.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.705</Modified>
+      <Modified>2017-04-14T09:43:18.541</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\2.rsrc">
       <PackagePath>_Resources\2.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.686</Modified>
+      <Modified>2017-04-14T09:43:18.519</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\3.rsrc">
       <PackagePath>_Resources\3.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.688</Modified>
+      <Modified>2017-04-14T09:43:18.520</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\4.rsrc">
       <PackagePath>_Resources\4.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.697</Modified>
+      <Modified>2017-04-14T09:43:18.527</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\5.rsrc">
       <PackagePath>_Resources\5.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.698</Modified>
+      <Modified>2017-04-14T09:43:18.529</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\6.rsrc">
       <PackagePath>_Resources\6.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.700</Modified>
+      <Modified>2017-04-14T09:43:18.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\7.rsrc">
       <PackagePath>_Resources\7.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.701</Modified>
+      <Modified>2017-04-14T09:43:18.532</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\8.rsrc">
       <PackagePath>_Resources\8.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.702</Modified>
+      <Modified>2017-04-14T09:43:18.538</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\9.rsrc">
       <PackagePath>_Resources\9.rsrc</PackagePath>
-      <Modified>2017-03-19T21:52:45.704</Modified>
+      <Modified>2017-04-14T09:43:18.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Release\ilc\_Resources\index.txt">
       <PackagePath>_Resources\index.txt</PackagePath>
-      <Modified>2017-03-19T21:52:45.711</Modified>
+      <Modified>2017-04-14T09:43:18.545</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

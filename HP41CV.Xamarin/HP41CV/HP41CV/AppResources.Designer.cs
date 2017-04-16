@@ -2024,6 +2024,33 @@ namespace HP41CV {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Options ähnelt.
+        /// </summary>
+        internal static string OptionCommand {
+            get {
+                return ResourceManager.GetString("OptionCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Lock up the most importend physical constants ähnelt.
+        /// </summary>
+        internal static string OptionConstants {
+            get {
+                return ResourceManager.GetString("OptionConstants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die use the value in calculation or programs by typing in the name ähnelt.
+        /// </summary>
+        internal static string OptionConstants1 {
+            get {
+                return ResourceManager.GetString("OptionConstants1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Load  and save all register  key-assignments and  programs ähnelt.
         /// </summary>
         internal static string OptionPersistence {
@@ -2101,6 +2128,15 @@ namespace HP41CV {
         internal static string OptionStatistic {
             get {
                 return ResourceManager.GetString("OptionStatistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Options ähnelt.
+        /// </summary>
+        internal static string OptionsTitle {
+            get {
+                return ResourceManager.GetString("OptionsTitle", resourceCulture);
             }
         }
         
