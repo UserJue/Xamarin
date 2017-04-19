@@ -22,9 +22,9 @@
 	<key>CFBundleDisplayName</key>
 	<string>HP41CV</string>
 	<key>CFBundleIdentifier</key>
-	<string>UserJUE.HP41CV</string>
+	<string>UserJue.HP41CV</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>2.0</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x</string>
@@ -52,7 +52,7 @@
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>CFBundleShortVersionString</key>
-	<string>4.0.1</string>
+	<string>4.1.0</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 </dict>
