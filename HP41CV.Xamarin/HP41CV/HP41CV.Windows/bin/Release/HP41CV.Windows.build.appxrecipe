@@ -65,6 +65,9 @@
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\Data\in-app-purchase.xml">
+      <PackagePath>Data\in-app-purchase.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.Windows\bin\Release\HP41CV.Windows.xr.xml">
       <PackagePath>HP41CV.Windows.xr.xml</PackagePath>
     </AppxPackagedFile>

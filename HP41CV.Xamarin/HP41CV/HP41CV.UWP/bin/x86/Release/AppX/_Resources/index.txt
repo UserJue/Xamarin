@@ -9,4 +9,5 @@ HP41CV, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   HP41CV.Views.AboutView.xaml
   HP41CV.Views.ByteView.xaml
   HP41CV.Views.HelpView.xaml
+  HP41CV.Views.OptionsView.xaml
   HP41CV.Assets.JS.png

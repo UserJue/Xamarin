@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-16T20:28:14.639</Modified>
+      <Modified>2017-04-19T21:54:57.370</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Debug\HP41CV.UWP.exe">
       <PackagePath>entrypoint\HP41CV.UWP.exe</PackagePath>
-      <Modified>2017-04-16T20:28:13.074</Modified>
+      <Modified>2017-04-19T21:54:50.567</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\JUE\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -466,11 +466,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Debug\HP41CV.dll">
       <PackagePath>HP41CV.dll</PackagePath>
-      <Modified>2017-04-16T20:28:11.341</Modified>
+      <Modified>2017-04-19T21:54:45.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Debug\de\HP41CV.resources.dll">
       <PackagePath>de\HP41CV.resources.dll</PackagePath>
-      <Modified>2017-04-16T20:28:11.836</Modified>
+      <Modified>2017-04-19T21:54:46.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\Assets\JS.png">
       <PackagePath>Assets\JS.png</PackagePath>
@@ -512,7 +512,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\Data\in-app-purchase.xml">
       <PackagePath>Data\in-app-purchase.xml</PackagePath>
-      <Modified>2017-04-16T20:28:08.670</Modified>
+      <Modified>2017-04-19T21:51:47.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -520,7 +520,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Debug\HP41CV.UWP.xr.xml">
       <PackagePath>HP41CV.UWP.xr.xml</PackagePath>
-      <Modified>2017-04-14T17:44:57.356</Modified>
+      <Modified>2017-04-19T21:50:50.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -536,11 +536,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2017-04-16T20:28:14.341</Modified>
+      <Modified>2017-04-19T21:54:56.799</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\bin\x86\Debug\Core\HP41CV.UWP.exe">
       <PackagePath>HP41CV.UWP.exe</PackagePath>
-      <Modified>2017-04-16T20:28:14.635</Modified>
+      <Modified>2017-04-19T21:54:57.356</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -70,13 +70,8 @@ C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.dll
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.Phone.dll
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\HP41CV.pdb
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Core.pdb
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Core.xml
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Platform.pdb
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.pri
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.Phone.pri
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Xaml.pdb
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\bin\Debug\de\HP41CV.resources.dll
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\obj\Debug\HP41CV.WinPhone.csprojResolveAssemblyReference.cache
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.WinPhone\obj\Debug\App.g.i.cs

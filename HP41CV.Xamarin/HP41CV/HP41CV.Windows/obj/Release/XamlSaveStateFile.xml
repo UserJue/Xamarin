@@ -1,7 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv.windows\obj\release\intermediatexaml\hp41cv.windows.exe" HashGuid="d2e1e8dd-d1f6-08ee-7218-4384412c5eb7" />
-    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv\bin\release\hp41cv.dll" HashGuid="e9dcd2a0-0c88-54b4-6c85-16ddf3c40027" />
+    <LocalAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv.windows\obj\release\intermediatexaml\hp41cv.windows.exe" HashGuid="966bc8cf-66f2-f5a2-f1e0-23599d648c4e" />
+    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv\bin\release\hp41cv.dll" HashGuid="6d930e48-b64d-4971-b1ba-e4d30f57d0b1" />
     <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\packages\xam.plugins.forms.roundedboxview.1.0.0.7\lib\portable-net45+wp8+win8+monoandroid10+monotouch10+xamarin.ios10\roundedboxview.forms.plugin.abstractions.dll" HashGuid="9cfac317-35fd-89b2-8b89-6137d28666c1" />
     <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv.windows\bin\release\xamarin.forms.core.dll" HashGuid="c782f70f-077f-7e2d-5bd4-f6b5da067f8a" />
     <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv.windows\bin\release\xamarin.forms.platform.dll" HashGuid="6b938cd4-44c0-2618-7eb6-4caa3f482076" />
