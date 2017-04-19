@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Helpers\PlatformMessenger.cs" />
     <Compile Include="Helpers\PlatformSoundPlayer.cs" />
+    <Compile Include="Helpers\PlatformMarketPlace.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -127,6 +128,9 @@
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Data\in-app-purchase.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

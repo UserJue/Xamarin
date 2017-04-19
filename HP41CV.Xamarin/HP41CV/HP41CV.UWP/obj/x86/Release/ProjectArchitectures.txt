@@ -1,2 +1,0 @@
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV.UWP\HP41CV.UWP.csproj;x86
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\HP41CV.csproj;neutral

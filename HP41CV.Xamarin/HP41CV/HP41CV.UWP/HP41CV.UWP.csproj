@@ -96,6 +96,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\PlatformMarketPlace.cs" />
     <Compile Include="Helpers\PlatformMessenger.cs" />
     <Compile Include="Helpers\PlatformSoundPlayer.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -111,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\JS.png" />
+    <Content Include="Data\in-app-purchase.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

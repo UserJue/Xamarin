@@ -70,8 +70,9 @@
         <ListView ItemsSource="{Binding Path=Course}"  BackgroundColor="#FFD4D2D2" HasUnevenRows="true" ItemTemplate="{StaticResource CoursDataTemplateSelector}" />
       </StackLayout>
       <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Center">
-      <Button Text="{Binding BackText}" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack2Visible}" TextColor="Yellow"/>          
-      <Button Text="{Binding AboutText}" Command="{Binding Path=AboutCommand}" TextColor="Yellow"/>          
+        <Button Text="{Binding BackText}" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack2Visible}" TextColor="Yellow"/>
+        <Button Text="{Binding OptionText}" Command="{Binding Path=OptionCommand}" TextColor="Yellow"/>
+        <Button Text="{Binding AboutText}" Command="{Binding Path=AboutCommand}" TextColor="Yellow"/>          
     </StackLayout>
   </Grid>
 

@@ -62,6 +62,7 @@ namespace HP41CV
                 mainViewModel.CalculatorViewModel.Width = width;
                 AbsoluteLayout.SetLayoutBounds(calculator,new Rectangle( posX, posY ,AbsoluteLayout.AutoSize,AbsoluteLayout.AutoSize));
                 AbsoluteLayout.SetLayoutBounds(AboutView, new Rectangle(posXA, 0,sizeXA , viewHight));
+                AbsoluteLayout.SetLayoutBounds(OptionsView, new Rectangle(posXH, 0, sizeXH, viewHight));
                 AbsoluteLayout.SetLayoutBounds(HelpView, new Rectangle(posXH, 0, sizeXH, viewHight));
             }
         }
