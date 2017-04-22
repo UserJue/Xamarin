@@ -32,7 +32,7 @@ namespace HP41CV.ViewModels
             bool useAppResource = ((App)App.Current).UseAppResource; ;
             OneView = true;
             CalculatorViewModel = new CalculatorViewModel();
-            AboutViewModel = new AboutViewModel {Title = !useAppResource ? "HP41-CV" : AppResources.ApplicationTitle,SubTitle = !useAppResource ? "Windows Phone" : AppResources.ForW,Version = "4.0",BackText = !useAppResource ? "Close" : AppResources.Close };
+            AboutViewModel = new AboutViewModel {Title = !useAppResource ? "HP41-CV" : AppResources.ApplicationTitle,SubTitle = !useAppResource ? "Windows Phone" : AppResources.ForW,Version = "4.1",BackText = !useAppResource ? "Close" : AppResources.Close };
             switch (Device.OS)
             {
                 case TargetPlatform.iOS:

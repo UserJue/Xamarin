@@ -348,6 +348,9 @@
   <data name="Chapter2Remark" xml:space="preserve">
     <value />
   </data>
+  <data name="OptionCommand1" xml:space="preserve">
+    <value>Option</value>
+  </data>
   <data name="BuyButton" xml:space="preserve">
     <value>Buy for {0}</value>
   </data>
@@ -414,8 +417,14 @@
   <data name="HelpProgrammingExample2Code5" xml:space="preserve">
     <value>ᵀCAPITAL?</value>
   </data>
+  <data name="OptionConstants11" xml:space="preserve">
+    <value>use the value in calculation or programs by typing in the name</value>
+  </data>
   <data name="HelpClearProgram" xml:space="preserve">
     <value>Clear program</value>
+  </data>
+  <data name="OptionConstants2" xml:space="preserve">
+    <value>Schlage die wichtigsten physikalischen Konstantanten nach</value>
   </data>
   <data name="OptionConstants1" xml:space="preserve">
     <value>use the value in calculation or programs by typing in the name</value>

@@ -375,6 +375,9 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="OptionConstants" xml:space="preserve">
+    <value>Lock up the most importend physical constants</value>
+  </data>
   <data name="HelpProgrammingExample1" xml:space="preserve">
     <value>Simple Example</value>
   </data>
@@ -413,6 +416,9 @@
   </data>
   <data name="HelpClearProgram" xml:space="preserve">
     <value>Clear program</value>
+  </data>
+  <data name="OptionConstants1" xml:space="preserve">
+    <value>use the value in calculation or programs by typing in the name</value>
   </data>
   <data name="MenuInfo" xml:space="preserve">
     <value>About</value>
