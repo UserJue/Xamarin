@@ -26,7 +26,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>_15Puzzle</string>
 	<key>CFBundleIdentifier</key>
-	<string>UserJue.-15Puzzle</string>
+	<string>UserJue.15Puzzle</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>

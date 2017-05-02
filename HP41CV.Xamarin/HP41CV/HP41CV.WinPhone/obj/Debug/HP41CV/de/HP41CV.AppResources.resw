@@ -357,6 +357,9 @@
   <data name="Function4Description" xml:space="preserve">
     <value>Steuere Programverzweigungen oder zeig das Ergebnis an</value>
   </data>
+  <data name="OptionCommand" xml:space="preserve">
+    <value>Option</value>
+  </data>
   <data name="OptionRobustStatistic1" xml:space="preserve">
     <value>Median und MAD werden ermittelt</value>
   </data>
@@ -399,6 +402,9 @@
   <data name="Close" xml:space="preserve">
     <value>Schließen</value>
   </data>
+  <data name="OptionConstants" xml:space="preserve">
+    <value>Schlage die wichtigsten physikalischen Konstantanten nach</value>
+  </data>
   <data name="HelpProgrammingExample1" xml:space="preserve">
     <value>Einfaches Beispiel</value>
   </data>
@@ -437,6 +443,9 @@
   </data>
   <data name="HelpClearProgram" xml:space="preserve">
     <value>Löschen eines Programs</value>
+  </data>
+  <data name="OptionConstants1" xml:space="preserve">
+    <value>use the value in calculation or programs by typing in the name</value>
   </data>
   <data name="MenuInfo" xml:space="preserve">
     <value>About</value>

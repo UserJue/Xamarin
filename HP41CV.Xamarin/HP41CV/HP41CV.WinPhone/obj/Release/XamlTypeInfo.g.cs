@@ -622,5 +622,3 @@ namespace HP41CV.WinPhone.HP41CV_WinPhone_XamlTypeInfo
 }
 
 
-
-
