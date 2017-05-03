@@ -464,8 +464,8 @@ namespace HP41CV.Models
             {
                 program = new ProgramModel(this, "BIN 8");
                 program.AddStep(GetActionModel("BIN"), 8);
+	            this.Programs.Add(program.Text, program);
             }
-            this.Programs.Add(program.Text, program);
             program = new ProgramModel(this, "FIX 4");
             program.AddStep(GetActionModel("FIX"), 4);
             this.Programs.Add(program.Text, program);
