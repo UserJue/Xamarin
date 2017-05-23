@@ -122,9 +122,13 @@ namespace _15Puzzle.ViewModels
 
         public ICommand SettingCommand { get; set; }
 
+        public ICommand ScoreListCommand { get; set; }
+
         public AboutViewModel AboutViewModel { get; }
 
         public SettingsViewModel SettingsViewModel { get; }
+
+        public ScoreListViewModel ScoreListViewModel { get; }
 
         public MainViewModel(Models._15Puzzle model,Settings settings,bool userTimer = true)
         {
@@ -151,10 +155,15 @@ namespace _15Puzzle.ViewModels
                 AboutViewModel.IsVisible = false;
                 IsVisible = true;
             };
-            SettingsViewModel = new SettingsViewModel(settings) { BackText = AppResource.Close,AboutText = AppResource.About};
+            SettingsViewModel = new SettingsViewModel(settings) { BackText = AppResource.Close, ScoreListText = AppResource.ScoreList, AboutText = AppResource.About};
             SettingsViewModel.AboutAction = () =>
             {
                 AboutViewModel.IsVisible = true;
+                SettingsViewModel.IsVisible = false;
+            };
+            SettingsViewModel.ScoreListAction = () =>
+            {
+                ScoreListViewModel.IsVisible = true;
                 SettingsViewModel.IsVisible = false;
             };
             SettingsViewModel.BackAction = () =>
@@ -162,6 +171,19 @@ namespace _15Puzzle.ViewModels
                 SettingsViewModel.IsVisible = false;
                 IsVisible = true;
             };
+
+            ScoreListViewModel = new ScoreListViewModel(model.ScoreList) { BackText = AppResource.Close, AboutText = AppResource.About };
+            ScoreListViewModel.AboutAction = () =>
+            {
+                AboutViewModel.IsVisible = true;
+                ScoreListViewModel.IsVisible = false;
+            };
+            ScoreListViewModel.BackAction = () =>
+            {
+                ScoreListViewModel.IsVisible = false;
+                IsVisible = true;
+            };
+
             showPictureText = AppResource.ShowPictureText;
             hidePictureText = AppResource.HidePictureText;
             isPortrait = true;
@@ -172,6 +194,13 @@ namespace _15Puzzle.ViewModels
                 if (model.Status == Models._15Puzzle.GameStatus.Activ)
                     model.Status = Models._15Puzzle.GameStatus.Inactiv;
                 SettingsViewModel.IsVisible = true;
+            });
+            ScoreListCommand = new Command(() =>
+            {
+                IsVisible = false;
+                if (model.Status == Models._15Puzzle.GameStatus.Activ)
+                    model.Status = Models._15Puzzle.GameStatus.Inactiv;
+                ScoreListViewModel.IsVisible = true;
             });
             ShuffleCommand = new Command(() =>
             {

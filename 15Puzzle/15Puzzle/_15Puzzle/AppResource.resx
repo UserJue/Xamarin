@@ -147,6 +147,15 @@
   <data name="PictureCapture" xml:space="preserve">
     <value>Picture</value>
   </data>
+  <data name="ScoreList" xml:space="preserve">
+    <value>Score List</value>
+  </data>
+  <data name="ScoreListCapture" xml:space="preserve">
+    <value>Score List</value>
+  </data>
+  <data name="ScoreListCommand" xml:space="preserve">
+    <value>Score List</value>
+  </data>
   <data name="ShowPictureText" xml:space="preserve">
     <value>Show Picture</value>
   </data>

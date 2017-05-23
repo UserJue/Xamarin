@@ -55,6 +55,7 @@
     <Compile Include="Helpers\IPlatformSoundPlayer.cs" />
     <Compile Include="Helpers\MarketPlace.cs" />
     <Compile Include="Helpers\Messenger.cs" />
+    <Compile Include="Helpers\MockMarketPlace.cs" />
     <Compile Include="Helpers\PlatformCulture.cs" />
     <Compile Include="Helpers\SoundPlayer.cs" />
     <Compile Include="MainPage.xaml.cs">

@@ -40,6 +40,7 @@
     </Picker>
     <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
       <Button Text="{Binding BackText}" Command="{Binding Path=BackCommand}" IsVisible="{Binding Path=IsBack2Visible}" />
+      <Button Text="{Binding ScoreListText}" Command="{Binding Path=ScoreListCommand}"/>
       <Button Text="{Binding AboutText}" Command="{Binding Path=AboutCommand}"/>
     </StackLayout>
   </Grid>

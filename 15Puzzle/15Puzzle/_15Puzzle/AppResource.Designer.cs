@@ -152,6 +152,33 @@ namespace _15Puzzle {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Score List ähnelt.
+        /// </summary>
+        internal static string ScoreList {
+            get {
+                return ResourceManager.GetString("ScoreList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Score List ähnelt.
+        /// </summary>
+        internal static string ScoreListCapture {
+            get {
+                return ResourceManager.GetString("ScoreListCapture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Score List ähnelt.
+        /// </summary>
+        internal static string ScoreListCommand {
+            get {
+                return ResourceManager.GetString("ScoreListCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Show Picture ähnelt.
         /// </summary>
         internal static string ShowPictureText {

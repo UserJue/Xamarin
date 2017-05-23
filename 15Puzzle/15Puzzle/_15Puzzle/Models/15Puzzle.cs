@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Json;
+using Common.Models;
 using Xamarin.Forms;
 using _15Puzzle.Annotations;
 
@@ -26,6 +27,7 @@ namespace _15Puzzle.Models
         public int DimensionY { get; private set; }
         public int HoleX { get; set; }
         public int HoleY { get; set; }
+        public IScoreList<IntScoreValue> ScoreList { get; } 
 
         public GameStatus Status
         {
@@ -70,6 +72,8 @@ namespace _15Puzzle.Models
             Status = GameStatus.None;
             random = new Random();
             Tiles = new List<Tile>();
+            IStoreage storeage = DependencyService.Get<IStoreage>();
+            ScoreList = new ScoreList<IntScoreValue>(storeage);
         }
 
         public bool LoadFromProperties()
@@ -363,6 +367,7 @@ namespace _15Puzzle.Models
                 if (Application.Current.MainPage != null)
                     Application.Current.MainPage.DisplayAlert(AppResource.ApplicationTitle, AppResource.WinMessage + (int)score, "OK");
                 Status = GameStatus.Finished;
+                ScoreList.Add(new Score<IntScoreValue>("Jue",new IntScoreValue(Picture,usedTime,score)));
             }
             return result;
         }

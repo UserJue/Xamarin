@@ -22,7 +22,6 @@
   </Dependencies>
   <Resources>
     <Resource Language="EN-US" />
-    <Resource Language="DE" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="HP41CV.UWP.exe" EntryPoint="HP41CV.UWP.App">

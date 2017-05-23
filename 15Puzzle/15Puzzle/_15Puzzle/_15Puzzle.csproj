@@ -35,6 +35,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\Common\Models\IntScoreValue.cs">
+      <Link>Models\IntScoreValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Models\IScore.cs">
+      <Link>Models\IScore.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Models\IScoreList.cs">
+      <Link>Models\IScoreList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Models\IScoreValue.cs">
+      <Link>Models\IScoreValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Models\Score.cs">
+      <Link>Models\Score.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Models\ScoreList.cs">
+      <Link>Models\ScoreList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Models\ScoreValue.cs">
+      <Link>Models\ScoreValue.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -49,8 +70,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\15Puzzle.cs" />
+    <Compile Include="Models\IStoreage.cs" />
     <Compile Include="Models\PuzzleInfo.cs" />
     <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\StoreageGeneral.cs" />
     <Compile Include="Models\Tile.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +81,8 @@
     <Compile Include="ViewModels\IPanViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PuzzleInfoViewModel.cs" />
+    <Compile Include="ViewModels\ScoreListEntryViewModel.cs" />
+    <Compile Include="ViewModels\ScoreListViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\TileViewModel.cs" />
     <Compile Include="Views\15PuzzleView.xaml.cs">
@@ -67,6 +92,9 @@
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PanContainer.cs" />
+    <Compile Include="Views\ScoreListView.xaml.cs">
+      <DependentUpon>ScoreListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
@@ -199,6 +227,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pictures\Start%403.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ScoreListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

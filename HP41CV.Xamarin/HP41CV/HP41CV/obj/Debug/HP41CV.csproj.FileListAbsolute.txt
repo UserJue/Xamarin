@@ -54,5 +54,3 @@ C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\obj\Debug\HP41CV.pd
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\obj\Debug\HP41CV.Views.OptionsView.xaml.g.cs
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\obj\Debug\HP41CV.dll.mdb
 C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Debug\HP41CV.dll.mdb
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\obj\Debug\HP41CV.dll.mdb
-C:\Source\Repos\xamarin\Xamarin\HP41CV.Xamarin\HP41CV\HP41CV\bin\Debug\HP41CV.dll.mdb

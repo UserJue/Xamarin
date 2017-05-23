@@ -77,7 +77,11 @@ namespace _15Puzzle.ViewModels
 
         public ICommand AboutCommand { get; private set; }
 
+        public ICommand ScoreListCommand { get; private set; }
+
         public string BackText { get; set; }
+
+        public string ScoreListText { get; set; }
 
         public string AboutText { get; set; }
 
@@ -99,6 +103,8 @@ namespace _15Puzzle.ViewModels
         }
 
         public Action AboutAction;
+        public Action ScoreListAction;
+
         private PuzzleInfoViewModel selectedPuzzleInfo;
         private int showPreview;
 
@@ -110,6 +116,7 @@ namespace _15Puzzle.ViewModels
             back1 = true;
             BackCommand = new Command(() => BackAction?.Invoke());
             AboutCommand = new Command(() => AboutAction?.Invoke());
+            ScoreListCommand = new Command(() => ScoreListAction?.Invoke());
             PuzzleInfos = new Collection<PuzzleInfoViewModel>();
             foreach (var puzzleInfo in settings.PuzzleInfos)
             {

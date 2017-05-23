@@ -13,7 +13,8 @@
   <AbsoluteLayout>    
   <views:AboutView BindingContext="{Binding Path=AboutViewModel}" x:Name="AboutView" IsVisible="{Binding Path=IsVisible}" HorizontalOptions="Center" />
   <views:SettingsView BindingContext="{Binding Path=SettingsViewModel}" x:Name="SettingsView" IsVisible="{Binding Path=IsVisible}"/>
-      <Grid x:Name="PuzzleView" IsVisible="{Binding Path=IsVisible}">
+  <views:ScoreListView BindingContext="{Binding Path=ScoreListViewModel}" x:Name="ScoreListView" IsVisible="{Binding Path=IsVisible}"/>
+  <Grid x:Name="PuzzleView" IsVisible="{Binding Path=IsVisible}">
     <Grid.RowDefinitions>
       <RowDefinition Height="*" />
       <RowDefinition Height="Auto" />

@@ -1,7 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv.winphone\obj\debug\intermediatexaml\hp41cv.winphone.exe" HashGuid="26b1046c-bcd7-55b0-764f-baeb7027b2e7" />
-    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv\bin\debug\hp41cv.dll" HashGuid="43ce6b12-1653-42eb-8098-8437d0728d6e" />
+    <LocalAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv.winphone\obj\debug\intermediatexaml\hp41cv.winphone.exe" HashGuid="96ca8542-0b63-528d-88f0-b4b2fd44d1c7" />
+    <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv\bin\debug\hp41cv.dll" HashGuid="2a44784a-2b7f-ea84-0455-66dc8dced882" />
     <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv.winphone\bin\debug\xamarin.forms.core.dll" HashGuid="c782f70f-077f-7e2d-5bd4-f6b5da067f8a" />
     <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\hp41cv\hp41cv.winphone\bin\debug\xamarin.forms.platform.dll" HashGuid="6b938cd4-44c0-2618-7eb6-4caa3f482076" />
     <ReferenceAssembly PathName="c:\source\repos\xamarin\xamarin\hp41cv.xamarin\packages\xamarin.forms.2.3.3.193\lib\wpa81\xamarin.forms.platform.winrt.dll" HashGuid="739997af-d3af-47b8-5b3b-888c2ab8fd2b" />
